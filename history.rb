@@ -15,7 +15,7 @@ class Result
   end
 
   def method_missing(attr)
-    return '' unless h = @raw[attr]
+    return unless h = @raw[attr]
     return h[:value].to_s[0..9] if h[:datatype] == 'http://www.w3.org/2001/XMLSchema#dateTime'
     return '{{Q|%s}}' % [h[:value].to_s.split('/').last] if h[:type] == 'uri'
     h[:value]
@@ -27,6 +27,10 @@ def sparql(query)
   JSON.parse(result, symbolize_names: true)[:results][:bindings]
 rescue RestClient::Exception => e
   raise "Wikidata query #{query} failed: #{e.message}"
+end
+
+def cell(value, problem)
+  '|%s' % [problem ? "{{comment|#{value}}}" : value]
 end
 
 query = <<EOQ
@@ -47,8 +51,19 @@ qid = ARGV.first || abort("Usage: #{$PROGRAM_NAME} <Qid>")
 
 json = sparql(query % qid)
 data = json.map { |r| Result.new(r) }
+list = [nil, data, nil].flatten(1)
 
 puts '{| class="wikitable"'
 puts '! ordinal !! person !! start date !! end date !! replaces !! replaced by'
-puts data.map { |o| [o.ordinal, o.item, o.start_date, o.end_date, o.prev, o.next].join('||').prepend("|-\n|") }.join("\n")
+
+list.each_cons(3) do |later, current, earlier|
+  next unless current
+  puts '|-'
+  puts cell(current.ordinal, nil)
+  puts cell(current.item, nil)
+  puts cell(current.start_date, (current.start_date && earlier&.end_date && current.start_date < earlier.start_date))
+  puts cell(current.end_date, (current.end_date && later&.start_date && current.end_date > later.start_date))
+  puts cell(current.prev, current.prev && earlier && current.prev != earlier.item)
+  puts cell(current.next, current.next && later && current.next != later.item)
+end
 puts '|}'
