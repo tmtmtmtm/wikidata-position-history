@@ -94,8 +94,8 @@ list.each_cons(3) do |later, current, earlier|
   check = Check.new(later, current, earlier)
   puts '|-'
   puts '| style="padding:1em" | %s' % [ current.ordinal ? "#{current.ordinal}." : '' ]
-  puts '| style="padding:1em" | <span style="font-size: 1.5em; display: block;">%s</span> %s–%s %s' % [
-    current.item, current.start_date, current.end_date,
+  puts '| style="padding:1em" | <span style="font-size: 1.5em; display: block;">%s</span> %s %s' % [
+    current.item, (current.start_date || current.end_date ? "#{current.start_date}–#{current.end_date}" : ''),
     warning(check, :missing_fields) + warning(check, :wrong_predecessor) + warning(check, :wrong_successor) + warning(check, :ends_after_successor_starts)
   ]
 end
