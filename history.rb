@@ -47,8 +47,6 @@ class Check
     return "{{P|1366}} of #{current.next} differs from successor (#{later.item})" if current.next != later.item
   end
 
-  private
-
   attr_reader :later, :current, :earlier
 end
 
@@ -59,9 +57,9 @@ rescue RestClient::Exception => e
   raise "Wikidata query #{query} failed: #{e.message}"
 end
 
-def cell(item, field, warning)
-  footnote = " <ref>Warning for #{item.item}: #{warning}</ref>" if warning
-  "|#{item.send(field)}#{footnote}"
+def warning(check, method)
+  text = check.send(method) or return ""
+  " <ref>Warning for #{check.current.item}: #{text}</ref>"
 end
 
 query = <<EOQ
@@ -85,17 +83,15 @@ data = json.map { |r| Result.new(r) }
 list = [nil, data, nil].flatten(1)
 
 puts '{| class="wikitable"'
-puts '! ordinal !! person !! start date !! end date !! replaces !! replaced by'
-
 list.each_cons(3) do |later, current, earlier|
   next unless current
   check = Check.new(later, current, earlier)
   puts '|-'
-  puts cell(current, :ordinal, nil)
-  puts cell(current, :item, nil)
-  puts cell(current, :start_date, nil)
-  puts cell(current, :end_date, check.ends_after_successor_starts)
-  puts cell(current, :prev, check.wrong_predecessor)
-  puts cell(current, :next, check.wrong_successor)
+  puts '| style="font-size: 150%%; text-align: center;" | %s %s<br><span style="font-size: 60%%">%s–%s</span>' % [
+    current.ordinal ? "(#{current.ordinal}.) " : '',
+    current.item + warning(check, :wrong_predecessor) + warning(check, :wrong_successor),
+    current.start_date + warning(check, :ends_after_successor_starts),
+    current.end_date
+  ]
 end
 puts '|}'
