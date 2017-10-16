@@ -31,20 +31,20 @@ class Check
 
   def ends_after_successor_starts
     return unless later && later.start_date
-    return '{{P|580}} is missing' unless current.end_date
-    return "{{P|580}} of #{current.end_date} is later than start date of #{later.item} (#{later.start_date})" if current.end_date > later.start_date
+    return [ 'Missing {{P|580}}', "#{current.item} is missing a {{P|580}}" ] unless current.end_date
+    return [ 'Date overlap', "#{current.item} has a {{P|580}} of #{current.end_date}, which is later than {{P|580}} of #{later.start_date} for #{later.item}" ] if current.end_date > later.start_date
   end
 
   def wrong_predecessor
     return unless earlier
-    return '{{P|1365}} is missing' unless current.prev
-    return "{{P|1365}} of #{current.prev} differs from predecessor (#{earlier.item})" if current.prev != earlier.item
+    return [ 'Missing {{P|1365}}', "#{current.item} is missing a {{P|1365}}" ] unless current.prev
+    return [ 'Inconsistent predecessor', "#{current.item}}has a {{P|1365}} of #{current.prev}, which differs from #{earlier.item}" ] if current.prev != earlier.item
   end
 
   def wrong_successor
     return unless later
-    return '{{P|1366}} is missing' unless current.next
-    return "{{P|1366}} of #{current.next} differs from successor (#{later.item})" if current.next != later.item
+    return [ 'Missing {{P|1366}}', "#{current.item} is missing a {{P|1366}}" ] unless current.next
+    return [ 'Inconsistent sucessor', "#{current.item} has a {{P|1366}} of #{current.next}, which differs from #{later.item}" ] if current.next != later.item
   end
 
   attr_reader :later, :current, :earlier
@@ -58,8 +58,8 @@ rescue RestClient::Exception => e
 end
 
 def warning(check, method)
-  text = check.send(method) or return ""
-  " <ref>Warning for #{check.current.item}: #{text}</ref>"
+  errors = check.send(method) or return ""
+  '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;<ref>%s</ref></span>' % [ errors.first, errors.last ]
 end
 
 query = <<EOQ
@@ -82,16 +82,15 @@ json = sparql(query % qid)
 data = json.map { |r| Result.new(r) }
 list = [nil, data, nil].flatten(1)
 
-puts '{| class="wikitable"'
+puts '{| class="wikitable" style="text-align: center;"'
 list.each_cons(3) do |later, current, earlier|
   next unless current
   check = Check.new(later, current, earlier)
   puts '|-'
-  puts '| style="font-size: 150%%; text-align: center;" | %s %s<br><span style="font-size: 60%%">%s–%s</span>' % [
-    current.ordinal ? "(#{current.ordinal}.) " : '',
-    current.item + warning(check, :wrong_predecessor) + warning(check, :wrong_successor),
-    current.start_date + warning(check, :ends_after_successor_starts),
-    current.end_date
+  puts '| style="padding:1em" | %s' % [ current.ordinal ? "#{current.ordinal}." : '' ]
+  puts '| style="padding:1em" | <span style="font-size: 1.5em; display: block;">%s</span> %s–%s %s' % [
+    current.item, current.start_date, current.end_date,
+    warning(check, :wrong_predecessor) + warning(check, :wrong_successor) + warning(check, :ends_after_successor_starts)
   ]
 end
 puts '|}'
