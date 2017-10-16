@@ -43,7 +43,7 @@ class Check
 
   def ends_after_successor_starts
     return unless current.end_date && later&.start_date
-    return ['Date overlap', "#{current.item} has a {{P|580}} of #{current.end_date}, which is later than {{P|580}} of #{later.start_date} for #{later.item}"] if current.end_date > later.start_date
+    return ['Date overlap', "#{current.item} has a {{P|582}} of #{current.end_date}, which is later than {{P|580}} of #{later.start_date} for #{later.item}"] if current.end_date > later.start_date
   end
 
   def wrong_predecessor
