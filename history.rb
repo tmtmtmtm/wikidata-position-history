@@ -29,21 +29,27 @@ class Check
     @earlier = earlier
   end
 
+  def missing_fields
+    expected = { start_date: 580 }
+    expected.merge!({ prev: 1365 }) if earlier
+    expected.merge!({ end_date: 582, next: 1366 }) if later
+    missing = expected.keys.reject { |i| current.send(i) }
+    return unless missing.any?
+    return [ "Missing field#{missing.count > 1 ? 's' : ''}", "#{current.item} is missing #{missing.map { |i| "{{P|#{expected[i]}}}" }.join(", ")}" ]
+  end
+
   def ends_after_successor_starts
-    return unless later && later.start_date
-    return [ 'Missing {{P|580}}', "#{current.item} is missing a {{P|580}}" ] unless current.end_date
+    return unless current.end_date && later&.start_date
     return [ 'Date overlap', "#{current.item} has a {{P|580}} of #{current.end_date}, which is later than {{P|580}} of #{later.start_date} for #{later.item}" ] if current.end_date > later.start_date
   end
 
   def wrong_predecessor
-    return unless earlier
-    return [ 'Missing {{P|1365}}', "#{current.item} is missing a {{P|1365}}" ] unless current.prev
-    return [ 'Inconsistent predecessor', "#{current.item}}has a {{P|1365}} of #{current.prev}, which differs from #{earlier.item}" ] if current.prev != earlier.item
+    return unless current.prev && earlier&.item
+    return [ 'Inconsistent predecessor', "#{current.item} has a {{P|1365}} of #{current.prev}, which differs from #{earlier.item}" ] if current.prev != earlier.item
   end
 
   def wrong_successor
-    return unless later
-    return [ 'Missing {{P|1366}}', "#{current.item} is missing a {{P|1366}}" ] unless current.next
+    return unless current.next && later&.item
     return [ 'Inconsistent sucessor', "#{current.item} has a {{P|1366}} of #{current.next}, which differs from #{later.item}" ] if current.next != later.item
   end
 
@@ -90,7 +96,7 @@ list.each_cons(3) do |later, current, earlier|
   puts '| style="padding:1em" | %s' % [ current.ordinal ? "#{current.ordinal}." : '' ]
   puts '| style="padding:1em" | <span style="font-size: 1.5em; display: block;">%s</span> %s–%s %s' % [
     current.item, current.start_date, current.end_date,
-    warning(check, :wrong_predecessor) + warning(check, :wrong_successor) + warning(check, :ends_after_successor_starts)
+    warning(check, :missing_fields) + warning(check, :wrong_predecessor) + warning(check, :wrong_successor) + warning(check, :ends_after_successor_starts)
   ]
 end
 puts '|}'
