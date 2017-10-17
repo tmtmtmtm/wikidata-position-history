@@ -91,6 +91,7 @@ json = sparql(query % qid)
 data = json.map { |r| Result.new(r) }
 list = [nil, data, nil].flatten(1)
 
+puts '== {{Q|%s}} officeholders ==' % qid
 puts '{| class="wikitable" style="text-align: center; border: none;"'
 
 list.each_cons(3) do |later, current, earlier|
