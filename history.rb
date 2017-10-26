@@ -5,8 +5,6 @@
 require 'json'
 require 'rest-client'
 
-require 'pry'
-
 WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
 
 class Result
