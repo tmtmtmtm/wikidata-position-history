@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+require 'wikidata_position_history'
+require 'uri'
+
+
+if ARGV.size != 1
+  abort "Usage: #{$PROGRAM_NAME} REFRESH_URL_OR_QUERYSTRING
+e.g. wikidata_position_history 'mediawiki_site=www.wikidata.org&page_title=User%3AMhl20%2FPrime_minister_test'
+"
+end
+
+query = if ARGV.first.start_with?('http')
+          URI.parse(ARGV.first).query
+        else
+          ARGV.first
+        end
+
+options = URI.decode_www_form(query).map { |k, v| [k.to_sym, v] }.to_h
+
+warn "Running with options: #{options.inspect}" if ENV.key?('DEBUG')
+
+rewriter = WikidataPositionHistory::PageRewriter.new(**options)
+rewriter.run!
