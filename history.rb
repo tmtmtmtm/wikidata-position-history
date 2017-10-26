@@ -3,7 +3,7 @@
 # frozen_string_literal: true
 
 require 'json'
-require 'wikidata/fetcher'
+require 'rest-client'
 
 require 'pry'
 
