@@ -1,4 +1,3 @@
-#!/bin/env ruby
 # encoding: utf-8
 # frozen_string_literal: true
 
@@ -69,7 +68,8 @@ def warning(check, method)
   '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;<ref>%s</ref></span>' % [errors.first, errors.last]
 end
 
-query = <<EOQ
+def wikitext_history(subject_item_id)
+  query = <<EOQ
   SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next WHERE {
     ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
     ?posn ps:P39 wd:%s .
@@ -83,25 +83,24 @@ query = <<EOQ
   ORDER BY DESC(?start_date)
 EOQ
 
-qid = ARGV.first || abort("Usage: #{$PROGRAM_NAME} <Qid>")
+  json = sparql(query % subject_item_id)
+  data = json.map { |r| Result.new(r) }
+  list = [nil, data, nil].flatten(1)
 
-json = sparql(query % qid)
-data = json.map { |r| Result.new(r) }
-list = [nil, data, nil].flatten(1)
+  wikitext = "== {{Q|%s}} officeholders ==\n" % subject_item_id
+  wikitext << '{| class="wikitable" style="text-align: center; border: none;"' << "\n"
 
-puts '== {{Q|%s}} officeholders ==' % qid
-puts '{| class="wikitable" style="text-align: center; border: none;"'
-
-list.each_cons(3) do |later, current, earlier|
-  next unless current
-  check = Check.new(later, current, earlier)
-  puts '|-'
-  puts '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : '']
-  puts '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' % [
-    current.item, (current.start_date || current.end_date ? "#{current.start_date} – #{current.end_date}" : ''),
-  ]
-  puts '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' % [
-    warning(check, :missing_fields) + warning(check, :wrong_predecessor) + warning(check, :wrong_successor) + warning(check, :ends_after_successor_starts)
-  ]
+  list.each_cons(3) do |later, current, earlier|
+    next unless current
+    check = Check.new(later, current, earlier)
+    wikitext << "|-\n"
+    wikitext << '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : ''] << "\n"
+    wikitext << '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' % [
+           current.item, (current.start_date || current.end_date ? "#{current.start_date} – #{current.end_date}" : ''),
+         ] << "\n"
+    wikitext << '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' % [
+           warning(check, :missing_fields) + warning(check, :wrong_predecessor) + warning(check, :wrong_successor) + warning(check, :ends_after_successor_starts)
+         ] << "\n"
+  end
+  wikitext << "|}\n"
 end
-puts '|}'
