@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 EXAMPLE_QUERY_FILENAME = File.join(File.dirname(__FILE__), '..', 'example-data', 'prime-ministers.json')
@@ -8,9 +10,9 @@ describe 'wikitext_history' do
   # helpful as a test of whether something's broken.
   it 'returns expected results for the UK Prime Minister' do
     # Stub the request that gets the results of the SPARQL query:
-    stub_request(:get, "https://query.wikidata.org/sparql?query=%20%20SELECT%20DISTINCT%20?ordinal%20?item%20?start_date%20?end_date%20?prev%20?next%20WHERE%20%7B%0A%20%20%20%20?item%20wdt:P31%20wd:Q5%20%3B%20p:P39%20?posn%20.%0A%20%20%20%20?posn%20ps:P39%20wd:Q14211%20.%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P580%20?start_date.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P582%20?end_date.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1365%7Cpq:P155%20?prev.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1366%7Cpq:P156%20?next.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P2715%20?election.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1545%20?ordinal.%20%7D%0A%20%20%7D%0A%20%20ORDER%20BY%20DESC(?start_date)%0A").
-      with(headers: {'Accept'=>'application/sparql-results+json', 'Accept-Encoding'=>'gzip, deflate', 'Host'=>'query.wikidata.org', 'User-Agent'=>'rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.1p112'}).
-      to_return(status: 200, body: File.read(EXAMPLE_QUERY_FILENAME), headers: {})
+    stub_request(:get, 'https://query.wikidata.org/sparql?query=%20%20SELECT%20DISTINCT%20?ordinal%20?item%20?start_date%20?end_date%20?prev%20?next%20WHERE%20%7B%0A%20%20%20%20?item%20wdt:P31%20wd:Q5%20%3B%20p:P39%20?posn%20.%0A%20%20%20%20?posn%20ps:P39%20wd:Q14211%20.%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P580%20?start_date.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P582%20?end_date.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1365%7Cpq:P155%20?prev.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1366%7Cpq:P156%20?next.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P2715%20?election.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1545%20?ordinal.%20%7D%0A%20%20%7D%0A%20%20ORDER%20BY%20DESC(?start_date)%0A')
+      .with(headers: { 'Accept' => 'application/sparql-results+json', 'Accept-Encoding' => 'gzip, deflate', 'Host' => 'query.wikidata.org', 'User-Agent' => 'rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.1p112' })
+      .to_return(status: 200, body: File.read(EXAMPLE_QUERY_FILENAME), headers: {})
     # Now try generating the history of the position holders as wikitext:
     result = wikitext_history('Q14211')
     # Check that at least the start and end of that generated text is

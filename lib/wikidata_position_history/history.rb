@@ -96,11 +96,11 @@ EOQ
     wikitext << "|-\n"
     wikitext << '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : ''] << "\n"
     wikitext << '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' % [
-           current.item, (current.start_date || current.end_date ? "#{current.start_date} – #{current.end_date}" : ''),
-         ] << "\n"
+      current.item, (current.start_date || current.end_date ? "#{current.start_date} – #{current.end_date}" : ''),
+    ] << "\n"
     wikitext << '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' % [
-           warning(check, :missing_fields) + warning(check, :wrong_predecessor) + warning(check, :wrong_successor) + warning(check, :ends_after_successor_starts)
-         ] << "\n"
+      warning(check, :missing_fields) + warning(check, :wrong_predecessor) + warning(check, :wrong_successor) + warning(check, :ends_after_successor_starts),
+    ] << "\n"
   end
   wikitext << "|}\n"
 end

@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 describe 'WikidataPositionHistory' do
   describe 'PageRewriter' do
-    subject {
+    subject do
       WikidataPositionHistory::PageRewriter.new(
         mediawiki_site: 'www.wikidata.org',
-        page_title: 'User:Mhl20/Prime_minister_test'
+        page_title:     'User:Mhl20/Prime_minister_test'
       )
-    }
+    end
 
     it 'should have a mediawiki_site attribute' do
       subject.send(:mediawiki_site).must_equal 'www.wikidata.org'

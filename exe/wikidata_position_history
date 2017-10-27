@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'wikidata_position_history'
 require 'uri'
-
 
 if ARGV.size != 1
   abort "Usage: #{$PROGRAM_NAME} REFRESH_URL_OR_QUERYSTRING
