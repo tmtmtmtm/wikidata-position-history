@@ -31,7 +31,7 @@ module WikidataPositionHistory
       check_login_available
       begin
         new_wikitext = wikitext_history(position_id)
-        section.replace_output(new_wikitext, "Last updated at: #{DateTime.now}")
+        section.replace_output(new_wikitext, "Successfully updated holders of #{position_id}")
       rescue RewriteError => e
         section.replace_output(e.wikitext, e.to_s)
       end
