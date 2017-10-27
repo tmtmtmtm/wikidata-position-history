@@ -57,7 +57,7 @@ module WikidataPositionHistory
     end
 
     def check_id_well_formed(item_id)
-      return if item_id =~ /Q\d+/
+      return if item_id =~ /^Q\d+$/
       raise RewriteError.new(
         'The id parameter was malformed',
         "'''#{WIKI_TEMPLATE_NAME} Error''': The <code>id</code> parameter was " \
