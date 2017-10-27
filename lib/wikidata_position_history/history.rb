@@ -68,7 +68,7 @@ def warning(check, method)
   '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;<ref>%s</ref></span>' % [errors.first, errors.last]
 end
 
-def wikitext_history(subject_item_id)
+def wikitext_history(subject_item_id, include_header: false)
   query = <<EOQ
   SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next WHERE {
     ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
@@ -87,7 +87,11 @@ EOQ
   data = json.map { |r| Result.new(r) }
   list = [nil, data, nil].flatten(1)
 
-  wikitext = "== {{Q|%s}} officeholders ==\n" % subject_item_id
+  if include_header
+    wikitext = "== {{Q|%s}} officeholders ==\n" % subject_item_id
+  else
+    wikitext = +''
+  end
   wikitext << '{| class="wikitable" style="text-align: center; border: none;"' << "\n"
 
   list.each_cons(3) do |later, current, earlier|

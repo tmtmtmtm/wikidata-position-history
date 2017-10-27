@@ -9,4 +9,4 @@ e.g. #{$PROGRAM_NAME} Q14211'
 "
 end
 
-puts wikitext_history(ARGV.first)
+puts wikitext_history(ARGV.first, include_header: true)
