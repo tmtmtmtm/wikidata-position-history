@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'wikidata_position_history'
+
+if ARGV.size != 1
+  abort "Usage: #{$PROGRAM_NAME} ITEM_ID
+e.g. #{$PROGRAM_NAME} Q14211'
+"
+end
+
+puts wikitext_history(ARGV.first)
