@@ -67,7 +67,7 @@ module WikidataPositionHistory
     end
 
     def position_id
-      section.params[:id].tap do |item_id|
+      section.params[:id].strip.tap do |item_id|
         check_id_supplied(item_id)
         check_id_well_formed(item_id)
       end
