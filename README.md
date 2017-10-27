@@ -33,7 +33,7 @@ This looks for a the first tag like:
 
 ... in the page, and inserts after that tag wikitext that
 renders to a list of people who have held (in a P39 sense) the
-position Q14211. After that a sentinel HTML comment is insert,
+position Q14211. After that a sentinel HTML comment is inserted,
 so that on subsequent runs only the text between the template
 and that comment are rewritten.
 
