@@ -27,6 +27,20 @@ module WikidataPositionHistory
       @page_title = page_title.tr('_', ' ')
     end
 
+    def run!
+      check_login_available
+      begin
+        new_wikitext = wikitext_history(position_id)
+        section.replace_output(new_wikitext, "Last updated at: #{DateTime.now}")
+      rescue RewriteError => e
+        section.replace_output(e.wikitext, e.to_s)
+      end
+    end
+
+    private
+
+    attr_reader :mediawiki_site, :page_title
+
     def check_login_available
       return if WIKI_USERNAME && WIKI_PASSWORD
       abort 'You must set the WIKI_USERNAME and WIKI_PASSWORD environment variables'
@@ -74,19 +88,5 @@ module WikidataPositionHistory
         template: WIKI_TEMPLATE_NAME
       )
     end
-
-    def run!
-      check_login_available
-      begin
-        new_wikitext = wikitext_history(position_id)
-        section.replace_output(new_wikitext, "Last updated at: #{DateTime.now}")
-      rescue RewriteError => e
-        section.replace_output(e.wikitext, e.to_s)
-      end
-    end
-
-    private
-
-    attr_reader :mediawiki_site, :page_title
   end
 end
