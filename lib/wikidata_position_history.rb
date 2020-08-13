@@ -47,7 +47,7 @@ module WikidataPositionHistory
     end
 
     def check_id_supplied(item_id)
-      return if item_id
+      return unless item_id.empty?
       raise RewriteError.new(
         'The id parameter was missing',
         "'''#{WIKI_TEMPLATE_NAME} Error''': You must pass the <code>id</code> " \
@@ -67,7 +67,7 @@ module WikidataPositionHistory
     end
 
     def position_id
-      section.params[:id].strip.tap do |item_id|
+      section.params[:id].to_s.strip.tap do |item_id|
         check_id_supplied(item_id)
         check_id_well_formed(item_id)
       end
