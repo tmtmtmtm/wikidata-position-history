@@ -69,19 +69,21 @@ def warning(check, method)
 end
 
 def wikitext_history(subject_item_id, include_header: false)
-  query = <<EOQ
-  SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next WHERE {
-    ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
-    ?posn ps:P39 wd:%s .
-    OPTIONAL { ?posn pq:P580 ?start_date. }
-    OPTIONAL { ?posn pq:P582 ?end_date. }
-    OPTIONAL { ?posn pq:P1365|pq:P155 ?prev. }
-    OPTIONAL { ?posn pq:P1366|pq:P156 ?next. }
-    OPTIONAL { ?posn pq:P2715 ?election. }
-    OPTIONAL { ?posn pq:P1545 ?ordinal. }
-  }
-  ORDER BY DESC(?start_date)
-EOQ
+  query = <<~SPARQL
+    SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next WHERE {
+      ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
+      ?posn ps:P39 wd:%s .
+      FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
+
+      OPTIONAL { ?posn pq:P580 ?start_date. }
+      OPTIONAL { ?posn pq:P582 ?end_date. }
+      OPTIONAL { ?posn pq:P1365|pq:P155 ?prev. }
+      OPTIONAL { ?posn pq:P1366|pq:P156 ?next. }
+      OPTIONAL { ?posn pq:P2715 ?election. }
+      OPTIONAL { ?posn pq:P1545 ?ordinal. }
+    }
+    ORDER BY DESC(?start_date)
+  SPARQL
 
   json = sparql(query % subject_item_id)
   data = json.map { |r| Result.new(r) }
