@@ -12,11 +12,11 @@ describe 'WikidataPositionHistory' do
     end
 
     it 'should have a mediawiki_site attribute' do
-      subject.send(:mediawiki_site).must_equal 'www.wikidata.org'
+      expect(subject.send(:mediawiki_site)).must_equal 'www.wikidata.org'
     end
 
     it 'should have a page_title attribute, where underscores have been changed to spaces' do
-      subject.send(:page_title).must_equal 'User:Mhl20/Prime minister test'
+      expect(subject.send(:page_title)).must_equal 'User:Mhl20/Prime minister test'
     end
   end
 end
