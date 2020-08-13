@@ -6,17 +6,19 @@ require 'uri'
 
 if ARGV.size != 1
   abort "Usage: #{$PROGRAM_NAME} REFRESH_URL_OR_QUERYSTRING
-e.g. wikidata_position_history 'mediawiki_site=www.wikidata.org&page_title=User%3AMhl20%2FPrime_minister_test'
-"
+    e.g. wikidata_position_history 'mediawiki_site=www.wikidata.org&page_title=User%3AMhl20%2FPrime_minister_test'
+    or wikidata_position_history https://www.wikidata.org/wiki/User:Mhl20/Prime_minister_test"
 end
 
-query = if ARGV.first.start_with?('http')
-          URI.parse(ARGV.first).query
-        else
-          ARGV.first
-        end
-
-options = URI.decode_www_form(query).map { |k, v| [k.to_sym, v] }.to_h
+if ARGV.first.start_with?('http')
+  uri = URI.parse ARGV.first
+  options = {
+    mediawiki_site: uri.hostname,
+    page_title: uri.path.gsub('/wiki/', '') # with 2.5.1 we could use delete_prefix
+  }
+else
+  options = URI.decode_www_form(ARGV.first).map { |k, v| [k.to_sym, v] }.to_h
+end
 
 warn "Running with options: #{options.inspect}" if ENV.key?('DEBUG')
 
