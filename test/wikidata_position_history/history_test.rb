@@ -2,14 +2,16 @@
 
 require 'test_helper'
 
-EXAMPLE_QUERY_FILENAME = File.join(File.dirname(__FILE__), '..', 'example-data', 'prime-ministers.json')
+RESPONSES = Pathname.new('test/example-data')
 
 describe 'wikitext_history' do
 
   before do
     # Stub the request that gets the results of the SPARQL query:
-    stub_request(:get, 'https://query.wikidata.org/sparql?query=%20%20SELECT%20DISTINCT%20?ordinal%20?item%20?start_date%20?end_date%20?prev%20?next%20WHERE%20%7B%0A%20%20%20%20?item%20wdt:P31%20wd:Q5%20%3B%20p:P39%20?posn%20.%0A%20%20%20%20?posn%20ps:P39%20wd:Q14211%20.%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P580%20?start_date.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P582%20?end_date.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1365%7Cpq:P155%20?prev.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1366%7Cpq:P156%20?next.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P2715%20?election.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20?posn%20pq:P1545%20?ordinal.%20%7D%0A%20%20%7D%0A%20%20ORDER%20BY%20DESC(?start_date)%0A')
-      .to_return(status: 200, body: File.read(EXAMPLE_QUERY_FILENAME), headers: {})
+    stub_request(:get, %r{query.wikidata.org/sparql}).to_return do |request|
+      filename = request.uri.to_s[/ps:P39%20wd:(Q\d+)/, 1] + '.json'
+      { body: (RESPONSES + filename).read }
+    end
   end
 
   # This is just a very high level acceptance test at the moment - not
