@@ -5,8 +5,7 @@ require 'wikidata_position_history'
 
 if ARGV.size != 1
   abort "Usage: #{$PROGRAM_NAME} ITEM_ID
-e.g. #{$PROGRAM_NAME} Q14211'
-"
+e.g. #{$PROGRAM_NAME} Q14211'"
 end
 
-puts wikitext_history(ARGV.first, include_header: true)
+puts WikidataPositionHistory::Output.new(ARGV.first).wikitext_with_header

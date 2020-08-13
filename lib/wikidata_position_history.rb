@@ -28,7 +28,7 @@ module WikidataPositionHistory
       return [NO_ID_ERROR, 'The id parameter was missing'] if position_id.empty?
       return [MALFORMED_ID_ERROR, 'The id parameter was malformed'] unless position_id =~ /^Q\d+$/
 
-      [wikitext_history(position_id), "Successfully updated holders of #{position_id}"]
+      [WikidataPositionHistory::Output.new(position_id).wikitext, "Successfully updated holders of #{position_id}"]
     end
 
     private

@@ -5,7 +5,6 @@ require 'test_helper'
 RESPONSES = Pathname.new('test/example-data')
 
 describe 'wikitext_history' do
-
   before do
     # Stub the request that gets the results of the SPARQL query:
     stub_request(:get, %r{query.wikidata.org/sparql}).to_return do |request|
@@ -19,7 +18,7 @@ describe 'wikitext_history' do
   # helpful as a test of whether something's broken.
   it 'returns expected results for the UK Prime Minister' do
     # Now try generating the history of the position holders as wikitext:
-    result = wikitext_history('Q14211')
+    result = WikidataPositionHistory::Output.new('Q14211').wikitext
     # Check that at least the start and end of that generated text is
     # the same:
     expected_start = '{| class="wikitable" style="text-align: center; border: none;"
@@ -47,7 +46,7 @@ describe 'wikitext_history' do
   end
 
   it 'returns expected results with include_header set to true' do
-    result = wikitext_history('Q14211', include_header: true)
+    result = WikidataPositionHistory::Output.new('Q14211').wikitext_with_header
     # Check that at least the start and end of that generated text is
     # the same:
     expected_start = '== {{Q|Q14211}} officeholders ==
