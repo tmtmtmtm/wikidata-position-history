@@ -27,20 +27,14 @@ describe 'WikidataPositionHistory' do
       stub_request(:get, /wikidata.org.*Prime%20minister%20test/)
         .to_return(body: '{{PositionHolderHistory}}')
 
-      error = assert_raises WikidataPositionHistory::RewriteError do
-        subject.send(:position_id)
-      end
-      expect(error.to_s).must_equal 'The id parameter was missing'
+      expect(subject.send(:new_content).last).must_equal 'The id parameter was missing'
     end
 
     it 'should error with invalid itemid' do
       stub_request(:get, /wikidata.org.*Prime%20minister%20test/)
         .to_return(body: '{{PositionHolderHistory|id=Prime Minister}}')
 
-      error = assert_raises WikidataPositionHistory::RewriteError do
-        subject.send(:position_id)
-      end
-      expect(error.to_s).must_equal 'The id parameter was malformed'
+      expect(subject.new_content.last).must_equal 'The id parameter was malformed'
     end
 
     it 'should get a well-formed position ID' do

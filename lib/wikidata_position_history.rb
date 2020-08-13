@@ -9,14 +9,7 @@ require 'mediawiki/client'
 require 'mediawiki/page'
 
 module WikidataPositionHistory
-  class RewriteError < StandardError
-    def initialize(summary, wikitext)
-      @wikitext = wikitext
-      super(summary)
-    end
-    attr_reader :wikitext
-  end
-
+  # Rewrites a Wiki page
   class PageRewriter
     WIKI_TEMPLATE_NAME = 'PositionHolderHistory'
     WIKI_USERNAME = ENV['WIKI_USERNAME']
@@ -28,52 +21,39 @@ module WikidataPositionHistory
     end
 
     def run!
-      check_login_available
-      begin
-        new_wikitext = wikitext_history(position_id)
-        section.replace_output(new_wikitext, "Successfully updated holders of #{position_id}")
-      rescue RewriteError => e
-        section.replace_output(e.wikitext, e.to_s)
-      end
+      section.replace_output(*new_content)
+    end
+
+    def new_content
+      return [NO_ID_ERROR, 'The id parameter was missing'] if position_id.empty?
+      return [MALFORMED_ID_ERROR, 'The id parameter was malformed'] unless position_id =~ /^Q\d+$/
+
+      [wikitext_history(position_id), "Successfully updated holders of #{position_id}"]
     end
 
     private
 
     attr_reader :mediawiki_site, :page_title
 
-    def check_login_available
-      return if WIKI_USERNAME && WIKI_PASSWORD
-      abort 'You must set the WIKI_USERNAME and WIKI_PASSWORD environment variables'
-    end
+    NO_ID_ERROR = <<~EOERROR
+      '''#{WIKI_TEMPLATE_NAME} Error''': You must pass the <code>id</code>
+      parameter to the <code>#{WIKI_TEMPLATE_NAME}</code> template; e.g.
+      <nowiki>{{#{WIKI_TEMPLATE_NAME}|id=Q14211}}</nowiki>
+    EOERROR
 
-    def check_id_supplied(item_id)
-      return unless item_id.empty?
-      raise RewriteError.new(
-        'The id parameter was missing',
-        "'''#{WIKI_TEMPLATE_NAME} Error''': You must pass the <code>id</code> " \
-        "parameter to the <code>#{WIKI_TEMPLATE_NAME}</code> template; e.g.\n\n" \
-        " <nowiki>{{#{WIKI_TEMPLATE_NAME}|id=Q14211}}</nowiki>\n"
-      )
-    end
+    MALFORMED_ID_ERROR = <<~EOERROR
+      '''#{WIKI_TEMPLATE_NAME} Error''': The <code>id</code> parameter was
+      malformed; it should be Q followed by a number of digits, e.g. as in:
 
-    def check_id_well_formed(item_id)
-      return if item_id =~ /^Q\d+$/
-      raise RewriteError.new(
-        'The id parameter was malformed',
-        "'''#{WIKI_TEMPLATE_NAME} Error''': The <code>id</code> parameter was " \
-        "malformed; it should be Q followed by a number of digits, e.g. as in:\n\n" \
-        " <nowiki>{{#{WIKI_TEMPLATE_NAME}|id=Q14211}}</nowiki>\n"
-      )
-    end
+      <nowiki>{{#{WIKI_TEMPLATE_NAME}|id=Q14211}}</nowiki>
+    EOERROR
 
     def position_id
-      section.params[:id].to_s.strip.tap do |item_id|
-        check_id_supplied(item_id)
-        check_id_well_formed(item_id)
-      end
+      section.params[:id].to_s.strip
     end
 
     def client
+      abort 'You must set the WIKI_USERNAME and WIKI_PASSWORD environment variables' unless WIKI_USERNAME && WIKI_PASSWORD
       @client ||= MediaWiki::Client.new(
         site:     mediawiki_site,
         username: ENV['WIKI_USERNAME'],
