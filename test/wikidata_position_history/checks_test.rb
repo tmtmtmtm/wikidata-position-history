@@ -38,4 +38,20 @@ describe 'Checks' do
       expect(check.wrong_successor).wont_be_nil
     end
   end
+
+  describe 'Moldova' do
+    subject { WikidataPositionHistory::Output.new('Q1769526').send(:padded_results) }
+
+    it 'warns of missing replaced_by' do
+      check = WikidataPositionHistory::Check.new(*subject.last(3))
+      expect(check.missing_fields.last).must_include '{{P|1366}}'
+    end
+
+    # TODO: this should not warn
+    it 'warns of missing succession, even for self' do
+      iurie = subject.index { |result| result&.ordinal == '10' }
+      check = WikidataPositionHistory::Check.new(*subject.slice(iurie-1 .. iurie+1))
+      expect(check.missing_fields.last).must_include '{{P|1365}}'
+    end
+  end
 end
