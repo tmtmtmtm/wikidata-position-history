@@ -3,9 +3,7 @@
 require 'json'
 require 'rest-client'
 
-WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
-
-module WikidataPositionHistory
+module QueryService
   # A SPARQL query against the Wikidata Query Service
   class Query
     WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
@@ -32,7 +30,9 @@ module WikidataPositionHistory
       JSON.parse(result, symbolize_names: true)[:results][:bindings]
     end
   end
+end
 
+module WikidataPositionHistory
   # different views of a Wikidata item
   class WikidataItem
     def initialize(url)
@@ -52,8 +52,8 @@ module WikidataPositionHistory
     attr_reader :url
   end
 
-  # Represents a row returned from running the Query
-  class QueryRow
+  # Represents a single row returned from running the Query
+  class Mandate
     def initialize(row)
       @row = row
     end
@@ -279,11 +279,11 @@ module WikidataPositionHistory
     private
 
     def json
-      @json ||= Query.new(sparql).results
+      @json ||= QueryService::Query.new(sparql).results
     end
 
     def results
-      json.map { |result| QueryRow.new(result) }
+      json.map { |result| Mandate.new(result) }
     end
 
     def padded_results
