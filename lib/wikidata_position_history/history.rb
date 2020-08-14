@@ -58,11 +58,10 @@ module WikidataPositionHistory
     end
 
     def missing_fields
-      expected = expected_fields
-      missing = expected.keys.reject { |i| current.send(i) }
+      missing = expected.reject { |i| current.send(i) }
       return unless missing.any?
 
-      ["Missing field#{missing.count > 1 ? 's' : ''}", "#{current.item} is missing #{missing.map { |i| "{{P|#{expected[i]}}}" }.join(', ')}"]
+      ["Missing field#{missing.count > 1 ? 's' : ''}", "#{current.item} is missing #{missing.map { |i| "{{P|#{field_map[i]}}}" }.join(', ')}"]
     end
 
     def wrong_predecessor
@@ -93,12 +92,37 @@ module WikidataPositionHistory
 
     attr_reader :later, :current, :earlier
 
-    def expected_fields
-      expected = { start_date: 580 }
-      expected[:prev] = 1365 if earlier && !current.acting?
-      expected[:end_date] = 582 if later
-      expected[:next] = 1366 if later && !current.acting?
-      expected
+    def field_map
+      {
+        start_date: 580,
+        prev:       1365,
+        end_date:   582,
+        next:       1366,
+      }
+    end
+
+    def expected
+      field_map.keys.select { |field| send("expect_#{field}?") }
+    end
+
+    def expect_start_date?
+      true
+    end
+
+    def expect_end_date?
+      later
+    end
+
+    def expect_prev?
+      return unless earlier
+
+      !current.acting?
+    end
+
+    def expect_next?
+      return unless later
+
+      !current.acting?
     end
   end
 
