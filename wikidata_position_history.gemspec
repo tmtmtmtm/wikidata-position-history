@@ -5,14 +5,15 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'wikidata_position_history/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'wikidata_position_history'
-  spec.version       = WikidataPositionHistory::VERSION
-  spec.authors       = ['Tony Bowden', 'Mark Longair']
-  spec.email         = ['team@everypolitician.org']
+  spec.required_ruby_version = '>= 2.4.0'
+  spec.name                  = 'wikidata_position_history'
+  spec.version               = WikidataPositionHistory::VERSION
+  spec.authors               = ['Tony Bowden', 'Mark Longair']
+  spec.email                 = ['wikidata@tmtm.com']
 
-  spec.summary       = 'Generates a wikitext history of a holders of a position in Wikidata'
-  spec.homepage      = 'https://github.com/everypolitician/wikidata-position-history/'
-  spec.license       = 'MIT'
+  spec.summary  = 'Generates a wikitext history of a holders of a position in Wikidata'
+  spec.homepage = 'https://github.com/everypolitician/wikidata-position-history/'
+  spec.license  = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
