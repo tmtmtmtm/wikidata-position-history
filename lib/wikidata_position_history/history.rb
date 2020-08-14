@@ -125,9 +125,15 @@ module WikidataPositionHistory
       '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : '']
     end
 
+    def member_style
+      return 'font-size: 1.25em; display: block; font-style: italic;' if acting?
+
+      'font-size: 1.5em; display: block;'
+    end
+
     def member_cell
-      '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' %
-        [membership_person, membership_dates]
+      '| style="padding:0.5em 2em" | <span style="%s">%s</span> %s' %
+        [member_style, membership_person, membership_dates]
     end
 
     def warnings_cell
@@ -146,6 +152,10 @@ module WikidataPositionHistory
       return '' unless current.start_date || current.end_date
 
       "#{current.start_date} – #{current.end_date}"
+    end
+
+    def acting?
+      current.nature.to_s.include? 'Q4676846'
     end
   end
 
@@ -186,17 +196,18 @@ module WikidataPositionHistory
 
     def raw_sparql
       <<~SPARQL
-        SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next WHERE {
+        SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next ?nature 
+        WHERE {
           ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
           ?posn ps:P39 wd:%s .
           FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
 
-          OPTIONAL { ?posn pq:P580 ?start_date. }
-          OPTIONAL { ?posn pq:P582 ?end_date. }
-          OPTIONAL { ?posn pq:P1365|pq:P155 ?prev. }
-          OPTIONAL { ?posn pq:P1366|pq:P156 ?next. }
-          OPTIONAL { ?posn pq:P2715 ?election. }
-          OPTIONAL { ?posn pq:P1545 ?ordinal. }
+          OPTIONAL { ?posn pq:P580 ?start_date }
+          OPTIONAL { ?posn pq:P582 ?end_date }
+          OPTIONAL { ?posn pq:P1365|pq:P155 ?prev }
+          OPTIONAL { ?posn pq:P1366|pq:P156 ?next }
+          OPTIONAL { ?posn pq:P1545 ?ordinal }
+          OPTIONAL { ?posn pq:P5102 ?nature }
         }
         ORDER BY DESC(?start_date)
       SPARQL
