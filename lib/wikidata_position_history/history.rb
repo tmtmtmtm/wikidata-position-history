@@ -33,23 +33,66 @@ module WikidataPositionHistory
     end
   end
 
-  # Represents a row returned from running the Query
-  class Result
-    def initialize(raw_hash)
-      @raw = raw_hash
+  # different views of a Wikidata item
+  class WikidataItem
+    def initialize(url)
+      @url = url
     end
 
-    def method_missing(attr)
-      return unless h = @raw[attr]
-      return h[:value].to_s[0..9] if h[:datatype] == 'http://www.w3.org/2001/XMLSchema#dateTime'
-      return format('{{Q|%s}}', h[:value].to_s.split('/').last) if h[:type] == 'uri'
+    def id
+      url.split('/').last unless url.to_s.empty?
+    end
 
-      h[:value]
+    def qlink
+      "{{Q|#{id}}}" if id
+    end
+
+    private
+
+    attr_reader :url
+  end
+
+  # Represents a row returned from running the Query
+  class QueryRow
+    def initialize(row)
+      @row = row
+    end
+
+    def ordinal
+      row.dig(:ordinal, :value)
+    end
+
+    def item
+      WikidataItem.new(row.dig(:item, :value)).qlink
+    end
+
+    def prev
+      WikidataItem.new(row.dig(:prev, :value)).qlink
+    end
+
+    def next
+      WikidataItem.new(row.dig(:next, :value)).qlink
+    end
+
+    def nature
+      WikidataItem.new(row.dig(:nature, :value)).id
     end
 
     def acting?
-      nature.to_s.include? 'Q4676846'
+      nature == 'Q4676846'
     end
+
+    def start_date
+      row.dig(:start_date, :value).to_s[0..9]
+    end
+
+    def end_date
+      row.dig(:end_date, :value).to_s[0..9]
+    end
+
+    private
+
+    attr_reader :row
   end
 
   # Checks if an Officeholder has any warning signs to report on
@@ -240,7 +283,7 @@ module WikidataPositionHistory
     end
 
     def results
-      json.map { |result| Result.new(result) }
+      json.map { |result| QueryRow.new(result) }
     end
 
     def padded_results
