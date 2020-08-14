@@ -76,6 +76,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
+    warning (1.1.0)
     webmock (3.0.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -91,6 +92,7 @@ DEPENDENCIES
   rake (~> 13.0)
   reek (~> 6.0)
   rubocop (~> 0.51.0)
+  warning (~> 1.1)
   webmock (~> 3.0.0)
   wikidata_position_history!
 

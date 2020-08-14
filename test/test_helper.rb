@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'wikidata_position_history'
+require 'warning'
 
-require 'pry'
+Gem.path.each do |path|
+  Warning.ignore(//, path)
+end
 
 require 'minitest/autorun'
+require 'pry'
 require 'webmock/minitest'
+
+require 'wikidata_position_history'
 
 def example_data_path
   Pathname.new('test/example-data')
