@@ -3,10 +3,13 @@
 
 require 'wikidata_position_history'
 
+def store(id, dir, query)
+  output = Pathname.new('test/example-data/') + dir + "#{id}.json"
+  sparql = query.send(:sparql)
+  res = QueryService::Query.new(sparql).send(:result)
+  output.write res
+end
+
 id = ARGV.first or abort "Usage: #{$PROGRAM_NAME} <Qid>"
-
-output_example = example_data_path + "#{id}.json"
-query = WikidataPositionHistory::Report.new(id).send(:sparql)
-res = WikidataPositionHistory::Query.new(query).send(:result)
-
-output_example.write res
+store(id, 'mandates', WikidataPositionHistory::SPARQL::Mandates.new(id))
+store(id, 'metadata', WikidataPositionHistory::SPARQL::Metadata.new(id))

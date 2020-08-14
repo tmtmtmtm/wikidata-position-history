@@ -41,7 +41,7 @@ describe 'wikitext_history' do
     result = WikidataPositionHistory::Report.new('Q14211').wikitext_with_header
     # Check that at least the start and end of that generated text is
     # the same:
-    expected_start = '== {{Q|Q14211}} officeholders ==
+    expected_start = '== {{Q|Q14211}} officeholders (1721-04-04 – ) ==
 {| class="wikitable" style="text-align: center; border: none;"
 |-
 | style="padding:0.5em 2em" | 76.

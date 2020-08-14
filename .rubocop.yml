@@ -5,6 +5,10 @@ AllCops:
   TargetRubyVersion: 2.4
   NewCops: enable
 
+Metrics/AbcSize:
+  Exclude:
+    - 'test/test_helper.rb'
+
 Metrics/BlockLength:
   Exclude:
     - '**/*.gemspec'

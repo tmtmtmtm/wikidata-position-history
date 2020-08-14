@@ -52,7 +52,26 @@ module WikidataPositionHistory
     attr_reader :url
   end
 
-  # Represents a single row returned from running the Query
+  # Represents a single row returned from the Position query
+  class Metadata
+    def initialize(row)
+      @row = row
+    end
+
+    def inception_date
+      row.dig(:inception, :value).to_s[0..9]
+    end
+
+    def abolition_date
+      row.dig(:abolished, :value).to_s[0..9]
+    end
+
+    private
+
+    attr_reader :row
+  end
+
+  # Represents a single row returned from the Mandates query
   class Mandate
     def initialize(row)
       @row = row
@@ -255,6 +274,7 @@ module WikidataPositionHistory
   end
 
   module SPARQL
+    # Turn raw SPARQL into result objects
     class ItemQuery
       def initialize(itemid)
         @itemid = itemid
@@ -277,9 +297,27 @@ module WikidataPositionHistory
       end
     end
 
+    # SPARQL for fetching metadata about a position
+    class Metadata < ItemQuery
+      def raw_sparql
+        <<~SPARQL
+          # position-metadata
+          SELECT DISTINCT ?inception ?abolished
+          WHERE {
+            VALUES ?item { wd:%s }
+            OPTIONAL { ?item wdt:P571 ?inception }
+            OPTIONAL { ?item wdt:P576 ?abolished }
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+          }
+        SPARQL
+      end
+    end
+
+    # SPARQL for fetching all officeholdings of a position
     class Mandates < ItemQuery
       def raw_sparql
         <<~SPARQL
+          # position-mandates
           SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next ?nature
           WHERE {
             ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
@@ -308,13 +346,20 @@ module WikidataPositionHistory
     attr_reader :subject_item_id
 
     def wikitext
-      return no_items_output if results.empty?
+      return no_items_output if mandates.empty?
 
       [table_header, table_rows, table_footer].compact.join("\n")
     end
 
     def header
-      "== {{Q|#{subject_item_id}}} officeholders =="
+      "== {{Q|#{subject_item_id}}} officeholders #{position_dates} =="
+    end
+
+    def position_dates
+      dates = [metadata.inception_date, metadata.abolition_date]
+      return '' if dates.compact.empty?
+
+      format('(%s)', dates.join(' – '))
     end
 
     def wikitext_with_header
@@ -323,12 +368,18 @@ module WikidataPositionHistory
 
     private
 
-    def results
-      @results ||= SPARQL::Mandates.new(subject_item_id).results_as(Mandate)
+    def metadata
+      # TODO: we might get more than one response, if a position has
+      # multiple dates
+      @metadata ||= SPARQL::Metadata.new(subject_item_id).results_as(Metadata).first
     end
 
-    def padded_results
-      [nil, results, nil].flatten(1)
+    def mandates
+      @mandates ||= SPARQL::Mandates.new(subject_item_id).results_as(Mandate)
+    end
+
+    def padded_mandates
+      [nil, mandates, nil].flatten(1)
     end
 
     def no_items_output
@@ -344,7 +395,7 @@ module WikidataPositionHistory
     end
 
     def table_rows
-      padded_results.each_cons(3).map do |later, current, earlier|
+      padded_mandates.each_cons(3).map do |later, current, earlier|
         next unless current
 
         check = Check.new(later, current, earlier)

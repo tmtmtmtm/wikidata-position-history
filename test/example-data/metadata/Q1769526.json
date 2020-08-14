@@ -1,0 +1,14 @@
+{
+  "head" : {
+    "vars" : [ "inception", "abolished" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1991-01-01T00:00:00Z"
+      }
+    } ]
+  }
+}
