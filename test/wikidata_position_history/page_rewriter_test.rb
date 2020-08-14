@@ -51,7 +51,7 @@ describe 'WikidataPositionHistory' do
 
       expect(WikidataPositionHistory::PageRewriter.new(
         mediawiki_site: 'www.wikidata.org',
-        page_title:     'Talk:Q42',
+        page_title:     'Talk:Q42'
       ).send(:position_id)).must_equal 'Q42'
     end
 
@@ -61,7 +61,7 @@ describe 'WikidataPositionHistory' do
 
       expect(WikidataPositionHistory::PageRewriter.new(
         mediawiki_site: 'www.wikidata.org',
-        page_title:     'Talk:Q42/Q1769526',
+        page_title:     'Talk:Q42/Q1769526'
       ).send(:position_id)).must_equal 'Q1769526'
     end
 
@@ -71,9 +71,8 @@ describe 'WikidataPositionHistory' do
 
       expect(WikidataPositionHistory::PageRewriter.new(
         mediawiki_site: 'www.wikidata.org',
-        page_title:     'Talk:Q42',
+        page_title:     'Talk:Q42'
       ).send(:position_id)).must_equal 'Q1769526'
     end
-
   end
 end

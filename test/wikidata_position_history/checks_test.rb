@@ -25,7 +25,7 @@ describe 'Checks' do
 
     it 'warns of inconsistent succession' do
       peel = subject.index { |result| result&.item == '{{Q|Q181875}}' }
-      check = WikidataPositionHistory::Check.new(*subject.slice(peel .. peel+2))
+      check = WikidataPositionHistory::Check.new(*subject.slice(peel..peel + 2))
       expect(check.wrong_predecessor).wont_be_nil
       expect(check.wrong_successor).wont_be_nil
     end
@@ -42,7 +42,7 @@ describe 'Checks' do
     # TODO: this should not warn
     it 'warns of missing succession, even for self' do
       iurie = subject.index { |result| result&.ordinal == '10' }
-      check = WikidataPositionHistory::Check.new(*subject.slice(iurie-1 .. iurie+1))
+      check = WikidataPositionHistory::Check.new(*subject.slice(iurie - 1..iurie + 1))
       expect(check.missing_fields.last).must_include '{{P|1365}}'
     end
   end

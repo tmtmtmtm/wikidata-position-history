@@ -50,6 +50,7 @@ module WikidataPositionHistory
 
     def position_id
       return id_param unless id_param.empty?
+
       derived_id
     end
 

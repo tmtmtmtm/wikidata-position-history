@@ -1,4 +1,3 @@
-# encoding: utf-8
 # frozen_string_literal: true
 
 require 'json'
@@ -42,6 +41,7 @@ module WikidataPositionHistory
       return unless h = @raw[attr]
       return h[:value].to_s[0..9] if h[:datatype] == 'http://www.w3.org/2001/XMLSchema#dateTime'
       return '{{Q|%s}}' % [h[:value].to_s.split('/').last] if h[:type] == 'uri'
+
       h[:value]
     end
   end
@@ -126,18 +126,16 @@ module WikidataPositionHistory
     end
 
     def member_cell
-      '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' % [
-        membership_person, membership_dates,
-      ]
+      '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' %
+        [membership_person, membership_dates]
     end
 
     def warnings_cell
-      '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' % [
+      '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' %
         warning(check, :missing_fields) +
         warning(check, :wrong_predecessor) +
         warning(check, :wrong_successor) +
         warning(check, :ends_after_successor_starts)
-      ]
     end
 
     def membership_person

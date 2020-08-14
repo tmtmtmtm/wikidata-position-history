@@ -14,7 +14,7 @@ if ARGV.first.start_with?('http')
   uri = URI.parse ARGV.first
   options = {
     mediawiki_site: uri.hostname,
-    page_title: uri.path.gsub('/wiki/', '') # with 2.5.1 we could use delete_prefix
+    page_title:     uri.path.gsub('/wiki/', ''), # with 2.5.1 we could use delete_prefix
   }
 else
   options = URI.decode_www_form(ARGV.first).map { |k, v| [k.to_sym, v] }.to_h
