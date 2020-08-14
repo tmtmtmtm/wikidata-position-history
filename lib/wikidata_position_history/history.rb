@@ -110,24 +110,6 @@ module WikidataPositionHistory
       '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;<ref>%s</ref></span>' % [errors.first, errors.last]
     end
 
-    def query
-      <<~SPARQL
-        SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next WHERE {
-          ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
-          ?posn ps:P39 wd:%s .
-          FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
-
-          OPTIONAL { ?posn pq:P580 ?start_date. }
-          OPTIONAL { ?posn pq:P582 ?end_date. }
-          OPTIONAL { ?posn pq:P1365|pq:P155 ?prev. }
-          OPTIONAL { ?posn pq:P1366|pq:P156 ?next. }
-          OPTIONAL { ?posn pq:P2715 ?election. }
-          OPTIONAL { ?posn pq:P1545 ?ordinal. }
-        }
-        ORDER BY DESC(?start_date)
-      SPARQL
-    end
-
     def wikitext
       lines = []
       lines << '{| class="wikitable" style="text-align: center; border: none;"'
@@ -158,7 +140,7 @@ module WikidataPositionHistory
     private
 
     def json
-      @json ||= Query.new(query % subject_item_id).results
+      @json ||= Query.new(sparql).results
     end
 
     def results
@@ -167,6 +149,28 @@ module WikidataPositionHistory
 
     def padded_results
       [nil, results, nil].flatten(1)
+    end
+
+    def raw_sparql
+      <<~SPARQL
+        SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next WHERE {
+          ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
+          ?posn ps:P39 wd:%s .
+          FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
+
+          OPTIONAL { ?posn pq:P580 ?start_date. }
+          OPTIONAL { ?posn pq:P582 ?end_date. }
+          OPTIONAL { ?posn pq:P1365|pq:P155 ?prev. }
+          OPTIONAL { ?posn pq:P1366|pq:P156 ?next. }
+          OPTIONAL { ?posn pq:P2715 ?election. }
+          OPTIONAL { ?posn pq:P1545 ?ordinal. }
+        }
+        ORDER BY DESC(?start_date)
+      SPARQL
+    end
+
+    def sparql
+      raw_sparql % subject_item_id
     end
   end
 end
