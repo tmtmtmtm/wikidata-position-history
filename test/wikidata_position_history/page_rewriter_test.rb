@@ -3,11 +3,7 @@
 require 'test_helper'
 
 describe 'WikidataPositionHistory' do
-  before do
-    stub_request(:post, 'https://www.wikidata.org/w/api.php')
-      .with(body: hash_including({ 'action' => 'login' }))
-      .to_return(status: 200, body: '{"login": { "result": "Success" }}')
-  end
+  before { fake_login }
 
   describe 'PrimeMinisterTest' do
     subject do

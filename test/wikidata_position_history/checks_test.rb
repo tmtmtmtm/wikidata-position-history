@@ -2,16 +2,8 @@
 
 require 'test_helper'
 
-RESPONSES = Pathname.new('test/example-data')
-
 describe 'Checks' do
-  before do
-    # Stub the request that gets the results of the SPARQL query:
-    stub_request(:get, %r{query.wikidata.org/sparql}).to_return do |request|
-      filename = request.uri.to_s[/ps:P39%20wd:(Q\d+)/, 1] + '.json'
-      { body: (RESPONSES + filename).read }
-    end
-  end
+  before { use_sample_data }
 
   describe 'UK' do
     subject { WikidataPositionHistory::Output.new('Q14211').send(:padded_results) }
