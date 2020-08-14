@@ -49,7 +49,16 @@ module WikidataPositionHistory
     EOERROR
 
     def position_id
+      return id_param unless id_param.empty?
+      derived_id
+    end
+
+    def id_param
       section.params[:id].to_s.strip
+    end
+
+    def derived_id
+      page_title.scan(/Q\d+/).last.to_s
     end
 
     def client
