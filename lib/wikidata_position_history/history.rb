@@ -98,6 +98,39 @@ module WikidataPositionHistory
     end
   end
 
+  class ItemOutput
+    def initialize(current, check)
+      @current = current
+      @check = check
+    end
+
+    def output
+      lines = []
+      lines << '|-'
+      lines << '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : '']
+      lines << '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' % [
+        current.item, (current.start_date || current.end_date ? "#{current.start_date} – #{current.end_date}" : ''),
+      ]
+      lines << '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' % [
+        warning(check, :missing_fields) +
+        warning(check, :wrong_predecessor) +
+        warning(check, :wrong_successor) +
+        warning(check, :ends_after_successor_starts)
+      ]
+      lines
+    end
+
+    private
+
+    attr_reader :current, :check
+
+    def warning(check, method)
+      errors = check.send(method) or return ''
+      '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;<ref>%s</ref></span>' % [errors.first, errors.last]
+    end
+
+  end
+
   class Output
     def initialize(subject_item_id)
       @subject_item_id = subject_item_id
@@ -105,10 +138,6 @@ module WikidataPositionHistory
 
     attr_reader :subject_item_id
 
-    def warning(check, method)
-      errors = check.send(method) or return ''
-      '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;<ref>%s</ref></span>' % [errors.first, errors.last]
-    end
 
     def wikitext
       return no_items_output if results.empty?
@@ -119,17 +148,7 @@ module WikidataPositionHistory
       padded_results.each_cons(3) do |later, current, earlier|
         next unless current
         check = Check.new(later, current, earlier)
-        lines << '|-'
-        lines << '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : '']
-        lines << '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' % [
-          current.item, (current.start_date || current.end_date ? "#{current.start_date} – #{current.end_date}" : ''),
-        ]
-        lines << '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' % [
-          warning(check, :missing_fields) +
-          warning(check, :wrong_predecessor) +
-          warning(check, :wrong_successor) +
-          warning(check, :ends_after_successor_starts)
-        ]
+        lines << ItemOutput.new(current, check).output
       end
       lines << "|}\n"
       lines.join("\n")
