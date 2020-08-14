@@ -44,6 +44,10 @@ module WikidataPositionHistory
 
       h[:value]
     end
+
+    def acting?
+      nature.to_s.include? 'Q4676846'
+    end
   end
 
   class Check
@@ -91,9 +95,9 @@ module WikidataPositionHistory
 
     def expected_fields
       expected = { start_date: 580 }
-      expected[:prev] = 1365 if earlier
+      expected[:prev] = 1365 if earlier && !current.acting?
       expected[:end_date] = 582 if later
-      expected[:next] = 1366 if later
+      expected[:next] = 1366 if later && !current.acting?
       expected
     end
   end
@@ -126,7 +130,7 @@ module WikidataPositionHistory
     end
 
     def member_style
-      return 'font-size: 1.25em; display: block; font-style: italic;' if acting?
+      return 'font-size: 1.25em; display: block; font-style: italic;' if current.acting?
 
       'font-size: 1.5em; display: block;'
     end
@@ -152,10 +156,6 @@ module WikidataPositionHistory
       return '' unless current.start_date || current.end_date
 
       "#{current.start_date} – #{current.end_date}"
-    end
-
-    def acting?
-      current.nature.to_s.include? 'Q4676846'
     end
   end
 
