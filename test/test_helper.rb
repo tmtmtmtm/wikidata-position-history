@@ -13,7 +13,7 @@ require 'webmock/minitest'
 require 'wikidata_position_history'
 
 def example_data_path
-  Pathname.new('test/example-data')
+  Pathname.new('test/example-data/mandates')
 end
 
 def fake_login

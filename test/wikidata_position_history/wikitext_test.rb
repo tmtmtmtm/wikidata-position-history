@@ -2,8 +2,6 @@
 
 require 'test_helper'
 
-RESPONSES = Pathname.new('test/example-data')
-
 describe 'wikitext_history' do
   before { use_sample_data }
 

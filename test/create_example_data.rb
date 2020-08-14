@@ -5,7 +5,7 @@ require 'wikidata_position_history'
 
 id = ARGV.first or abort "Usage: #{$PROGRAM_NAME} <Qid>"
 
-output_example = Pathname.new("test/example-data/#{id}.json")
+output_example = example_data_path + "#{id}.json"
 query = WikidataPositionHistory::Report.new(id).send(:sparql)
 res = WikidataPositionHistory::Query.new(query).send(:result)
 
