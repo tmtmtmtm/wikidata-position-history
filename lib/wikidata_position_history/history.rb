@@ -105,19 +105,7 @@ module WikidataPositionHistory
     end
 
     def output
-      lines = []
-      lines << '|-'
-      lines << '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : '']
-      lines << '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' % [
-        current.item, (current.start_date || current.end_date ? "#{current.start_date} – #{current.end_date}" : ''),
-      ]
-      lines << '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' % [
-        warning(check, :missing_fields) +
-        warning(check, :wrong_predecessor) +
-        warning(check, :wrong_successor) +
-        warning(check, :ends_after_successor_starts)
-      ]
-      lines
+      [row_start, ordinal_cell, member_cell, warnings_cell].join("\n")
     end
 
     private
@@ -129,6 +117,38 @@ module WikidataPositionHistory
       '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;<ref>%s</ref></span>' % [errors.first, errors.last]
     end
 
+    def row_start
+      '|-'
+    end
+
+    def ordinal_cell
+      '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : '']
+    end
+
+    def member_cell
+      '| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">%s</span> %s' % [
+        membership_person, membership_dates,
+      ]
+    end
+
+    def warnings_cell
+      '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' % [
+        warning(check, :missing_fields) +
+        warning(check, :wrong_predecessor) +
+        warning(check, :wrong_successor) +
+        warning(check, :ends_after_successor_starts)
+      ]
+    end
+
+    def membership_person
+      current.item
+    end
+
+    def membership_dates
+      return '' unless current.start_date || current.end_date
+
+      "#{current.start_date} – #{current.end_date}"
+    end
   end
 
   class Output
