@@ -12,7 +12,7 @@ describe 'wikitext_history' do
   # helpful as a test of whether something's broken.
   it 'returns expected results for the UK Prime Minister' do
     # Now try generating the history of the position holders as wikitext:
-    result = WikidataPositionHistory::Output.new('Q14211').wikitext
+    result = WikidataPositionHistory::Report.new('Q14211').wikitext
     # Check that at least the start and end of that generated text is
     # the same:
     expected_start = '{| class="wikitable" style="text-align: center; border: none;"
@@ -40,7 +40,7 @@ describe 'wikitext_history' do
   end
 
   it 'returns expected results with include_header set to true' do
-    result = WikidataPositionHistory::Output.new('Q14211').wikitext_with_header
+    result = WikidataPositionHistory::Report.new('Q14211').wikitext_with_header
     # Check that at least the start and end of that generated text is
     # the same:
     expected_start = '== {{Q|Q14211}} officeholders ==

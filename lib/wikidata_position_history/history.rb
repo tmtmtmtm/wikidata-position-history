@@ -185,7 +185,7 @@ module WikidataPositionHistory
   end
 
   # A single output row of Wikitext for an officeholder
-  class ItemOutput
+  class ItemReport
     def initialize(current, check)
       @current = current
       @check = check
@@ -255,7 +255,7 @@ module WikidataPositionHistory
   end
 
   # The entire wikitext generated for this report
-  class Output
+  class Report
     def initialize(subject_item_id)
       @subject_item_id = subject_item_id
     end
@@ -326,7 +326,7 @@ module WikidataPositionHistory
         next unless current
 
         check = Check.new(later, current, earlier)
-        ItemOutput.new(current, check).output
+        ItemReport.new(current, check).output
       end
     end
 

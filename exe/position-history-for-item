@@ -8,4 +8,4 @@ if ARGV.size != 1
 e.g. #{$PROGRAM_NAME} Q14211'"
 end
 
-puts WikidataPositionHistory::Output.new(ARGV.first).wikitext_with_header
+puts WikidataPositionHistory::Report.new(ARGV.first).wikitext_with_header

@@ -6,7 +6,7 @@ describe 'Checks' do
   before { use_sample_data }
 
   describe 'UK' do
-    subject { WikidataPositionHistory::Output.new('Q14211').send(:padded_results) }
+    subject { WikidataPositionHistory::Report.new('Q14211').send(:padded_results) }
 
     it 'allows for no successor for the incumbent' do
       check = WikidataPositionHistory::Check.new(*subject.take(3))
@@ -32,7 +32,7 @@ describe 'Checks' do
   end
 
   describe 'Moldova' do
-    subject { WikidataPositionHistory::Output.new('Q1769526').send(:padded_results) }
+    subject { WikidataPositionHistory::Report.new('Q1769526').send(:padded_results) }
 
     it 'warns of missing replaced_by' do
       check = WikidataPositionHistory::Check.new(*subject.last(3))
