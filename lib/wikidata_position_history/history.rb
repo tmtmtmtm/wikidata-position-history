@@ -6,6 +6,7 @@ require 'rest-client'
 WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
 
 module WikidataPositionHistory
+  # A SPARQL query against the Wikidata Query Service
   class Query
     WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
 
@@ -32,6 +33,7 @@ module WikidataPositionHistory
     end
   end
 
+  # Represents a row returned from running the Query
   class Result
     def initialize(raw_hash)
       @raw = raw_hash
@@ -50,6 +52,7 @@ module WikidataPositionHistory
     end
   end
 
+  # Checks if an Officeholder has any warning signs to report on
   class Check
     def initialize(later, current, earlier)
       @later = later
@@ -58,38 +61,44 @@ module WikidataPositionHistory
     end
 
     def missing_fields
-      missing = expected.reject { |i| current.send(i) }
+      missing = expected.reject { |field| current.send(field) }
       return unless missing.any?
 
       ["Missing field#{missing.count > 1 ? 's' : ''}",
-       "#{current.item} is missing #{missing.map { |i| "{{P|#{field_map[i]}}}" }.join(', ')}"]
+       "#{current.item} is missing #{missing.map { |field| "{{P|#{field_map[field]}}}" }.join(', ')}"]
     end
 
     def wrong_predecessor
       return unless earlier
-      return unless current.prev && earlier.item
-      return unless current.prev != earlier.item
+
+      replaces = current.prev or return
+      prev_in_list = earlier.item or return
+      return unless replaces != prev_in_list
 
       ['Inconsistent predecessor',
-       "#{current.item} has a {{P|1365}} of #{current.prev}, which differs from #{earlier.item}"]
+       "#{current.item} has a {{P|1365}} of #{replaces}, which differs from #{prev_in_list}"]
     end
 
     def wrong_successor
       return unless later
-      return unless current.next && later.item
-      return unless current.next != later.item
+
+      replaced_by = current.next or return
+      next_in_list = later.item or return
+      return unless replaced_by != next_in_list
 
       ['Inconsistent sucessor',
-       "#{current.item} has a {{P|1366}} of #{current.next}, which differs from #{later.item}"]
+       "#{current.item} has a {{P|1366}} of #{replaced_by}, which differs from #{next_in_list}"]
     end
 
     def ends_after_successor_starts
       return unless later
-      return unless current.end_date && later.start_date
-      return unless current.end_date > later.start_date
+
+      ends = current.end_date or return
+      next_starts = later.start_date or return
+      return unless ends > next_starts
 
       ['Date overlap',
-       "#{current.item} has a {{P|582}} of #{current.end_date}, which is later than {{P|580}} of #{later.start_date} for #{later.item}"]
+       "#{current.item} has a {{P|582}} of #{ends}, which is later than {{P|580}} of #{next_starts} for #{later.item}"]
     end
 
     private
@@ -132,6 +141,7 @@ module WikidataPositionHistory
     end
   end
 
+  # A single output row of Wikitext for an officeholder
   class ItemOutput
     def initialize(current, check)
       @current = current
@@ -166,9 +176,8 @@ module WikidataPositionHistory
     end
 
     def ordinal_string
-      return '' unless current.ordinal
-
-      "#{current.ordinal}."
+      ordinal = current.ordinal or return ''
+      ordinal.concat('.')
     end
 
     def member_style
@@ -195,12 +204,14 @@ module WikidataPositionHistory
     end
 
     def membership_dates
-      return '' unless current.start_date || current.end_date
+      dates = [current.start_date, current.end_date]
+      return '' if dates.compact.empty?
 
-      "#{current.start_date} – #{current.end_date}"
+      dates.join(' – ')
     end
   end
 
+  # The entire wikitext generated for this report
   class Output
     def initialize(subject_item_id)
       @subject_item_id = subject_item_id
@@ -229,7 +240,7 @@ module WikidataPositionHistory
     end
 
     def results
-      json.map { |r| Result.new(r) }
+      json.map { |result| Result.new(result) }
     end
 
     def padded_results
