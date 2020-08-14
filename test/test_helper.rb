@@ -24,7 +24,7 @@ end
 
 def use_sample_data
   stub_request(:get, %r{query.wikidata.org/sparql}).to_return do |request|
-    filename = request.uri.to_s[/ps:P39%20wd:(Q\d+)/, 1] + '.json'
-    { body: (example_data_path + filename).read }
+    filename = request.uri.to_s[/ps:P39%20wd:(Q\d+)/, 1]
+    { body: (example_data_path + filename).sub_ext('.json').read }
   end
 end

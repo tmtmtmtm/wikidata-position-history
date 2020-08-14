@@ -40,7 +40,7 @@ module WikidataPositionHistory
     def method_missing(attr)
       return unless h = @raw[attr]
       return h[:value].to_s[0..9] if h[:datatype] == 'http://www.w3.org/2001/XMLSchema#dateTime'
-      return '{{Q|%s}}' % [h[:value].to_s.split('/').last] if h[:type] == 'uri'
+      return format('{{Q|%s}}', h[:value].to_s.split('/').last) if h[:type] == 'uri'
 
       h[:value]
     end
@@ -61,7 +61,8 @@ module WikidataPositionHistory
       missing = expected.reject { |i| current.send(i) }
       return unless missing.any?
 
-      ["Missing field#{missing.count > 1 ? 's' : ''}", "#{current.item} is missing #{missing.map { |i| "{{P|#{field_map[i]}}}" }.join(', ')}"]
+      ["Missing field#{missing.count > 1 ? 's' : ''}",
+       "#{current.item} is missing #{missing.map { |i| "{{P|#{field_map[i]}}}" }.join(', ')}"]
     end
 
     def wrong_predecessor
@@ -69,7 +70,8 @@ module WikidataPositionHistory
       return unless current.prev && earlier.item
       return unless current.prev != earlier.item
 
-      ['Inconsistent predecessor', "#{current.item} has a {{P|1365}} of #{current.prev}, which differs from #{earlier.item}"]
+      ['Inconsistent predecessor',
+       "#{current.item} has a {{P|1365}} of #{current.prev}, which differs from #{earlier.item}"]
     end
 
     def wrong_successor
@@ -77,7 +79,8 @@ module WikidataPositionHistory
       return unless current.next && later.item
       return unless current.next != later.item
 
-      ['Inconsistent sucessor', "#{current.item} has a {{P|1366}} of #{current.next}, which differs from #{later.item}"]
+      ['Inconsistent sucessor',
+       "#{current.item} has a {{P|1366}} of #{current.next}, which differs from #{later.item}"]
     end
 
     def ends_after_successor_starts
@@ -85,7 +88,8 @@ module WikidataPositionHistory
       return unless current.end_date && later.start_date
       return unless current.end_date > later.start_date
 
-      ['Date overlap', "#{current.item} has a {{P|582}} of #{current.end_date}, which is later than {{P|580}} of #{later.start_date} for #{later.item}"]
+      ['Date overlap',
+       "#{current.item} has a {{P|582}} of #{current.end_date}, which is later than {{P|580}} of #{later.start_date} for #{later.item}"]
     end
 
     private
@@ -142,9 +146,15 @@ module WikidataPositionHistory
 
     attr_reader :current, :check
 
+    def pictogram
+      '[[File:Pictogram voting comment.svg|15px|link=]]'
+    end
+
     def warning(check, method)
       errors = check.send(method) or return ''
-      '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;<ref>%s</ref></span>' % [errors.first, errors.last]
+      format('<span style="display: block">%s&nbsp;', pictogram) +
+        format('<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;', errors.first) +
+        format('<ref>%s</ref></span>', errors.last)
     end
 
     def row_start
@@ -152,7 +162,13 @@ module WikidataPositionHistory
     end
 
     def ordinal_cell
-      '| style="padding:0.5em 2em" | %s' % [current.ordinal ? "#{current.ordinal}." : '']
+      %(| style="padding:0.5em 2em" | #{ordinal_string})
+    end
+
+    def ordinal_string
+      return '' unless current.ordinal
+
+      "#{current.ordinal}."
     end
 
     def member_style
@@ -162,16 +178,16 @@ module WikidataPositionHistory
     end
 
     def member_cell
-      '| style="padding:0.5em 2em" | <span style="%s">%s</span> %s' %
-        [member_style, membership_person, membership_dates]
+      format('| style="padding:0.5em 2em" | <span style="%s">%s</span> %s',
+             member_style, membership_person, membership_dates)
     end
 
     def warnings_cell
-      '| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s' %
-        warning(check, :missing_fields) +
-        warning(check, :wrong_predecessor) +
-        warning(check, :wrong_successor) +
-        warning(check, :ends_after_successor_starts)
+      format('| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s',
+             warning(check, :missing_fields) +
+             warning(check, :wrong_predecessor) +
+             warning(check, :wrong_successor) +
+             warning(check, :ends_after_successor_starts))
     end
 
     def membership_person
@@ -198,8 +214,12 @@ module WikidataPositionHistory
       [table_header, table_rows, table_footer].compact.join("\n")
     end
 
+    def header
+      "== {{Q|#{subject_item_id}}} officeholders =="
+    end
+
     def wikitext_with_header
-      ("== {{Q|%s}} officeholders ==\n" % subject_item_id) + wikitext
+      [header, wikitext].join("\n")
     end
 
     private
