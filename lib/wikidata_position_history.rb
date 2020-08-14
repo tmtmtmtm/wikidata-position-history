@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'wikidata_position_history/version'
-require 'wikidata_position_history/history'
+require 'wikidata_position_history/report'
 
 require 'date'
 
