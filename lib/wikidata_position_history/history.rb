@@ -115,12 +115,14 @@ module WikidataPositionHistory
 
     def expect_prev?
       return unless earlier
+      return if earlier.item == current.item # sucessive terms by same person
 
       !current.acting?
     end
 
     def expect_next?
       return unless later
+      return if later.item == current.item # sucessive terms by same person
 
       !current.acting?
     end

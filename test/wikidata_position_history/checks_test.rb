@@ -39,11 +39,10 @@ describe 'Checks' do
       expect(check.missing_fields.last).must_include '{{P|1366}}'
     end
 
-    # TODO: this should not warn
-    it 'warns of missing succession, even for self' do
+    it 'does not warn of missing succession if followed by self' do
       iurie = subject.index { |result| result&.ordinal == '10' }
       check = WikidataPositionHistory::Check.new(*subject.slice(iurie - 1..iurie + 1))
-      expect(check.missing_fields.last).must_include '{{P|1365}}'
+      expect(check.missing_fields.to_a).must_be_empty
     end
   end
 end
