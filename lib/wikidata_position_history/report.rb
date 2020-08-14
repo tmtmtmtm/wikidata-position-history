@@ -254,6 +254,51 @@ module WikidataPositionHistory
     end
   end
 
+  module SPARQL
+    class ItemQuery
+      def initialize(itemid)
+        @itemid = itemid
+      end
+
+      def results_as(klass)
+        json.map { |result| klass.new(result) }
+      end
+
+      private
+
+      attr_reader :itemid
+
+      def sparql
+        raw_sparql % itemid
+      end
+
+      def json
+        @json ||= QueryService::Query.new(sparql).results
+      end
+    end
+
+    class Mandates < ItemQuery
+      def raw_sparql
+        <<~SPARQL
+          SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next ?nature
+          WHERE {
+            ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
+            ?posn ps:P39 wd:%s .
+            FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
+
+            OPTIONAL { ?posn pq:P580 ?start_date }
+            OPTIONAL { ?posn pq:P582 ?end_date }
+            OPTIONAL { ?posn pq:P1365|pq:P155 ?prev }
+            OPTIONAL { ?posn pq:P1366|pq:P156 ?next }
+            OPTIONAL { ?posn pq:P1545 ?ordinal }
+            OPTIONAL { ?posn pq:P5102 ?nature }
+          }
+          ORDER BY DESC(?start_date)
+        SPARQL
+      end
+    end
+  end
+
   # The entire wikitext generated for this report
   class Report
     def initialize(subject_item_id)
@@ -278,12 +323,8 @@ module WikidataPositionHistory
 
     private
 
-    def json
-      @json ||= QueryService::Query.new(sparql).results
-    end
-
     def results
-      json.map { |result| Mandate.new(result) }
+      @results ||= SPARQL::Mandates.new(subject_item_id).results_as(Mandate)
     end
 
     def padded_results
@@ -292,25 +333,6 @@ module WikidataPositionHistory
 
     def no_items_output
       "\n{{PositionHolderHistory/error_no_holders|id=#{subject_item_id}}}\n"
-    end
-
-    def raw_sparql
-      <<~SPARQL
-        SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next ?nature 
-        WHERE {
-          ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
-          ?posn ps:P39 wd:%s .
-          FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
-
-          OPTIONAL { ?posn pq:P580 ?start_date }
-          OPTIONAL { ?posn pq:P582 ?end_date }
-          OPTIONAL { ?posn pq:P1365|pq:P155 ?prev }
-          OPTIONAL { ?posn pq:P1366|pq:P156 ?next }
-          OPTIONAL { ?posn pq:P1545 ?ordinal }
-          OPTIONAL { ?posn pq:P5102 ?nature }
-        }
-        ORDER BY DESC(?start_date)
-      SPARQL
     end
 
     def table_header
@@ -328,10 +350,6 @@ module WikidataPositionHistory
         check = Check.new(later, current, earlier)
         MandateReport.new(current, check).output
       end
-    end
-
-    def sparql
-      raw_sparql % subject_item_id
     end
   end
 end
