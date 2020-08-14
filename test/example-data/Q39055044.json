@@ -1,0 +1,8 @@
+{
+  "head" : {
+    "vars" : [ "ordinal", "item", "start_date", "end_date", "prev", "next" ]
+  },
+  "results" : {
+    "bindings" : [ ]
+  }
+}

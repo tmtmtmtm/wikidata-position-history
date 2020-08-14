@@ -111,6 +111,8 @@ module WikidataPositionHistory
     end
 
     def wikitext
+      return no_items_output if results.empty?
+
       lines = []
       lines << '{| class="wikitable" style="text-align: center; border: none;"'
 
@@ -149,6 +151,10 @@ module WikidataPositionHistory
 
     def padded_results
       [nil, results, nil].flatten(1)
+    end
+
+    def no_items_output
+      "\n{{PositionHolderHistory/error_no_holders|id=#{subject_item_id}}}\n"
     end
 
     def raw_sparql
