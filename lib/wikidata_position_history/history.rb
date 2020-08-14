@@ -138,20 +138,10 @@ module WikidataPositionHistory
 
     attr_reader :subject_item_id
 
-
     def wikitext
       return no_items_output if results.empty?
 
-      lines = []
-      lines << '{| class="wikitable" style="text-align: center; border: none;"'
-
-      padded_results.each_cons(3) do |later, current, earlier|
-        next unless current
-        check = Check.new(later, current, earlier)
-        lines << ItemOutput.new(current, check).output
-      end
-      lines << "|}\n"
-      lines.join("\n")
+      [table_header, table_rows, table_footer].compact.join("\n")
     end
 
     def wikitext_with_header
@@ -192,6 +182,23 @@ module WikidataPositionHistory
         }
         ORDER BY DESC(?start_date)
       SPARQL
+    end
+
+    def table_header
+      '{| class="wikitable" style="text-align: center; border: none;"'
+    end
+
+    def table_footer
+      "|}\n"
+    end
+
+    def table_rows
+      padded_results.each_cons(3).map do |later, current, earlier|
+        next unless current
+
+        check = Check.new(later, current, earlier)
+        ItemOutput.new(current, check).output
+      end
     end
 
     def sparql
