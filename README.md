@@ -1,15 +1,15 @@
 # WikidataPositionHistory
 
-Rewrites pages that include a `PositionHolderHistory` template
-to include a timeline of people who have held a particular post,
-including helpful diagnostics for common errors.
+Rewrites Mediawiki pages that include a `PositionHolderHistory`
+template, to show a timeline of people who have held a particular
+office, along with helpful diagnostic warnings for common errors.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'wikidata_position_history', github: 'everypolitician/wikidata-position-history'
+gem 'wikidata_position_history', github: 'tmtmtmtm/wikidata-position-history'
 ```
 
 And then execute:
@@ -25,17 +25,18 @@ WikidataPositionHistory::PageRewriter.new(
 ).run!
 ```
 
-This looks for a the first tag like:
+This looks for a Template call in that page of the form:
 
 ```
 {{PositionHolderHistory|id=Q14211}}
 ```
 
-... in the page, and inserts after that tag wikitext that
-renders to a list of people who have held (in a P39 sense) the
-position Q14211. After that a sentinel HTML comment is inserted,
-so that on subsequent runs only the text between the template
-and that comment are rewritten.
+If such a template is found, a table is inserted after it listing all
+people who have held (i.e. have a relevant P39 "position held"
+statement) position Q14211.
+
+A sentinel HTML comment is also inserted, so that on subsequent runs
+only the text between the template and that comment are rewritten.
 
 ## Development
 
@@ -54,9 +55,17 @@ and tags, and push the `.gem` file to
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/everypolitician/wikidata-position-history.
+https://github.com/tmtmtmtm/wikidata-position-history
 
 ## License
 
 The gem is available as open source under the terms of the
 [MIT License](http://opensource.org/licenses/MIT).
+
+## History
+
+This was originally developed by Tony Bowden and Mark Longair at
+mySociety as part of a [Wikimedia Foundation grant-funded
+project](https://meta.wikimedia.org/wiki/Grants:Project/mySociety/EveryPolitician).
+
+This version is now maintained independently by Tony Bowden.
