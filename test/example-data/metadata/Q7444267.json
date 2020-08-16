@@ -1,18 +1,28 @@
 {
   "head" : {
-    "vars" : [ "inception", "abolished" ]
+    "vars" : [ "inception", "inception_precision", "abolition", "abolition_precision" ]
   },
   "results" : {
     "bindings" : [ {
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1945-01-01T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "9"
+      },
       "inception" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
         "value" : "1920-08-22T00:00:00Z"
       },
-      "abolished" : {
-        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
         "type" : "literal",
-        "value" : "1945-01-01T00:00:00Z"
+        "value" : "11"
       }
     } ]
   }

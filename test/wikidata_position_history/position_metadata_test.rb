@@ -24,9 +24,8 @@ describe 'Checks' do
       expect(subject.inception_date).must_equal '1920-08-22'
     end
 
-    # TODO: fix the precision of this
     it 'has an abolition date' do
-      expect(subject.abolition_date).must_equal '1945-01-01'
+      expect(subject.abolition_date).must_equal '1945'
     end
   end
 
