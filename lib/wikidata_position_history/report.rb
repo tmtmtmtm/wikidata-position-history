@@ -52,6 +52,37 @@ module WikidataPositionHistory
     attr_reader :url
   end
 
+  # a Wikidata date of a given precision
+  class WikidataDate
+    def initialize(str, precision)
+      @str = str
+      @raw_precision = precision
+    end
+
+    def to_s
+      return str if precision == '11'
+      return str[0..6] if precision == '10'
+      return str[0..3] if precision == '9'
+
+      warn "Cannot handle precision #{precision} for #{str}"
+      str
+    end
+
+    private
+
+    attr_reader :str, :raw_precision
+
+    def parts
+      str.split('-')
+    end
+
+    def precision
+      return '11' if raw_precision.to_s.empty? # default to YYYY-MM-DD
+
+      raw_precision.to_s
+    end
+  end
+
   # Represents a single row returned from the Position query
   class Metadata
     def initialize(row)
@@ -102,11 +133,27 @@ module WikidataPositionHistory
     end
 
     def start_date
-      row.dig(:start_date, :value).to_s[0..9]
+      WikidataDate.new(start_date_raw, start_date_precision).to_s
     end
 
     def end_date
+      WikidataDate.new(end_date_raw, end_date_precision).to_s
+    end
+
+    def start_date_raw
+      row.dig(:start_date, :value).to_s[0..9]
+    end
+
+    def end_date_raw
       row.dig(:end_date, :value).to_s[0..9]
+    end
+
+    def start_date_precision
+      row.dig(:start_precision, :value)
+    end
+
+    def end_date_precision
+      row.dig(:end_precision, :value)
     end
 
     private
@@ -318,14 +365,14 @@ module WikidataPositionHistory
       def raw_sparql
         <<~SPARQL
           # position-mandates
-          SELECT DISTINCT ?ordinal ?item ?start_date ?end_date ?prev ?next ?nature
+          SELECT DISTINCT ?ordinal ?item ?start_date ?start_precision ?end_date ?end_precision ?prev ?next ?nature
           WHERE {
             ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
             ?posn ps:P39 wd:%s .
             FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
 
-            OPTIONAL { ?posn pq:P580 ?start_date }
-            OPTIONAL { ?posn pq:P582 ?end_date }
+            OPTIONAL { ?posn pqv:P580 [ wikibase:timeValue ?start_date; wikibase:timePrecision ?start_precision ] }
+            OPTIONAL { ?posn pqv:P582 [ wikibase:timeValue ?end_date; wikibase:timePrecision ?end_precision ] }
             OPTIONAL { ?posn pq:P1365|pq:P155 ?prev }
             OPTIONAL { ?posn pq:P1366|pq:P156 ?next }
             OPTIONAL { ?posn pq:P1545 ?ordinal }
