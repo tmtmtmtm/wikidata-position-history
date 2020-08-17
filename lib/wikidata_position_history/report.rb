@@ -117,6 +117,10 @@ module WikidataPositionHistory
       WikidataDate.new(abolition_date_raw, abolition_date_precision)
     end
 
+    def position?
+      row.dig(:isPosition, :value) == 'true'
+    end
+
     private
 
     attr_reader :row
@@ -389,9 +393,10 @@ module WikidataPositionHistory
         <<~SPARQL
           # position-metadata
 
-          SELECT DISTINCT ?inception ?inception_precision ?abolition ?abolition_precision
+          SELECT DISTINCT ?inception ?inception_precision ?abolition ?abolition_precision ?isPosition
           WHERE {
             VALUES ?item { wd:%s }
+            BIND(EXISTS { ?item wdt:P279+ wd:Q4164871  } as ?isPosition)
             OPTIONAL { ?item p:P571/psv:P571 [ wikibase:timeValue ?inception; wikibase:timePrecision ?inception_precision ] }
             OPTIONAL { ?item p:P576/psv:P576 [ wikibase:timeValue ?abolition; wikibase:timePrecision ?abolition_precision ] }
             SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }

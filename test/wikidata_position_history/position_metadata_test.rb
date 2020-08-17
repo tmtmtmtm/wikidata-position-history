@@ -39,5 +39,17 @@ describe 'Checks' do
     it 'has no abolition date' do
       expect(subject.abolition_date).must_be_empty
     end
+
+    it 'knows that it is a position' do
+      expect(subject.position?).must_equal true
+    end
+  end
+
+  describe 'legislative term' do
+    subject { WikidataPositionHistory::Report.new('Q20530392').send(:metadata) }
+
+    it 'knows that it is not a position' do
+      expect(subject.position?).must_equal false
+    end
   end
 end
