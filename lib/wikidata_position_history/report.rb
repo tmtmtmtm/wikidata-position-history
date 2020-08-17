@@ -54,9 +54,17 @@ module WikidataPositionHistory
 
   # a Wikidata date of a given precision
   class WikidataDate
+    include Comparable
+
     def initialize(str, precision)
       @str = str
       @raw_precision = precision
+    end
+
+    def <=>(other)
+      return to_s <=> other.to_s if precision == other.precision
+      return year <=> other.year if year != other.year
+      return month <=> other.month if month && other.month
     end
 
     def to_s
@@ -68,18 +76,30 @@ module WikidataPositionHistory
       str
     end
 
-    private
-
-    attr_reader :str, :raw_precision
-
-    def parts
-      str.split('-')
+    def empty?
+      str.to_s.empty?
     end
 
     def precision
       return '11' if raw_precision.to_s.empty? # default to YYYY-MM-DD
 
       raw_precision.to_s
+    end
+
+    def year
+      parts[0]
+    end
+
+    def month
+      parts[1]
+    end
+
+    private
+
+    attr_reader :str, :raw_precision
+
+    def parts
+      to_s.split('-')
     end
   end
 
@@ -90,11 +110,11 @@ module WikidataPositionHistory
     end
 
     def inception_date
-      WikidataDate.new(inception_date_raw, inception_date_precision).to_s
+      WikidataDate.new(inception_date_raw, inception_date_precision)
     end
 
     def abolition_date
-      WikidataDate.new(abolition_date_raw, abolition_date_precision).to_s
+      WikidataDate.new(abolition_date_raw, abolition_date_precision)
     end
 
     private
@@ -149,11 +169,11 @@ module WikidataPositionHistory
     end
 
     def start_date
-      WikidataDate.new(start_date_raw, start_date_precision).to_s
+      WikidataDate.new(start_date_raw, start_date_precision)
     end
 
     def end_date
-      WikidataDate.new(end_date_raw, end_date_precision).to_s
+      WikidataDate.new(end_date_raw, end_date_precision)
     end
 
     def start_date_raw
@@ -224,6 +244,9 @@ module WikidataPositionHistory
 
       ['Date overlap',
        "#{current.item} has a {{P|582}} of #{ends}, which is later than {{P|580}} of #{next_starts} for #{later.item}"]
+    rescue ArgumentError
+      ['Date precision',
+       "#{current.item} has a {{P|582}} of #{ends}, which may overlap with the {{P|580}} of #{next_starts} for #{later.item}"]
     end
 
     private

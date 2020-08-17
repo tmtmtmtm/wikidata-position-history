@@ -9,7 +9,7 @@ describe 'Checks' do
     subject { WikidataPositionHistory::Report.new('Q14211').send(:metadata) }
 
     it 'has an inception date' do
-      expect(subject.inception_date).must_equal '1721-04-04'
+      expect(subject.inception_date.to_s).must_equal '1721-04-04'
     end
 
     it 'has no abolition date' do
@@ -21,11 +21,11 @@ describe 'Checks' do
     subject { WikidataPositionHistory::Report.new('Q7444267').send(:metadata) }
 
     it 'has an inception date' do
-      expect(subject.inception_date).must_equal '1920-08-22'
+      expect(subject.inception_date.to_s).must_equal '1920-08-22'
     end
 
     it 'has an abolition date' do
-      expect(subject.abolition_date).must_equal '1945'
+      expect(subject.abolition_date.to_s).must_equal '1945'
     end
   end
 
