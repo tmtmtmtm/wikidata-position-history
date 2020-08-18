@@ -4,8 +4,9 @@ require 'query_service'
 require 'sparql/item_query'
 require 'sparql/position_data'
 require 'sparql/mandates'
-require 'wikidata_position_history/version'
+require 'wikidata_position_history/checks'
 require 'wikidata_position_history/report'
+require 'wikidata_position_history/version'
 
 require 'date'
 
