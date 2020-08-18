@@ -104,7 +104,7 @@ module WikidataPositionHistory
   end
 
   # Represents a single row returned from the Position query
-  class Metadata
+  class PositionData
     def initialize(row)
       @row = row
     end
@@ -363,72 +363,6 @@ module WikidataPositionHistory
     end
   end
 
-  module SPARQL
-    # Turn raw SPARQL into result objects
-    class ItemQuery
-      def initialize(itemid)
-        @itemid = itemid
-      end
-
-      def results_as(klass)
-        json.map { |result| klass.new(result) }
-      end
-
-      private
-
-      attr_reader :itemid
-
-      def sparql
-        raw_sparql % itemid
-      end
-
-      def json
-        @json ||= QueryService::Query.new(sparql).results
-      end
-    end
-
-    # SPARQL for fetching metadata about a position
-    class Metadata < ItemQuery
-      def raw_sparql
-        <<~SPARQL
-          # position-metadata
-
-          SELECT DISTINCT ?inception ?inception_precision ?abolition ?abolition_precision ?isPosition
-          WHERE {
-            VALUES ?item { wd:%s }
-            BIND(EXISTS { ?item wdt:P279+ wd:Q4164871  } as ?isPosition)
-            OPTIONAL { ?item p:P571/psv:P571 [ wikibase:timeValue ?inception; wikibase:timePrecision ?inception_precision ] }
-            OPTIONAL { ?item p:P576/psv:P576 [ wikibase:timeValue ?abolition; wikibase:timePrecision ?abolition_precision ] }
-            SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-          }
-        SPARQL
-      end
-    end
-
-    # SPARQL for fetching all officeholdings of a position
-    class Mandates < ItemQuery
-      def raw_sparql
-        <<~SPARQL
-          # position-mandates
-          SELECT DISTINCT ?ordinal ?item ?start_date ?start_precision ?end_date ?end_precision ?prev ?next ?nature
-          WHERE {
-            ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
-            ?posn ps:P39 wd:%s .
-            FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
-
-            OPTIONAL { ?posn pqv:P580 [ wikibase:timeValue ?start_date; wikibase:timePrecision ?start_precision ] }
-            OPTIONAL { ?posn pqv:P582 [ wikibase:timeValue ?end_date; wikibase:timePrecision ?end_precision ] }
-            OPTIONAL { ?posn pq:P1365|pq:P155 ?prev }
-            OPTIONAL { ?posn pq:P1366|pq:P156 ?next }
-            OPTIONAL { ?posn pq:P1545 ?ordinal }
-            OPTIONAL { ?posn pq:P5102 ?nature }
-          }
-          ORDER BY DESC(?start_date)
-        SPARQL
-      end
-    end
-  end
-
   # The entire wikitext generated for this report
   class Report
     def initialize(subject_item_id)
@@ -463,7 +397,7 @@ module WikidataPositionHistory
     def metadata
       # TODO: we might get more than one response, if a position has
       # multiple dates
-      @metadata ||= SPARQL::Metadata.new(subject_item_id).results_as(Metadata).first
+      @metadata ||= SPARQL::PositionData.new(subject_item_id).results_as(PositionData).first
     end
 
     def mandates
