@@ -28,11 +28,11 @@ module WikidataPositionHistory
     end
 
     def inception_date
-      WikidataDate.new(inception_date_raw, inception_date_precision)
+      QueryService::WikidataDate.new(inception_date_raw, inception_date_precision)
     end
 
     def abolition_date
-      WikidataDate.new(abolition_date_raw, abolition_date_precision)
+      QueryService::WikidataDate.new(abolition_date_raw, abolition_date_precision)
     end
 
     def position?

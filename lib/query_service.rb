@@ -30,4 +30,74 @@ module QueryService
       JSON.parse(result, symbolize_names: true)[:results][:bindings]
     end
   end
+
+  # different views of a Wikidata item
+  class WikidataItem
+    def initialize(url)
+      @url = url
+    end
+
+    def id
+      url.split('/').last unless url.to_s.empty?
+    end
+
+    def qlink
+      "{{Q|#{id}}}" if id
+    end
+
+    private
+
+    attr_reader :url
+  end
+
+  # a Wikidata date of a given precision
+  class WikidataDate
+    include Comparable
+
+    def initialize(str, precision)
+      @str = str
+      @raw_precision = precision
+    end
+
+    def <=>(other)
+      return to_s <=> other.to_s if precision == other.precision
+      return year <=> other.year if year != other.year
+      return month <=> other.month if month && other.month
+    end
+
+    def to_s
+      return str if precision == '11'
+      return str[0..6] if precision == '10'
+      return str[0..3] if precision == '9'
+
+      warn "Cannot handle precision #{precision} for #{str}"
+      str
+    end
+
+    def empty?
+      str.to_s.empty?
+    end
+
+    def precision
+      return '11' if raw_precision.to_s.empty? # default to YYYY-MM-DD
+
+      raw_precision.to_s
+    end
+
+    def year
+      parts[0]
+    end
+
+    def month
+      parts[1]
+    end
+
+    private
+
+    attr_reader :str, :raw_precision
+
+    def parts
+      to_s.split('-')
+    end
+  end
 end

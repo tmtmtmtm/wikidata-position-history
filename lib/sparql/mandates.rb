@@ -38,19 +38,19 @@ module WikidataPositionHistory
     end
 
     def item
-      WikidataItem.new(row.dig(:item, :value)).qlink
+      QueryService::WikidataItem.new(row.dig(:item, :value)).qlink
     end
 
     def prev
-      WikidataItem.new(row.dig(:prev, :value)).qlink
+      QueryService::WikidataItem.new(row.dig(:prev, :value)).qlink
     end
 
     def next
-      WikidataItem.new(row.dig(:next, :value)).qlink
+      QueryService::WikidataItem.new(row.dig(:next, :value)).qlink
     end
 
     def nature
-      WikidataItem.new(row.dig(:nature, :value)).id
+      QueryService::WikidataItem.new(row.dig(:nature, :value)).id
     end
 
     def acting?
@@ -58,11 +58,11 @@ module WikidataPositionHistory
     end
 
     def start_date
-      WikidataDate.new(start_date_raw, start_date_precision)
+      QueryService::WikidataDate.new(start_date_raw, start_date_precision)
     end
 
     def end_date
-      WikidataDate.new(end_date_raw, end_date_precision)
+      QueryService::WikidataDate.new(end_date_raw, end_date_precision)
     end
 
     def start_date_raw
