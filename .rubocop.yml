@@ -52,6 +52,3 @@ Style/TrailingCommaInHashLiteral:
 
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: no_comma
-
-inherit_from:
-  - .rubocop_todo.yml
