@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'query_service'
 require 'sparql/item_query'
 require 'sparql/position_data'
 require 'sparql/mandates'
