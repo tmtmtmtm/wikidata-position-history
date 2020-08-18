@@ -1,0 +1,23 @@
+---
+exclude_paths:
+  - test
+
+detectors:
+  DuplicateMethodCall:
+    exclude:
+    - QueryService::WikidataDate#<=>
+    - QueryService::WikidataDate#precision
+    - WikidataPositionHistory::Check#ends_after_successor_starts
+  MissingSafeMethod:
+    exclude:
+    - WikidataPositionHistory::PageRewriter
+  RepeatedConditional:
+    exclude:
+    - WikidataPositionHistory::Check
+  TooManyStatements:
+    exclude:
+    - WikidataPositionHistory::Check#ends_after_successor_starts
+    - WikidataPositionHistory::Check#missing_fields
+  UncommunicativeVariableName:
+    exclude:
+    - QueryService::Query#results
