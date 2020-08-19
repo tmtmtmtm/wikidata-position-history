@@ -3,9 +3,10 @@
 module WikidataPositionHistory
   # A single output row of Wikitext for an officeholding
   class MandateReport
-    def initialize(current, check)
+    def initialize(later, current, earlier)
+      @later = later
       @current = current
-      @check = check
+      @earlier = earlier
     end
 
     def output
@@ -14,18 +15,15 @@ module WikidataPositionHistory
 
     private
 
-    attr_reader :current, :check
+    CHECKS = [Check::MissingFields, Check::WrongPredecessor, Check::WrongSuccessor, Check::Overlap].freeze
 
-    def pictogram
-      '[[File:Pictogram voting comment.svg|15px|link=]]'
-    end
+    WARNING_LAYOUT = [
+      '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;',
+      '<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;',
+      '<ref>%s</ref></span>'
+    ].join
 
-    def warning(check, method)
-      errors = check.send(method) or return ''
-      format('<span style="display: block">%s&nbsp;', pictogram) +
-        format('<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;', errors.first) +
-        format('<ref>%s</ref></span>', errors.last)
-    end
+    attr_reader :later, :current, :earlier
 
     def row_start
       '|-'
@@ -53,10 +51,14 @@ module WikidataPositionHistory
 
     def warnings_cell
       format('| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s',
-             warning(check, :missing_fields) +
-             warning(check, :wrong_predecessor) +
-             warning(check, :wrong_successor) +
-             warning(check, :ends_after_successor_starts))
+             combined_warnings)
+    end
+
+    def combined_warnings
+      CHECKS.map do |check_class|
+        check = check_class.new(later, current, earlier)
+        format(WARNING_LAYOUT, check.headline, check.explanation) if check.problem?
+      end.join
     end
 
     def membership_person
@@ -108,12 +110,12 @@ module WikidataPositionHistory
       @metadata ||= SPARQL::PositionData.new(subject_item_id).results_as(PositionData).first
     end
 
-    def mandates
-      @mandates ||= SPARQL::Mandates.new(subject_item_id).results_as(Mandate)
-    end
-
     def padded_mandates
       [nil, mandates, nil].flatten(1)
+    end
+
+    def mandates
+      @mandates ||= SPARQL::Mandates.new(subject_item_id).results_as(Mandate)
     end
 
     def no_items_output
@@ -130,10 +132,7 @@ module WikidataPositionHistory
 
     def table_rows
       padded_mandates.each_cons(3).map do |later, current, earlier|
-        next unless current
-
-        check = Check.new(later, current, earlier)
-        MandateReport.new(current, check).output
+        MandateReport.new(later, current, earlier).output
       end
     end
   end

@@ -9,87 +9,146 @@ module WikidataPositionHistory
       @earlier = earlier
     end
 
-    def missing_fields
-      missing = expected.reject { |field| current.send(field) }
-      return unless missing.any?
-
-      ["Missing field#{missing.count > 1 ? 's' : ''}",
-       "#{current.item} is missing #{missing.map { |field| "{{P|#{field_map[field]}}}" }.join(', ')}"]
+    def explanation
+      possible_explanation if problem?
     end
 
-    def wrong_predecessor
-      return unless earlier
-
-      replaces = current.prev or return
-      prev_in_list = earlier.item or return
-      return unless replaces != prev_in_list
-
-      ['Inconsistent predecessor',
-       "#{current.item} has a {{P|1365}} of #{replaces}, which differs from #{prev_in_list}"]
-    end
-
-    def wrong_successor
-      return unless later
-
-      replaced_by = current.next or return
-      next_in_list = later.item or return
-      return unless replaced_by != next_in_list
-
-      ['Inconsistent sucessor',
-       "#{current.item} has a {{P|1366}} of #{replaced_by}, which differs from #{next_in_list}"]
-    end
-
-    def ends_after_successor_starts
-      return unless later
-
-      ends = current.end_date or return
-      next_starts = later.start_date or return
-      return unless ends > next_starts
-
-      ['Date overlap',
-       "#{current.item} has a {{P|582}} of #{ends}, which is later than {{P|580}} of #{next_starts} for #{later.item}"]
-    rescue ArgumentError
-      ['Date precision',
-       "#{current.item} has a {{P|582}} of #{ends}, which may overlap with the {{P|580}} of #{next_starts} for #{later.item}"]
-    end
-
-    private
+    protected
 
     attr_reader :later, :current, :earlier
 
-    def field_map
-      {
-        start_date: 580,
-        prev:       1365,
-        end_date:   582,
-        next:       1366,
-      }
+    def successor
+      current.next
     end
 
-    def expected
-      field_map.keys.select { |field| send("expect_#{field}?") }
+    def predecessor
+      current.prev
     end
 
-    def expect_start_date?
-      true
+    def latest_holder?
+      !!later
     end
 
-    def expect_end_date?
-      later
+    def earliest_holder?
+      !!earlier
+    end
+  end
+
+  class Check
+    # Does the Officeholder have all the properties we expect?
+    class MissingFields < Check
+      def problem?
+        missing.any?
+      end
+
+      def headline
+        "Missing field#{missing.count > 1 ? 's' : ''}"
+      end
+
+      def possible_explanation
+        "#{current.item} is missing #{missing.map { |field| "{{P|#{field_map[field]}}}" }.join(', ')}"
+      end
+
+      def missing
+        expected.reject { |field| current.send(field) }
+      end
+
+      def field_map
+        {
+          start_date: 580,
+          prev:       1365,
+          end_date:   582,
+          next:       1366,
+        }
+      end
+
+      def expected
+        field_map.keys.select { |field| send("expect_#{field}?") }
+      end
+
+      def expect_start_date?
+        true
+      end
+
+      def expect_end_date?
+        later
+      end
+
+      def expect_prev?
+        return unless earlier
+        return if earlier.item == current.item # sucessive terms by same person
+
+        !current.acting?
+      end
+
+      def expect_next?
+        return unless later
+        return if later.item == current.item # sucessive terms by same person
+
+        !current.acting?
+      end
     end
 
-    def expect_prev?
-      return unless earlier
-      return if earlier.item == current.item # sucessive terms by same person
+    # Does the 'replaces' match the previous item in the list?
+    class WrongPredecessor < Check
+      def problem?
+        earliest_holder? && !!predecessor && (earlier.item != predecessor)
+      end
 
-      !current.acting?
+      def headline
+        'Inconsistent predecessor'
+      end
+
+      def possible_explanation
+        "#{current.item} has a {{P|1365}} of #{predecessor}, which differs from #{earlier.item}"
+      end
     end
 
-    def expect_next?
-      return unless later
-      return if later.item == current.item # sucessive terms by same person
+    # Does the 'replaced by' match the next item in the list?
+    class WrongSuccessor < Check
+      def problem?
+        latest_holder? && !!successor && (later.item != successor)
+      end
 
-      !current.acting?
+      def headline
+        'Inconsistent successor'
+      end
+
+      def possible_explanation
+        "#{current.item} has a {{P|1366}} of #{successor}, which differs from #{later.item}"
+      end
+    end
+
+    # Does the end date overlap with the successor's start date?
+    class Overlap < Check
+      def problem?
+        return false unless later
+
+        current.end_date > later.start_date
+      rescue ArgumentError
+        true
+      end
+
+      def headline
+        comparable? ? 'Date overlap' : 'Date precision'
+      end
+
+      def possible_explanation
+        "#{current.item} has a {{P|582}} of #{current.end_date}, which #{overlap_explanation} the {{P|580}} of #{later.start_date} for #{later.item}"
+      end
+
+      protected
+
+      def comparable?
+        # Seems like there must be a better way to do this
+        [current.end_date, later.start_date].sort
+      rescue ArgumentError
+        false
+      end
+
+      def overlap_explanation
+        comparable? ? 'is later than' : 'may overlap with'
+      end
     end
   end
 end

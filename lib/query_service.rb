@@ -56,7 +56,7 @@ module QueryService
 
     def initialize(str, precision)
       @str = str
-      @raw_precision = precision
+      @raw_precision = precision.to_s
     end
 
     def <=>(other)
@@ -79,9 +79,9 @@ module QueryService
     end
 
     def precision
-      return '11' if raw_precision.to_s.empty? # default to YYYY-MM-DD
+      return '11' if raw_precision.empty? # default to YYYY-MM-DD
 
-      raw_precision.to_s
+      raw_precision
     end
 
     def year
