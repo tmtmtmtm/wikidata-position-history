@@ -32,3 +32,14 @@ describe 'Ambassador to Albania' do
     expect(dates['start']).must_equal '1922'
   end
 end
+
+describe 'Governor of Gibralatar' do
+  before { use_sample_data }
+
+  subject { WikidataPositionHistory::Report.new('Q195965').wikitext_with_header.split('|-') }
+
+  it 'does not display date line when there are no dates' do
+    holder = subject.find { |line| line.include? 'Q16859171' }
+    expect(holder).wont_include '–'
+  end
+end

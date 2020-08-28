@@ -67,7 +67,8 @@ module WikidataPositionHistory
 
     def membership_dates
       dates = [current.start_date, current.end_date]
-      return '' if dates.compact.empty?
+      # compact doesn't work here, even if we add #nil? to WikidataDate
+      return '' if dates.reject(&:empty?).empty?
 
       dates.join(' – ')
     end
