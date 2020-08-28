@@ -12,4 +12,4 @@ end
 
 id = ARGV.first or abort "Usage: #{$PROGRAM_NAME} <Qid>"
 store(id, 'mandates', WikidataPositionHistory::SPARQL::Mandates.new(id))
-store(id, 'metadata', WikidataPositionHistory::SPARQL::Metadata.new(id))
+store(id, 'metadata', WikidataPositionHistory::SPARQL::PositionData.new(id))
