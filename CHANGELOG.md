@@ -1,5 +1,11 @@
 # Changelog
 
+# [1.3.1] - 2020-08-28
+
+## Fixes
+
+* Skip the dates line if neither date is set
+
 # [1.3.0] - 2020-08-17
 
 ## Enhancements
