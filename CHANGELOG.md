@@ -1,5 +1,11 @@
 # Changelog
 
+# [1.3.2] - 2020-08-29
+
+## Fixes
+
+* Skip all date checks for items with no dates
+
 # [1.3.1] - 2020-08-28
 
 ## Fixes
