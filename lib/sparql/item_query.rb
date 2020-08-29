@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'erb'
+
 module WikidataPositionHistory
   module SPARQL
     # Turn raw SPARQL into result objects
@@ -10,6 +12,10 @@ module WikidataPositionHistory
 
       def results_as(klass)
         json.map { |result| klass.new(result) }
+      end
+
+      def wdqs_url
+        "https://query.wikidata.org/##{ERB::Util.url_encode(sparql)}"
       end
 
       private

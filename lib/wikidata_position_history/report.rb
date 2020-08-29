@@ -85,7 +85,7 @@ module WikidataPositionHistory
     def wikitext
       return no_items_output if mandates.empty?
 
-      [table_header, table_rows, table_footer].compact.join("\n")
+      [table_header, table_rows, table_footer, wdqs_section].compact.join("\n")
     end
 
     def header
@@ -115,8 +115,12 @@ module WikidataPositionHistory
       [nil, mandates, nil].flatten(1)
     end
 
+    def sparql
+      @sparql ||= SPARQL::Mandates.new(subject_item_id)
+    end
+
     def mandates
-      @mandates ||= SPARQL::Mandates.new(subject_item_id).results_as(Mandate)
+      @mandates ||= sparql.results_as(Mandate)
     end
 
     def no_items_output
@@ -129,6 +133,18 @@ module WikidataPositionHistory
 
     def table_footer
       "|}\n"
+    end
+
+    def wdqs_section
+      wdqs_div % sparql.wdqs_url
+    end
+
+    def wdqs_div
+      <<~HTML
+        <div style="margin-bottom:5px; border-bottom:3px solid #2f74d0; font-size:8pt">
+          <div style="float:right">[%s WDQS]</div>
+        </div>
+      HTML
     end
 
     def table_rows
