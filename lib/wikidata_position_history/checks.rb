@@ -124,7 +124,10 @@ module WikidataPositionHistory
       def problem?
         return false unless later
 
-        current.end_date > later.start_date
+        ends = current.end_date
+        return false if ends.empty?
+
+        ends > later.start_date
       rescue ArgumentError
         true
       end

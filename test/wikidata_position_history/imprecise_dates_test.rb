@@ -42,4 +42,11 @@ describe 'Governor of Gibralatar' do
     holder = subject.find { |line| line.include? 'Q16859171' }
     expect(holder).wont_include '–'
   end
+
+  it 'does not display date precision warnings when there are no dates' do
+    # Robert Napier as the first 'dateless' entry is notionally followed
+    # by Colin Campbell, the first 'dated' entry.
+    holder = subject.find { |line| line.include? 'Q336474' }
+    expect(holder).wont_include 'Date precision'
+  end
 end
