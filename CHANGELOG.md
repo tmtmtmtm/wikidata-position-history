@@ -1,5 +1,19 @@
 # Changelog
 
+# [1.3.4] - 2020-09-01
+
+## Fixes
+
+* Update to latest version of mediawiki-replaceable-content to include
+  upstream bug fix.
+
+# [1.3.3] - 2020-08-29
+
+## Enhancements
+
+* Include link to Wikidata Query Service showing the SPARQL used to
+  generate the list.
+
 # [1.3.2] - 2020-08-29
 
 ## Fixes
