@@ -6,6 +6,9 @@ Gem.path.each do |path|
   Warning.ignore(//, path)
 end
 
+ENV['WIKI_USERNAME'] = 'test'
+ENV['WIKI_PASSWORD'] = 'test'
+
 require 'minitest/autorun'
 require 'pry'
 require 'webmock/minitest'
