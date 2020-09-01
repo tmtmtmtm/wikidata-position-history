@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'mediawiki-page-replaceable_content', '0.1.3'
+  spec.add_runtime_dependency 'mediawiki-replaceable-content', '0.2.1'
   spec.add_runtime_dependency 'rest-client', '~> 2.0'
 
   spec.add_development_dependency 'bundler', '~> 2.1'
