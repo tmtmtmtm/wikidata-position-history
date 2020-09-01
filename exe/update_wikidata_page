@@ -17,7 +17,7 @@ if ARGV.first.start_with?('http')
     page_title:     uri.path.gsub('/wiki/', ''), # with 2.5.1 we could use delete_prefix
   }
 else
-  options = URI.decode_www_form(ARGV.first).map { |k, v| [k.to_sym, v] }.to_h
+  options = URI.decode_www_form(ARGV.first).transform_keys(&:to_sym)
 end
 
 warn "Running with options: #{options.inspect}" if ENV.key?('DEBUG')
