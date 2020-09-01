@@ -28,7 +28,7 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     kwalify (0.7.2)
-    mediawiki-page-replaceable_content (0.1.3)
+    mediawiki-replaceable-content (0.2.1)
       mediawiki_api (~> 0.7)
     mediawiki_api (0.7.1)
       faraday (~> 0.9, >= 0.9.0)
