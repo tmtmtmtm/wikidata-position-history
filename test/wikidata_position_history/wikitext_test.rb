@@ -13,6 +13,7 @@ describe 'wikitext_history' do
   let(:expected) { Pathname.new('test/Q14211.out').read }
 
   it 'generates wikitext that starts how we expect' do
+    # binding.pry if subject.wikitext_with_header != expected
     expect(subject.wikitext_with_header).must_equal expected
   end
 end

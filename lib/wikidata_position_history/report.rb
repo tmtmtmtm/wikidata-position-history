@@ -79,6 +79,10 @@ module WikidataPositionHistory
       @metadata ||= SPARQL::PositionData.new(position_id).results_as(PositionData).first
     end
 
+    def biodata
+      @biodata ||= SPARQL::BioData.new(position_id).results_as(BioData)
+    end
+
     def padded_mandates
       [nil, mandates, nil].flatten(1)
     end
@@ -116,7 +120,10 @@ module WikidataPositionHistory
 
     def table_rows
       padded_mandates.each_cons(3).map do |later, current, earlier|
-        MandateData.new(later, current, earlier)
+        {
+          mandate: MandateData.new(later, current, earlier),
+          bio:     biodata.select { |bio| bio.person.id == current.officeholder.id },
+        }
       end
     end
   end
