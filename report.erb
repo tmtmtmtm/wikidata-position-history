@@ -2,7 +2,7 @@
 <% table_rows.each do |mandate| %>|-
 | style="padding:0.5em 2em" | <%= mandate.ordinal_string %>
 | style="padding:0.5em 2em" | <span style="font-size: <%= mandate.acting? ? '1.25em; font-style: italic;' : '1.5em' %>; display: block;"><%= mandate.person %></span> <%= mandate.dates %>
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <%= mandate.warnings %>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <% mandate.warnings.each do |warning| %><span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span><% end %>
 <% end %>|}
 
 <div style="margin-bottom:5px; border-bottom:3px solid #2f74d0; font-size:8pt">

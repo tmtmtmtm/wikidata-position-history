@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module WikidataPositionHistory
-  # A single output row of Wikitext for an officeholding
+  # Date for a single mandate row, to be passed to the report template
   class MandateData
     def initialize(later, current, earlier)
       @later = later
@@ -31,21 +31,12 @@ module WikidataPositionHistory
     end
 
     def warnings
-      CHECKS.map do |check_class|
-        check = check_class.new(later, current, earlier)
-        format(WARNING_LAYOUT, check.headline, check.explanation) if check.problem?
-      end.join
+      CHECKS.map { |klass| klass.new(later, current, earlier) }.select(&:problem?)
     end
 
     private
 
     CHECKS = [Check::MissingFields, Check::WrongPredecessor, Check::WrongSuccessor, Check::Overlap].freeze
-
-    WARNING_LAYOUT = [
-      '<span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;',
-      '<span style="color: #d33; font-weight: bold; vertical-align: middle;">%s</span>&nbsp;',
-      '<ref>%s</ref></span>'
-    ].join
 
     attr_reader :later, :current, :earlier
   end
