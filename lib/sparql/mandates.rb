@@ -7,6 +7,7 @@ module WikidataPositionHistory
       def raw_sparql
         <<~SPARQL
           # position-mandates
+
           SELECT DISTINCT ?ordinal ?item ?start_date ?start_precision ?end_date ?end_precision ?prev ?next ?nature
           WHERE {
             ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
@@ -18,7 +19,6 @@ module WikidataPositionHistory
             OPTIONAL { ?posn pq:P1365|pq:P155 ?prev }
             OPTIONAL { ?posn pq:P1366|pq:P156 ?next }
             OPTIONAL { ?posn pq:P1545 ?ordinal }
-            OPTIONAL { ?posn pq:P5102 ?nature }
             OPTIONAL { ?posn pq:P5102 ?nature }
           }
           ORDER BY DESC(?start_date)
