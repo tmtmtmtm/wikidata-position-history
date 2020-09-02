@@ -2,15 +2,41 @@
 
 module WikidataPositionHistory
   # A single output row of Wikitext for an officeholding
-  class MandateReport
+  class MandateData
     def initialize(later, current, earlier)
       @later = later
       @current = current
       @earlier = earlier
     end
 
-    def output
-      [row_start, ordinal_cell, member_cell, warnings_cell].join("\n")
+    def ordinal_string
+      ordinal = current.ordinal or return ''
+      "#{ordinal}."
+    end
+
+    def person
+      current.item
+    end
+
+    def dates
+      dates = [current.start_date, current.end_date]
+      # compact doesn't work here, even if we add #nil? to WikidataDate
+      return '' if dates.reject(&:empty?).empty?
+
+      dates.join(' – ')
+    end
+
+    def style
+      return 'font-size: 1.25em; display: block; font-style: italic;' if current.acting?
+
+      'font-size: 1.5em; display: block;'
+    end
+
+    def warnings
+      CHECKS.map do |check_class|
+        check = check_class.new(later, current, earlier)
+        format(WARNING_LAYOUT, check.headline, check.explanation) if check.problem?
+      end.join
     end
 
     private
@@ -24,54 +50,6 @@ module WikidataPositionHistory
     ].join
 
     attr_reader :later, :current, :earlier
-
-    def row_start
-      '|-'
-    end
-
-    def ordinal_cell
-      %(| style="padding:0.5em 2em" | #{ordinal_string})
-    end
-
-    def ordinal_string
-      ordinal = current.ordinal or return ''
-      "#{ordinal}."
-    end
-
-    def member_style
-      return 'font-size: 1.25em; display: block; font-style: italic;' if current.acting?
-
-      'font-size: 1.5em; display: block;'
-    end
-
-    def member_cell
-      format('| style="padding:0.5em 2em" | <span style="%s">%s</span> %s',
-             member_style, membership_person, membership_dates)
-    end
-
-    def warnings_cell
-      format('| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | %s',
-             combined_warnings)
-    end
-
-    def combined_warnings
-      CHECKS.map do |check_class|
-        check = check_class.new(later, current, earlier)
-        format(WARNING_LAYOUT, check.headline, check.explanation) if check.problem?
-      end.join
-    end
-
-    def membership_person
-      current.item
-    end
-
-    def membership_dates
-      dates = [current.start_date, current.end_date]
-      # compact doesn't work here, even if we add #nil? to WikidataDate
-      return '' if dates.reject(&:empty?).empty?
-
-      dates.join(' – ')
-    end
   end
 
   # The entire wikitext generated for this report
@@ -150,7 +128,7 @@ module WikidataPositionHistory
 
     def table_rows
       padded_mandates.each_cons(3).map do |later, current, earlier|
-        MandateReport.new(later, current, earlier).output
+        MandateData.new(later, current, earlier)
       end
     end
   end

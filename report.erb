@@ -1,6 +1,9 @@
 {| class="wikitable" style="text-align: center; border: none;"
-<%= table_rows.join("\n") %>
-|}
+<% table_rows.each do |mandate| %>|-
+| style="padding:0.5em 2em" | <%= mandate.ordinal_string %>
+| style="padding:0.5em 2em" | <span style="<%= mandate.style %>"><%= mandate.person %></span> <%= mandate.dates %>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <%= mandate.warnings %>
+<% end %>|}
 
 <div style="margin-bottom:5px; border-bottom:3px solid #2f74d0; font-size:8pt">
   <div style="float:right">[<%= sparql_url %> WDQS]</div>
