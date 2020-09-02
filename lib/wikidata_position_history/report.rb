@@ -26,10 +26,8 @@ module WikidataPositionHistory
       dates.join(' – ')
     end
 
-    def style
-      return 'font-size: 1.25em; display: block; font-style: italic;' if current.acting?
-
-      'font-size: 1.5em; display: block;'
+    def acting?
+      current.acting?
     end
 
     def warnings

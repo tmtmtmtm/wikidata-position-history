@@ -1,7 +1,7 @@
 {| class="wikitable" style="text-align: center; border: none;"
 <% table_rows.each do |mandate| %>|-
 | style="padding:0.5em 2em" | <%= mandate.ordinal_string %>
-| style="padding:0.5em 2em" | <span style="<%= mandate.style %>"><%= mandate.person %></span> <%= mandate.dates %>
+| style="padding:0.5em 2em" | <span style="font-size: <%= mandate.acting? ? '1.25em; font-style: italic;' : '1.5em' %>; display: block;"><%= mandate.person %></span> <%= mandate.dates %>
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <%= mandate.warnings %>
 <% end %>|}
 
