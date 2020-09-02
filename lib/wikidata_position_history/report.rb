@@ -76,16 +76,17 @@ module WikidataPositionHistory
 
   # The entire wikitext generated for this report
   class Report
-    def initialize(subject_item_id)
+    def initialize(subject_item_id, template_file = 'report.erb')
       @subject_item_id = subject_item_id
+      @template_file = template_file
     end
 
-    attr_reader :subject_item_id
+    attr_reader :subject_item_id, :template_file
 
     def wikitext
       return no_items_output if mandates.empty?
 
-      [table_header, table_rows, table_footer, wdqs_section].compact.join("\n")
+      output
     end
 
     def header
@@ -127,24 +128,24 @@ module WikidataPositionHistory
       "\n{{PositionHolderHistory/error_no_holders|id=#{subject_item_id}}}\n"
     end
 
-    def table_header
-      '{| class="wikitable" style="text-align: center; border: none;"'
+    def template_path
+      Pathname.new(template_file)
     end
 
-    def table_footer
-      "|}\n"
+    def template
+      @template ||= ERB.new(template_path.read)
     end
 
-    def wdqs_section
-      wdqs_div % sparql.wdqs_url
+    def output
+      template.result_with_hash(template_params)
     end
 
-    def wdqs_div
-      <<~HTML
-        <div style="margin-bottom:5px; border-bottom:3px solid #2f74d0; font-size:8pt">
-          <div style="float:right">[%s WDQS]</div>
-        </div>
-      HTML
+    def template_params
+      {
+        item:       subject_item_id,
+        table_rows: table_rows,
+        sparql_url: sparql.wdqs_url,
+      }
     end
 
     def table_rows
