@@ -35,7 +35,7 @@ module WikidataPositionHistory
 
     def ordinal_string
       ordinal = current.ordinal or return ''
-      ordinal.concat('.')
+      "#{ordinal}."
     end
 
     def member_style
