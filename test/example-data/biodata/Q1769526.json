@@ -1,0 +1,163 @@
+{
+  "head" : {
+    "vars" : [ "item", "image" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1265040"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Braghis.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1371619"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q15071069"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Maia%20Sandu%20%282019%29.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q15715802"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Gheorghe%20Brega%20%2801%29.png"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1672026"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Ion%20Sturza%20%28December%202015%29.png"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q182230"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Dorin%20Chirtoac%C4%83%20with%20Vladimir%20Voronin%20and%20Vasile%20Tarlev.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q19281444"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Chiril%20Gaburici%20%28crop.%29.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1986805"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2143400"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Serafim%20Urechean%20%28crop%2012631652493%29.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q438706"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q438715"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Flickr%20-%20Ion%20Chibzii%20-%20Ion%20Ciubuc.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q6968023"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/NataliaGherman%CC%A0Wien.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7155601"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Pavel%20Filip%20%2811322438465%29%20cropped.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q75020865"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Ion%20Chicu%20%282020-01-31%29.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7911417"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Valeriu%20Strele%C8%9B%20%282015%29.png"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q941388"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q57685"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Vladimir%20Filat.jpg"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q58087"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Iurie%20Leanc%C4%83%20Senate%20of%20Poland.JPG"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q61299"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Zinaida%20Grecean%C3%AEi%2C%202014%20%28cropped%29.jpg"
+      }
+    } ]
+  }
+}
