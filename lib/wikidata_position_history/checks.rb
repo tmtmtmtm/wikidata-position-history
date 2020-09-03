@@ -100,7 +100,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.item} has a {{P|1365}} of #{predecessor}, which differs from #{earlier.item}"
+        "#{current.item} has a {{P|1365}} of #{predecessor}, but follows #{earlier.item} here"
       end
     end
 
@@ -115,7 +115,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.item} has a {{P|1366}} of #{successor}, which differs from #{later.item}"
+        "#{current.item} has a {{P|1366}} of #{successor}, but is followed by #{later.item} here"
       end
     end
 
