@@ -48,7 +48,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     psych (3.1.0)
-    public_suffix (4.0.5)
+    public_suffix (4.0.6)
     rainbow (3.0.0)
     rake (13.0.1)
     reek (6.0.1)
@@ -81,10 +81,10 @@ GEM
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
     warning (1.1.0)
-    webmock (3.0.1)
+    webmock (3.8.3)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-      hashdiff
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
@@ -97,7 +97,7 @@ DEPENDENCIES
   reek (~> 6.0)
   rubocop (~> 0.89)
   warning (~> 1.1)
-  webmock (~> 3.0.0)
+  webmock (~> 3.8.3)
   wikidata_position_history!
 
 BUNDLED WITH

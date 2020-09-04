@@ -34,5 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'reek', '~> 6.0'
   spec.add_development_dependency 'rubocop', '~> 0.89'
   spec.add_development_dependency 'warning', '~> 1.1'
-  spec.add_development_dependency 'webmock', '~> 3.0.0'
+  spec.add_development_dependency 'webmock', '~> 3.8.3'
 end
