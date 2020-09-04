@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     wikidata_position_history (1.4.1)
-      mediawiki-replaceable-content (= 0.2.1)
+      mediawiki-replaceable-content (= 0.2.2)
       rest-client (~> 2.0)
 
 GEM
@@ -28,7 +28,7 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     kwalify (0.7.2)
-    mediawiki-replaceable-content (0.2.1)
+    mediawiki-replaceable-content (0.2.2)
       mediawiki_api (~> 0.7)
     mediawiki_api (0.7.1)
       faraday (~> 0.9, >= 0.9.0)
