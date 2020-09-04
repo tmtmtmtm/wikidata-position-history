@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-describe 'Checks' do
+describe WikidataPositionHistory::Report do
   before { use_sample_data }
 
   describe 'office with inception but no abolition date' do
