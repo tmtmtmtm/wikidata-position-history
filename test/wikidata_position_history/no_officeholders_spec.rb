@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-describe 'no officeholders' do
+describe WikidataPositionHistory::Report do
   before { use_sample_data }
 
   it 'outputs the no-holders template when no results' do
