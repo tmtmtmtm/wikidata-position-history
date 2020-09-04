@@ -33,7 +33,7 @@ module WikidataPositionHistory
 
     def new_content
       return [NO_ID_ERROR, 'The id parameter was missing'] if position_id.empty?
-      return [MALFORMED_ID_ERROR, 'The id parameter was malformed'] unless position_id =~ /^Q\d+$/
+      return [MALFORMED_ID_ERROR, 'The id parameter was malformed'] unless position_id[/^Q\d+$/]
 
       [WikidataPositionHistory::Report.new(position_id).wikitext, "Successfully updated holders of #{position_id}"]
     end
