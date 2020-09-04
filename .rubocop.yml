@@ -33,6 +33,13 @@ Lint/AssignmentInCondition:
 Naming/ClassAndModuleCamelCase:
   Enabled: false
 
+RSpec/DescribedClass:
+  Enabled: false
+
+# TODO: remove this?
+RSpec/MultipleExpectations:
+  Max: 2
+
 Style/CollectionMethods:
   Enabled: true
 
