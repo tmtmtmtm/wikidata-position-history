@@ -6,7 +6,7 @@ require 'test_helper'
 # very useful for locating where a bug might be, but somewhat
 # helpful as a test of whether something's broken.
 
-describe 'wikitext_history' do
+describe WikidataPositionHistory::Report do
   before { use_sample_data }
 
   let(:report)   { WikidataPositionHistory::Report.new('Q14211') }
