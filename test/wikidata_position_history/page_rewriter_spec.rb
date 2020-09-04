@@ -5,13 +5,15 @@ require 'test_helper'
 describe 'WikidataPositionHistory' do
   before { fake_login }
 
+  let(:page) do
+    WikidataPositionHistory::PageRewriter.new(
+      mediawiki_site: 'www.wikidata.org',
+      page_title:     page_title
+    )
+  end
+
   describe 'PrimeMinisterTest' do
-    let(:page) do
-      WikidataPositionHistory::PageRewriter.new(
-        mediawiki_site: 'www.wikidata.org',
-        page_title:     'User:Mhl20/Prime_minister_test'
-      )
-    end
+    let(:page_title) { 'User:Mhl20/Prime_minister_test' }
 
     it 'has a mediawiki_site attribute' do
       expect(page.send(:mediawiki_site)).must_equal 'www.wikidata.org'
@@ -45,34 +47,30 @@ describe 'WikidataPositionHistory' do
   end
 
   describe 'DerivedIDs' do
-    it 'derives an item from the Page where none supplied' do
-      stub_request(:get, /wikidata.org.*Talk:Q42/)
-        .to_return(body: '{{PositionHolderHistory}}')
+    let(:page_title) { 'Talk:Q42' }
 
-      expect(WikidataPositionHistory::PageRewriter.new(
-        mediawiki_site: 'www.wikidata.org',
-        page_title:     'Talk:Q42'
-      ).send(:position_id)).must_equal 'Q42'
+    describe 'Qid in page title' do
+      it 'derives an item from the Page where none supplied' do
+        stub_request(:get, /Talk:Q42/).to_return(body: '{{PositionHolderHistory}}')
+
+        expect(page.send(:position_id)).must_equal 'Q42'
+      end
+
+      it 'prefers the ID in the template, even if one is in the URL' do
+        stub_request(:get, /Talk:Q42/).to_return(body: '{{PositionHolderHistory|id=Q1769526}}')
+
+        expect(page.send(:position_id)).must_equal 'Q1769526'
+      end
     end
+  end
+
+  describe 'multiple Qid in page title' do
+    let(:page_title) { 'Talk:Q42/Q1769526' }
 
     it 'takes the last ID from the Page name if multiple options' do
-      stub_request(:get, %r{wikidata.org.*Talk:Q42/Q1769526})
-        .to_return(body: '{{PositionHolderHistory}}')
+      stub_request(:get, %r{Talk:Q42/Q1769526}).to_return(body: '{{PositionHolderHistory}}')
 
-      expect(WikidataPositionHistory::PageRewriter.new(
-        mediawiki_site: 'www.wikidata.org',
-        page_title:     'Talk:Q42/Q1769526'
-      ).send(:position_id)).must_equal 'Q1769526'
-    end
-
-    it 'prefers the ID in the template, even if one is in the URL' do
-      stub_request(:get, /wikidata.org.*Talk:Q42/)
-        .to_return(body: '{{PositionHolderHistory|id=Q1769526}}')
-
-      expect(WikidataPositionHistory::PageRewriter.new(
-        mediawiki_site: 'www.wikidata.org',
-        page_title:     'Talk:Q42'
-      ).send(:position_id)).must_equal 'Q1769526'
+      expect(page.send(:position_id)).must_equal 'Q1769526'
     end
   end
 end
