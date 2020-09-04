@@ -3,6 +3,8 @@
 module WikidataPositionHistory
   # Date for a single mandate row, to be passed to the report template
   class MandateData
+    CHECKS = [Check::MissingFields, Check::WrongPredecessor, Check::WrongSuccessor, Check::Overlap].freeze
+
     def initialize(later, current, earlier)
       @later = later
       @current = current
@@ -35,8 +37,6 @@ module WikidataPositionHistory
     end
 
     private
-
-    CHECKS = [Check::MissingFields, Check::WrongPredecessor, Check::WrongSuccessor, Check::Overlap].freeze
 
     attr_reader :later, :current, :earlier
   end

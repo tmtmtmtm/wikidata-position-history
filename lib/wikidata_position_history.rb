@@ -22,6 +22,19 @@ module WikidataPositionHistory
     WIKI_USERNAME = ENV['WIKI_USERNAME']
     WIKI_PASSWORD = ENV['WIKI_PASSWORD']
 
+    NO_ID_ERROR = <<~WIKITEXT
+      '''#{WIKI_TEMPLATE_NAME} Error''': You must pass the <code>id</code>
+      parameter to the <code>#{WIKI_TEMPLATE_NAME}</code> template; e.g.
+      <nowiki>{{#{WIKI_TEMPLATE_NAME}|id=Q14211}}</nowiki>
+    WIKITEXT
+
+    MALFORMED_ID_ERROR = <<~WIKITEXT
+      '''#{WIKI_TEMPLATE_NAME} Error''': The <code>id</code> parameter was
+      malformed; it should be Q followed by a number of digits, e.g. as in:
+
+      <nowiki>{{#{WIKI_TEMPLATE_NAME}|id=Q14211}}</nowiki>
+    WIKITEXT
+
     def initialize(mediawiki_site:, page_title:)
       @mediawiki_site = mediawiki_site
       @page_title = page_title.tr('_', ' ')
@@ -41,19 +54,6 @@ module WikidataPositionHistory
     private
 
     attr_reader :mediawiki_site, :page_title
-
-    NO_ID_ERROR = <<~EOERROR
-      '''#{WIKI_TEMPLATE_NAME} Error''': You must pass the <code>id</code>
-      parameter to the <code>#{WIKI_TEMPLATE_NAME}</code> template; e.g.
-      <nowiki>{{#{WIKI_TEMPLATE_NAME}|id=Q14211}}</nowiki>
-    EOERROR
-
-    MALFORMED_ID_ERROR = <<~EOERROR
-      '''#{WIKI_TEMPLATE_NAME} Error''': The <code>id</code> parameter was
-      malformed; it should be Q followed by a number of digits, e.g. as in:
-
-      <nowiki>{{#{WIKI_TEMPLATE_NAME}|id=Q14211}}</nowiki>
-    EOERROR
 
     def position_id
       return id_param unless id_param.empty?
