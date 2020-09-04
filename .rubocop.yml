@@ -54,3 +54,6 @@ Style/TrailingCommaInHashLiteral:
 
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: no_comma
+
+Layout/ClassStructure:
+  Enabled: true
