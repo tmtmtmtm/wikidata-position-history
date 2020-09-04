@@ -8,6 +8,7 @@ require 'test_helper'
 
 describe 'wikitext_history' do
   before { use_sample_data }
+
   let(:report)   { WikidataPositionHistory::Report.new('Q14211') }
   let(:expected) { Pathname.new('test/Q14211.out').read }
 
