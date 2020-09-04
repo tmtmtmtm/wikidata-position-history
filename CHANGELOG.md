@@ -1,9 +1,10 @@
 # Changelog
 
-# unreleased
+# [1.4.0] 2020-09-04
 
 ## Enhancements
 
+* Add an image column.
 * Improve the warning for inconsistent successor/predecessor values.
 
 # [1.3.4] - 2020-09-01
