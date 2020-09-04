@@ -24,14 +24,14 @@ describe 'Checks' do
       expect(check.headline).must_equal 'Date overlap'
     end
 
-    it 'warns of inconsistent succession' do
+    it 'warns of inconsistent predecessor' do
       peel = mandates.index { |result| result&.item == '{{Q|Q181875}}' }
       check = WikidataPositionHistory::Check::WrongPredecessor.new(*mandates.slice(peel..peel + 2))
       expect(check.problem?).must_equal true
       expect(check.headline).must_equal 'Inconsistent predecessor'
     end
 
-    it 'warns of inconsistent succession' do
+    it 'warns of inconsistent successor' do
       peel = mandates.index { |result| result&.item == '{{Q|Q181875}}' }
       check = WikidataPositionHistory::Check::WrongSuccessor.new(*mandates.slice(peel..peel + 2))
       expect(check.problem?).must_equal true
