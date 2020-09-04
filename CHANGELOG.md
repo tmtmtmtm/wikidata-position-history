@@ -1,5 +1,11 @@
 # Changelog
 
+# [1.4.1] 2020-09-04
+
+## Fixes
+
+* Work around template deployment issue.
+
 # [1.4.0] 2020-09-04
 
 ## Enhancements
