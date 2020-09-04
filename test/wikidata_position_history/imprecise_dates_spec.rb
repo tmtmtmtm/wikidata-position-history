@@ -4,6 +4,7 @@ require 'test_helper'
 
 describe WikidataPositionHistory::Report do
   before { use_sample_data }
+
   let(:rows) { WikidataPositionHistory::Report.new(position_id).wikitext_with_header.split('|-') }
   let(:date_re) { /(?<start>[\d\-]+)\s–\s(?<end>[\d-]+)?/ }
 
