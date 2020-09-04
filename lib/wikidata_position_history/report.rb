@@ -43,12 +43,12 @@ module WikidataPositionHistory
 
   # The entire wikitext generated for this report
   class Report
-    def initialize(subject_item_id, template_file = 'report.erb')
-      @subject_item_id = subject_item_id
+    def initialize(position_id, template_file = 'report.erb')
+      @position_id = position_id
       @template_file = template_file
     end
 
-    attr_reader :subject_item_id, :template_file
+    attr_reader :position_id, :template_file
 
     def wikitext
       return no_items_output if mandates.empty?
@@ -57,7 +57,7 @@ module WikidataPositionHistory
     end
 
     def header
-      "== {{Q|#{subject_item_id}}} officeholders #{position_dates} =="
+      "== {{Q|#{position_id}}} officeholders #{position_dates} =="
     end
 
     def position_dates
@@ -76,7 +76,7 @@ module WikidataPositionHistory
     def metadata
       # TODO: we might get more than one response, if a position has
       # multiple dates
-      @metadata ||= SPARQL::PositionData.new(subject_item_id).results_as(PositionData).first
+      @metadata ||= SPARQL::PositionData.new(position_id).results_as(PositionData).first
     end
 
     def padded_mandates
@@ -84,7 +84,7 @@ module WikidataPositionHistory
     end
 
     def sparql
-      @sparql ||= SPARQL::Mandates.new(subject_item_id)
+      @sparql ||= SPARQL::Mandates.new(position_id)
     end
 
     def mandates
@@ -92,7 +92,7 @@ module WikidataPositionHistory
     end
 
     def no_items_output
-      "\n{{PositionHolderHistory/error_no_holders|id=#{subject_item_id}}}\n"
+      "\n{{PositionHolderHistory/error_no_holders|id=#{position_id}}}\n"
     end
 
     def template_path
@@ -109,7 +109,6 @@ module WikidataPositionHistory
 
     def template_params
       {
-        item:       subject_item_id,
         table_rows: table_rows,
         sparql_url: sparql.wdqs_url,
       }
