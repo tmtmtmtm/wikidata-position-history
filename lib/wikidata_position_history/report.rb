@@ -41,38 +41,14 @@ module WikidataPositionHistory
     attr_reader :later, :current, :earlier
   end
 
-  # Interface to the ERB Template for the output
-  class ReportTemplate
-    def initialize(file, data)
-      @file = file
-      @data = data
-    end
-
-    def output
-      template.result_with_hash(data)
-    end
-
-    private
-
-    def template_path
-      Pathname.new(file)
-    end
-
-    def template
-      @template ||= ERB.new(template_path.read)
-    end
-
-    attr_reader :file, :data
-  end
-
   # The entire wikitext generated for this report
   class Report
-    def initialize(position_id, template_file = 'report.erb')
+    def initialize(position_id, template_class = ReportTemplate)
       @position_id = position_id
-      @template_file = template_file
+      @template_class = template_class
     end
 
-    attr_reader :position_id, :template_file
+    attr_reader :position_id, :template_class
 
     def wikitext
       return no_items_output if mandates.empty?
@@ -128,7 +104,7 @@ module WikidataPositionHistory
     end
 
     def output
-      ReportTemplate.new(template_file, template_params).output
+      template_class.new(template_params).output
     end
 
     def template_params
