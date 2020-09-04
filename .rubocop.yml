@@ -1,4 +1,6 @@
-require: rubocop-performance
+require:
+  - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   Exclude:
@@ -6,6 +8,9 @@ AllCops:
     - 'vendor/**/*'
   TargetRubyVersion: 2.5
   NewCops: enable
+  RSpec:
+    Patterns:
+    - '_test.rb$'
 
 Metrics/AbcSize:
   Exclude:
