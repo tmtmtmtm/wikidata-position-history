@@ -8,12 +8,11 @@ require 'test_helper'
 
 describe 'wikitext_history' do
   before { use_sample_data }
-  subject { WikidataPositionHistory::Report.new('Q14211') }
-
+  let(:report)   { WikidataPositionHistory::Report.new('Q14211') }
   let(:expected) { Pathname.new('test/Q14211.out').read }
 
   it 'generates wikitext that starts how we expect' do
     # binding.pry if subject.wikitext_with_header != expected
-    expect(subject.wikitext_with_header).must_equal expected
+    expect(report.wikitext_with_header).must_equal expected
   end
 end
