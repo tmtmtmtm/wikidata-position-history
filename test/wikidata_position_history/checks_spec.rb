@@ -5,8 +5,10 @@ require 'test_helper'
 describe 'Checks' do
   before { use_sample_data }
 
+  let(:mandates) { WikidataPositionHistory::Report.new(position).send(:padded_mandates) }
+
   describe 'UK Prime Minister' do
-    let(:mandates) { WikidataPositionHistory::Report.new('Q14211').send(:padded_mandates) }
+    let(:position) { 'Q14211' }
 
     it 'allows for no successor for the incumbent' do
       check = WikidataPositionHistory::Check::WrongSuccessor.new(*mandates.take(3))
@@ -40,12 +42,11 @@ describe 'Checks' do
   end
 
   describe 'Prime Minister of Moldova' do
-    let(:mandates) { WikidataPositionHistory::Report.new('Q1769526').send(:padded_mandates) }
+    let(:position) { 'Q1769526' }
 
     it 'warns of missing replaced_by' do
       check = WikidataPositionHistory::Check::MissingFields.new(*mandates.last(3))
-      expect(check.problem?).must_equal true
-      expect(check.explanation).must_include '{{P|1366}}'
+      expect(check.explanation.scan(/{{P\|(\d+)}}/).flatten).must_equal %w[1366]
     end
 
     it 'does not warn of missing succession if followed by self' do
@@ -57,7 +58,7 @@ describe 'Checks' do
   end
 
   describe 'Albanian Ambassador' do
-    let(:mandates) { WikidataPositionHistory::Report.new('Q56761097').send(:padded_mandates) }
+    let(:position) { 'Q56761097' }
 
     it 'warns of imprecise dates that may overlap' do
       landsman = mandates.index { |result| result&.ordinal == '9' }
