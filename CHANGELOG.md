@@ -1,5 +1,11 @@
 # Changelog
 
+# Unreleased
+
+## Fixes
+
+* No longer blows up when a P39 has a start date, but no end date
+
 # [1.4.2] 2020-09-05
 
 ## Fixes
