@@ -63,10 +63,14 @@ module WikidataPositionHistory
     end
 
     def start_date
+      return if start_date_raw.empty?
+
       QueryService::WikidataDate.new(start_date_raw, start_date_precision)
     end
 
     def end_date
+      return if end_date_raw.empty?
+
       QueryService::WikidataDate.new(end_date_raw, end_date_precision)
     end
 
