@@ -124,8 +124,10 @@ module WikidataPositionHistory
       def problem?
         return false unless later
 
+        next_starts = later.start_date or return false
         ends = current.end_date or return false
-        ends > later.start_date
+
+        ends > next_starts
       rescue ArgumentError
         true
       end

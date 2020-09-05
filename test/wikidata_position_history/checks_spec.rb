@@ -77,4 +77,14 @@ describe 'Checks' do
       expect(check.explanation.scan(/{{P\|(\d+)}}/).flatten.sort).must_equal %w[1365 1366 580 582]
     end
   end
+
+  describe 'Archbishop of Sydney' do
+    let(:position) { 'Q4763428' }
+
+    it 'copes with end dates with no start dates' do
+      jensen = mandates.compact.index { |result| result.officeholder.id == 'Q7174971' }
+      check = WikidataPositionHistory::Check::Overlap.new(*mandates.slice(jensen..jensen + 2))
+      expect(check.problem?).must_equal false
+    end
+  end
 end
