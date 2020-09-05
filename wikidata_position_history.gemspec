@@ -11,8 +11,8 @@ Gem::Specification.new do |spec|
   spec.authors               = ['Tony Bowden', 'Mark Longair']
   spec.email                 = ['tony@tmtm.com']
 
-  spec.summary  = 'Generates a wikitext history of a holders of a position in Wikidata'
-  spec.homepage = 'https://github.com/everypolitician/wikidata-position-history/'
+  spec.summary  = 'Generates a table of historic holders of a Wikidata position'
+  spec.homepage = 'https://github.com/tmtmtmtm/wikidata-position-history/'
   spec.license  = 'MIT'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
