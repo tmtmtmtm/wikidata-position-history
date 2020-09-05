@@ -1,0 +1,14 @@
+{
+  "head" : {
+    "vars" : [ "inception", "inception_precision", "abolition", "abolition_precision", "isPosition" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      }
+    } ]
+  }
+}
