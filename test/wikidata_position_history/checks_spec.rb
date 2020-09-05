@@ -67,4 +67,14 @@ describe 'Checks' do
       expect(check.headline).must_equal('Date precision')
     end
   end
+
+  # Three officeholders, with no qualifiers at all
+  describe 'Tanzanian Water Minister' do
+    let(:position) { 'Q16147179' }
+
+    it 'warns of missing start and end dates' do
+      check = WikidataPositionHistory::Check::MissingFields.new(*mandates.drop(1).take(3))
+      expect(check.explanation.scan(/{{P\|(\d+)}}/).flatten.sort).must_equal %w[1365 1366 580 582]
+    end
+  end
 end

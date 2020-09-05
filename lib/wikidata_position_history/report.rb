@@ -22,8 +22,7 @@ module WikidataPositionHistory
 
     def dates
       dates = [current.start_date, current.end_date]
-      # compact doesn't work here, even if we add #nil? to WikidataDate
-      return '' if dates.reject(&:empty?).empty?
+      return '' if dates.compact.empty?
 
       dates.join(' – ')
     end
