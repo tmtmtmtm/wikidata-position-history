@@ -1,5 +1,11 @@
 # Changelog
 
+# [1.4.2] 2020-09-05
+
+## Fixes
+
+* Bring back the warnings when start or end dates are missing.
+
 # [1.4.1] 2020-09-04
 
 ## Fixes
