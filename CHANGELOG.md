@@ -5,6 +5,8 @@
 * When showing the results for a position from long long ago (such as
   the High Kings of Ireland), display the dates as "862 – 879" not as
   "862 – 879"
+* If we only know that someone took (or left) office sometime in a given
+  decade (i.e. at date precision 8), display that as (say) "1930s"
 
 ## Fixes
 
