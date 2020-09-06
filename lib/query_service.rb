@@ -66,12 +66,7 @@ module QueryService
     end
 
     def to_s
-      return str if precision == '11'
-      return str[0..6] if precision == '10'
-      return str[0..3] if precision == '9'
-
-      warn "Cannot handle precision #{precision} for #{str}"
-      str
+      precisioned_string.delete_prefix('0')
     end
 
     def empty?
@@ -98,6 +93,15 @@ module QueryService
 
     def parts
       to_s.split('-')
+    end
+
+    def precisioned_string
+      return str if precision == '11'
+      return str[0..6] if precision == '10'
+      return str[0..3] if precision == '9'
+
+      warn "Cannot handle precision #{precision} for #{str}"
+      str
     end
   end
 end
