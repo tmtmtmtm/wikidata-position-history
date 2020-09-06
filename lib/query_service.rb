@@ -54,6 +54,8 @@ module QueryService
   class WikidataDate
     include Comparable
 
+    DATELEN = { '11' => 10, '10' => 7, '9' => 4, '8' => 4 }.freeze
+
     def initialize(str, precision)
       @str = str
       @raw_precision = precision.to_s
@@ -95,14 +97,17 @@ module QueryService
       to_s.split('-')
     end
 
-    def precisioned_string
-      return str if precision == '11'
-      return str[0..6] if precision == '10'
-      return str[0..3] if precision == '9'
-      return "#{str[0..3]}s" if precision == '8'
+    def truncated_string
+      return str[0...DATELEN[precision]] if DATELEN.key?(precision)
 
       warn "Cannot handle precision #{precision} for #{str}"
       str
+    end
+
+    def precisioned_string
+      return "#{truncated_string}s" if precision == '8'
+
+      truncated_string
     end
   end
 end
