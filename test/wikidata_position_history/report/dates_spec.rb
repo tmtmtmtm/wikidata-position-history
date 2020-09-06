@@ -6,7 +6,7 @@ describe WikidataPositionHistory::Report do
   before { use_sample_data }
 
   let(:rows) { WikidataPositionHistory::Report.new(position_id).wikitext_with_header.split('|-') }
-  let(:holder_row) { rows.find { |line| line.include? officeholder } }
+  let(:holder_row) { rows.find { |line| line.include? "#{officeholder}}}</span>" } }
   let(:dates) { holder_row.match(/(?<start>[\d\-]+)\s–\s(?<end>[\d-]+)?/).named_captures }
 
   describe 'Ambassador to Albania' do
