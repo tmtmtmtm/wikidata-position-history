@@ -7,7 +7,7 @@ describe WikidataPositionHistory::Report do
 
   let(:rows) { WikidataPositionHistory::Report.new(position_id).wikitext_with_header.split('|-') }
   let(:holder_row) { rows.find { |line| line.include? "#{officeholder}}}</span>" } }
-  let(:dates) { holder_row.match(/(?<start>[\d\-]+)\s–\s(?<end>[\d-]+)?/).named_captures }
+  let(:dates) { holder_row.match(/(?<start>[\ds\-]+)\s–\s(?<end>[\ds-]+)?/).named_captures }
 
   describe 'Ambassador to Albania' do
     let(:position_id) { 'Q56761097' }
@@ -45,6 +45,12 @@ describe WikidataPositionHistory::Report do
 
       it { expect(dates['start']).must_equal '961' }
       it { expect(dates['end']).must_equal '992-03-05' }
+    end
+
+    describe 'decade-precision dates' do
+      let(:officeholder) { 'Q6860722' }
+
+      it { expect(dates['start']).must_equal '740s' }
     end
   end
 
