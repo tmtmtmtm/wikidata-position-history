@@ -1,6 +1,8 @@
 # Changelog
 
-# Unreleased
+# [1.5.0] 2020-09-06
+
+## Enhancements
 
 * When showing the results for a position from long long ago (such as
   the High Kings of Ireland), display the dates as "862 – 879" not as
