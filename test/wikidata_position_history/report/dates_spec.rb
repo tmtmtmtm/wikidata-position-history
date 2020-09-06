@@ -37,21 +37,14 @@ describe WikidataPositionHistory::Report do
     end
   end
 
-  describe 'High Kings of Ireland' do
-    let(:position_id) { 'Q889997' }
+  describe 'Bishop of Worcester' do
+    let(:position_id) { 'Q1837494' }
 
-    describe 'pre-1000 precision 11 dates' do
-      let(:officeholder) { 'Q1277664' }
+    describe 'pre-1000 dates' do
+      let(:officeholder) { 'Q1273281' }
 
-      it { expect(dates['start']).must_equal '879-11-24' }
-      it { expect(dates['end']).must_equal '916-05-30' }
-    end
-
-    describe 'pre-1000 precision 9 dates' do
-      let(:officeholder) { 'Q1283150' }
-
-      it { expect(dates['start']).must_equal '797' }
-      it { expect(dates['end']).must_equal '819' }
+      it { expect(dates['start']).must_equal '961' }
+      it { expect(dates['end']).must_equal '992-03-05' }
     end
   end
 
