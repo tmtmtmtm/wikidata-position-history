@@ -99,6 +99,7 @@ module QueryService
       return str if precision == '11'
       return str[0..6] if precision == '10'
       return str[0..3] if precision == '9'
+      return "#{str[0..3]}s" if precision == '8'
 
       warn "Cannot handle precision #{precision} for #{str}"
       str
