@@ -37,6 +37,24 @@ describe WikidataPositionHistory::Report do
     end
   end
 
+  describe 'High Kings of Ireland' do
+    let(:position_id) { 'Q889997' }
+
+    describe 'pre-1000 precision 11 dates' do
+      let(:officeholder) { 'Q1277664' }
+
+      it { expect(dates['start']).must_equal '879-11-24' }
+      it { expect(dates['end']).must_equal '916-05-30' }
+    end
+
+    describe 'pre-1000 precision 9 dates' do
+      let(:officeholder) { 'Q1283150' }
+
+      it { expect(dates['start']).must_equal '797' }
+      it { expect(dates['end']).must_equal '819' }
+    end
+  end
+
   describe 'Governor of Gibralatar' do
     let(:position_id) { 'Q195965' }
 
