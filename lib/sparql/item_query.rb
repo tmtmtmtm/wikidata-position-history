@@ -23,7 +23,11 @@ module WikidataPositionHistory
       attr_reader :itemid
 
       def sparql
-        raw_sparql % itemid
+        raw_sparql % sparql_args
+      end
+
+      def sparql_args
+        itemid
       end
 
       def json
