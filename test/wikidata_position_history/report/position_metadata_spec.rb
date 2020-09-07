@@ -13,7 +13,7 @@ describe WikidataPositionHistory::Report do
     end
 
     it 'has no abolition date' do
-      expect(position.abolition_date).must_be_empty
+      expect(position.abolition_date).must_be_nil
     end
   end
 
@@ -33,11 +33,11 @@ describe WikidataPositionHistory::Report do
     let(:position) { WikidataPositionHistory::Report.new('Q258045').send(:metadata) }
 
     it 'has no inception date' do
-      expect(position.inception_date).must_be_empty
+      expect(position.inception_date).must_be_nil
     end
 
     it 'has no abolition date' do
-      expect(position.abolition_date).must_be_empty
+      expect(position.abolition_date).must_be_nil
     end
 
     it 'knows that it is a position' do
