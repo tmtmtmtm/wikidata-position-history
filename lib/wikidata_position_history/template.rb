@@ -32,6 +32,7 @@ module WikidataPositionHistory
         <div style="margin-bottom:5px; border-bottom:3px solid #2f74d0; font-size:8pt">
           <div style="float:right">[<%= sparql_url %> WDQS]</div>
         </div>
+        {{reflist}}
       ERB
     end
   end
