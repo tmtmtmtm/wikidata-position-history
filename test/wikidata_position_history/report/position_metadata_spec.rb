@@ -5,51 +5,34 @@ require 'test_helper'
 describe WikidataPositionHistory::Report do
   before { use_sample_data }
 
+  let(:report) { WikidataPositionHistory::Report.new(position_id) }
+  let(:metadata) { report.send(:metadata) }
+
   describe 'office with inception but no abolition date' do
-    let(:position) { WikidataPositionHistory::Report.new('Q14211').send(:metadata) }
+    let(:position_id) { 'Q14211' }
 
-    it 'has an inception date' do
-      expect(position.inception_date.to_s).must_equal '1721-04-04'
-    end
-
-    it 'has no abolition date' do
-      expect(position.abolition_date).must_be_nil
-    end
+    it { expect(metadata.inception_date.to_s).must_equal '1721-04-04' }
+    it { expect(metadata.abolition_date).must_be_nil }
   end
 
   describe 'office with both inception and abolition date' do
-    let(:position) { WikidataPositionHistory::Report.new('Q7444267').send(:metadata) }
+    let(:position_id) { 'Q7444267' }
 
-    it 'has an inception date' do
-      expect(position.inception_date.to_s).must_equal '1920-08-22'
-    end
-
-    it 'has an abolition date' do
-      expect(position.abolition_date.to_s).must_equal '1945'
-    end
+    it { expect(metadata.inception_date.to_s).must_equal '1920-08-22' }
+    it { expect(metadata.abolition_date.to_s).must_equal '1945' }
   end
 
   describe 'office with neither inception nor abolition date' do
-    let(:position) { WikidataPositionHistory::Report.new('Q258045').send(:metadata) }
+    let(:position_id) { 'Q258045' }
 
-    it 'has no inception date' do
-      expect(position.inception_date).must_be_nil
-    end
-
-    it 'has no abolition date' do
-      expect(position.abolition_date).must_be_nil
-    end
-
-    it 'knows that it is a position' do
-      expect(position.position?).must_equal true
-    end
+    it { expect(metadata.inception_date).must_be_nil }
+    it { expect(metadata.abolition_date).must_be_nil }
+    it { expect(metadata.position?).must_equal true }
   end
 
   describe 'legislative term' do
-    let(:term) { WikidataPositionHistory::Report.new('Q20530392').send(:metadata) }
+    let(:position_id) { 'Q20530392' }
 
-    it 'knows that it is not a position' do
-      expect(term.position?).must_equal false
-    end
+    it { expect(metadata.position?).must_equal false }
   end
 end
