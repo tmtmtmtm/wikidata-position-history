@@ -23,7 +23,7 @@ describe WikidataPositionHistory::Report do
   end
 
   describe 'office with neither inception nor abolition date' do
-    let(:position_id) { 'Q258045' }
+    let(:position_id) { 'Q96424184' }
 
     it { expect(metadata.inception_date).must_be_nil }
     it { expect(metadata.abolition_date).must_be_nil }
