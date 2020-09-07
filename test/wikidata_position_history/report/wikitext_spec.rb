@@ -25,6 +25,12 @@ describe WikidataPositionHistory::Report do
     it { expect(report.wikitext_with_header).must_equal expected }
   end
 
+  describe 'Secretary for Mines' do
+    let(:id) { 'Q7444267' }
+
+    it { expect(report.wikitext_with_header).must_equal expected }
+  end
+
   describe 'Ambassador to Albania' do
     let(:id) { 'Q56761097' }
 
