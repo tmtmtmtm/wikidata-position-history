@@ -2,6 +2,14 @@
 
 # Unreleased
 
+## Enhancements
+
+* If a position has an inception date and/or abolition date, those will
+  now also be displayed. (If a position has more than one of either of
+  those — which really shouldn't happen, but sometimes does — then the
+  behaviour may not be particularly sensible. Later evolutions of this
+  feature will hopefully handle that better.)
+
 ## Fixes
 
 * Previously, any warnings would be displayed at the bottom of the page,
