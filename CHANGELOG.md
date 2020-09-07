@@ -1,5 +1,14 @@
 # Changelog
 
+# Unreleased
+
+## Fixes
+
+* Previously, any warnings would be displayed at the bottom of the page,
+  which was fine if this table was the only thing on the page, but would
+  be slightly odd if there was other discussion after it. Now the
+  footnotes are explicitly displayed immediately after the table.
+
 # [1.5.0] 2020-09-06
 
 ## Enhancements
