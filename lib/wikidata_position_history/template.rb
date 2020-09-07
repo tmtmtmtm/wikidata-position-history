@@ -37,6 +37,11 @@ module WikidataPositionHistory
         <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span>\
         <% end %>
         <% end -%>
+        <% if metadata.inception_date -%>
+        |-
+        | colspan="3" style="padding:0.5em 2em; border: none; background: #fff; font-size: 1.25em; text-align: right;" | '''Position created''': <%= metadata.inception_date %>
+        | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | 
+        <% end -%>
         |}
 
         <div style="margin-bottom:5px; border-bottom:3px solid #2f74d0; font-size:8pt">
