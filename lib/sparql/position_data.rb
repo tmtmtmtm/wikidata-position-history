@@ -28,10 +28,14 @@ module WikidataPositionHistory
     end
 
     def inception_date
+      return if inception_date_raw.empty?
+
       QueryService::WikidataDate.new(inception_date_raw, inception_date_precision)
     end
 
     def abolition_date
+      return if abolition_date_raw.empty?
+
       QueryService::WikidataDate.new(abolition_date_raw, abolition_date_precision)
     end
 
