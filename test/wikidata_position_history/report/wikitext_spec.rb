@@ -17,7 +17,11 @@ describe WikidataPositionHistory::Report do
 
   let(:report)   { WikidataPositionHistory::Report.new(id) }
   let(:pathname) { Pathname.new("test/expected-output/#{id}.out") }
-  let(:expected) { pathname.read }
+  let(:expected) do
+    # uncomment this to regenerate all the reports
+    # pathname.write report.wikitext_with_header
+    pathname.read
+  end
 
   describe 'Prime Minister of the United Kingdom' do
     let(:id) { 'Q14211' }

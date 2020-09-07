@@ -22,6 +22,11 @@ module WikidataPositionHistory
     def template_text
       <<~ERB
         {| class="wikitable" style="text-align: center; border: none;"
+        <% if metadata.abolition_date -%>
+        |-
+        | colspan="3" style="padding:0.5em 2em; border: none; background: #fff; font-size: 1.25em; text-align: right;" | '''Position abolished''': <%= metadata.abolition_date %>
+        | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | 
+        <% end -%>
         <% table_rows.map(&:values).each do |mandate, bio| -%>
         |-
         | style="padding:0.5em 2em" | <%= mandate.ordinal_string %>
