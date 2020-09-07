@@ -70,6 +70,14 @@ module WikidataPositionHistory
       [header, wikitext].join("\n")
     end
 
+    def template_params
+      {
+        metadata:   metadata,
+        table_rows: table_rows,
+        sparql_url: sparql.wdqs_url,
+      }
+    end
+
     private
 
     def metadata
@@ -104,13 +112,6 @@ module WikidataPositionHistory
 
     def output
       template_class.new(template_params).output
-    end
-
-    def template_params
-      {
-        table_rows: table_rows,
-        sparql_url: sparql.wdqs_url,
-      }
     end
 
     def table_rows
