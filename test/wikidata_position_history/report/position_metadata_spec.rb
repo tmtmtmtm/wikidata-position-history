@@ -6,7 +6,7 @@ describe WikidataPositionHistory::Report do
   before { use_sample_data }
 
   let(:report) { WikidataPositionHistory::Report.new(position_id) }
-  let(:metadata) { report.send(:metadata) }
+  let(:metadata) { report.template_params[:metadata] }
 
   describe 'office with inception but no abolition date' do
     let(:position_id) { 'Q14211' }
