@@ -1,5 +1,14 @@
 # Changelog
 
+# Unrelased
+
+# Improvements
+
+* A query like https://w.wiki/bVz is taking about 6 seconds to run.
+  Changing that to https://w.wiki/bW3 drops that to about half a second.
+  If you were to guess that the first has now been replaced by the
+  second, you'd be entirely correct.
+
 # [1.6.0] 2020-09-07
 
 ## Enhancements
