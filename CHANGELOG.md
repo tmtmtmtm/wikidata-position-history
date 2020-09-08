@@ -1,6 +1,6 @@
 # Changelog
 
-# Unrelased
+# [1.7.0] 2020-09-08
 
 # Enchancements
 
