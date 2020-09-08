@@ -12,8 +12,12 @@ module WikidataPositionHistory
           WHERE {
             VALUES ?item { wd:%s }
             BIND(EXISTS { wd:%s wdt:P279+ wd:Q4164871  } as ?isPosition)
-            OPTIONAL { ?item p:P571/psv:P571 [ wikibase:timeValue ?inception; wikibase:timePrecision ?inception_precision ] }
-            OPTIONAL { ?item p:P576/psv:P576 [ wikibase:timeValue ?abolition; wikibase:timePrecision ?abolition_precision ] }
+            OPTIONAL { ?item p:P571 [ a wikibase:BestRank ;
+              psv:P571 [ wikibase:timeValue ?inception; wikibase:timePrecision ?inception_precision ]
+            ] }
+            OPTIONAL { ?item p:P576 [ a wikibase:BestRank ;
+              psv:P576 [ wikibase:timeValue ?abolition; wikibase:timePrecision ?abolition_precision ]
+            ] }
             SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
           }
         SPARQL
