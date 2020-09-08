@@ -6,8 +6,8 @@
 
 * Yesterday’s future, when we said we'd do something a little better
   with positions that have multiple inception or abolition dates, has
-  arrived. Now we display all of them, rather than just picking one
-  semi-randomly.
+  arrived. Now we display all of them (with a warning), rather than just
+  picking one semi-randomly.
 
 # Improvements
 
