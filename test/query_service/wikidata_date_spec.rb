@@ -27,6 +27,12 @@ describe QueryService::WikidataDate do
     it { expect(date.to_s).must_equal '1930s' }
   end
 
+  describe 'precision 07 dates' do
+    let(:date) { QueryService::WikidataDate.new('1200-01-01', '7') }
+
+    it { expect(date.to_s).must_equal '12. century' }
+  end
+
   describe 'pre-1000 precision 11 dates' do
     let(:date) { QueryService::WikidataDate.new('0936-09-25', '11') }
 
