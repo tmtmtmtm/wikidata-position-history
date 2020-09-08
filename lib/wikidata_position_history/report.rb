@@ -42,8 +42,15 @@ module WikidataPositionHistory
 
   # Data about the position itself, to be passed to the report template
   class Metadata
+    # simplified version of a WikidataPositionHistory::Check
+    Warning = Struct.new(:headline, :explanation)
+
     def initialize(rows)
       @rows = rows
+    end
+
+    def item
+      rows.map(&:item).first
     end
 
     def inception_date
@@ -52,10 +59,25 @@ module WikidataPositionHistory
       inception_dates.join(' / ')
     end
 
+    def inception_warning
+      count = inception_dates.count
+
+      return if count == 1
+      return Warning.new('Missing field', "#{item_qlink} is missing {{P|571}}") if count.zero?
+
+      Warning.new('Multiple values', "#{item_qlink} has more than one {{P|571}}")
+    end
+
     def abolition_date
       return if abolition_dates.empty?
 
       abolition_dates.join(' / ')
+    end
+
+    def abolition_warning
+      return unless abolition_dates.count > 1
+
+      Warning.new('Multiple values', "#{item_qlink} has more than one {{P|576}}")
     end
 
     def position?
@@ -73,6 +95,10 @@ module WikidataPositionHistory
 
     def abolition_dates
       rows.map(&:abolition_date).compact.uniq(&:to_s).sort
+    end
+
+    def item_qlink
+      item.qlink
     end
   end
 
