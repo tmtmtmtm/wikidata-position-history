@@ -2,6 +2,13 @@
 
 # Unrelased
 
+# Enchancements
+
+* Yesterday’s future, when we said we'd do something a little better
+  with positions that have multiple inception or abolition dates, has
+  arrived. Now we display all of them, rather than just picking one
+  semi-randomly.
+
 # Improvements
 
 * A query like https://w.wiki/bVz is taking about 6 seconds to run.
