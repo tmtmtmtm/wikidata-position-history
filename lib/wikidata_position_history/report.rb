@@ -68,11 +68,11 @@ module WikidataPositionHistory
     attr_reader :rows
 
     def inception_dates
-      rows.map(&:inception_date).compact.uniq
+      rows.map(&:inception_date).compact.uniq(&:to_s).sort
     end
 
     def abolition_dates
-      rows.map(&:abolition_date).compact.uniq
+      rows.map(&:abolition_date).compact.uniq(&:to_s).sort
     end
   end
 
