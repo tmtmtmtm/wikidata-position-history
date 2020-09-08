@@ -41,6 +41,12 @@ describe WikidataPositionHistory::Report do
     it { expect(report.wikitext_with_header).must_equal expected }
   end
 
+  describe 'Prime Minister of Ghana' do
+    let(:id) { 'Q3657870' }
+
+    it { expect(report.wikitext_with_header).must_equal expected }
+  end
+
   describe 'Bishop of Worcester' do
     let(:id) { 'Q1837494' }
 

@@ -25,7 +25,10 @@ module WikidataPositionHistory
         <% if metadata.abolition_date -%>
         |-
         | colspan="3" style="padding:0.5em 2em; border: none; background: #fff; font-size: 1.25em; text-align: right;" | '''Position abolished''': <%= metadata.abolition_date %>
-        | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | 
+        | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | \
+        <% [metadata.abolition_warning].compact.each do |warning| -%>
+        <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span>\
+        <% end %>
         <% end -%>
         <% table_rows.map(&:values).each do |mandate, bio| -%>
         |-
@@ -40,7 +43,10 @@ module WikidataPositionHistory
         <% if metadata.inception_date -%>
         |-
         | colspan="3" style="padding:0.5em 2em; border: none; background: #fff; font-size: 1.25em; text-align: right;" | '''Position created''': <%= metadata.inception_date %>
-        | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | 
+        | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | \
+        <% [metadata.inception_warning].compact.each do |warning| -%>
+        <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span>\
+        <% end %>
         <% end -%>
         |}
 
