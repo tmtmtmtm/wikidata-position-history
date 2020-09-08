@@ -22,6 +22,13 @@ describe WikidataPositionHistory::Report do
     it { expect(metadata.abolition_date.to_s).must_equal '1945' }
   end
 
+  describe 'office with multiple inception and abolition dates' do
+    let(:position_id) { 'Q3657870' }
+
+    it { expect(metadata.inception_date.to_s).must_equal '1957 / 1969' }
+    it { expect(metadata.abolition_date.to_s).must_equal '1960 / 1972' }
+  end
+
   describe 'office with neither inception nor abolition date' do
     let(:position_id) { 'Q96424184' }
 
