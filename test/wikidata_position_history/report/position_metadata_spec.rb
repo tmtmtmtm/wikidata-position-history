@@ -20,6 +20,9 @@ describe WikidataPositionHistory::Report do
 
     it { expect(metadata.inception_date.to_s).must_equal '1920-08-22' }
     it { expect(metadata.abolition_date.to_s).must_equal '1945' }
+
+    it { expect(metadata.abolition_warning).must_be_nil }
+    it { expect(metadata.inception_warning).must_be_nil }
   end
 
   describe 'office with multiple inception and abolition dates' do
@@ -27,6 +30,9 @@ describe WikidataPositionHistory::Report do
 
     it { expect(metadata.inception_date.to_s).must_equal '1957 / 1969' }
     it { expect(metadata.abolition_date.to_s).must_equal '1960 / 1972' }
+
+    it { expect(metadata.inception_warning.headline).must_equal 'Multiple values' }
+    it { expect(metadata.abolition_warning.headline).must_equal 'Multiple values' }
   end
 
   describe 'office with neither inception nor abolition date' do
@@ -35,6 +41,10 @@ describe WikidataPositionHistory::Report do
     it { expect(metadata.inception_date).must_be_nil }
     it { expect(metadata.abolition_date).must_be_nil }
     it { expect(metadata.position?).must_equal true }
+
+    it { expect(metadata.inception_warning.headline).must_equal 'Missing field' }
+    it { expect(metadata.inception_warning.explanation).must_include '{{Q|Q96424184}}' }
+    it { expect(metadata.abolition_warning).must_be_nil }
   end
 
   describe 'legislative term' do
