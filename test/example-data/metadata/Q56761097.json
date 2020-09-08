@@ -1,9 +1,13 @@
 {
   "head" : {
-    "vars" : [ "inception", "inception_precision", "abolition", "abolition_precision" ]
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "isPosition" ]
   },
   "results" : {
     "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q56761097"
+      },
       "inception" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -13,6 +17,11 @@
         "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
         "type" : "literal",
         "value" : "9"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
       }
     } ]
   }
