@@ -1,9 +1,13 @@
 {
   "head" : {
-    "vars" : [ "inception", "inception_precision", "abolition", "abolition_precision", "isPosition" ]
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "isPosition" ]
   },
   "results" : {
     "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3657870"
+      },
       "abolition" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -30,6 +34,10 @@
         "value" : "true"
       }
     }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3657870"
+      },
       "abolition" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -56,6 +64,10 @@
         "value" : "true"
       }
     }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3657870"
+      },
       "abolition" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -82,6 +94,10 @@
         "value" : "true"
       }
     }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3657870"
+      },
       "abolition" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",

@@ -1,9 +1,13 @@
 {
   "head" : {
-    "vars" : [ "inception", "inception_precision", "abolition", "abolition_precision", "isPosition" ]
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "isPosition" ]
   },
   "results" : {
     "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q96424184"
+      },
       "isPosition" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
         "type" : "literal",
