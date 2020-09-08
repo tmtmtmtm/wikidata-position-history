@@ -83,11 +83,11 @@ module WikidataPositionHistory
     def metadata
       # TODO: we might get more than one response, if a position has
       # multiple dates
-      @metadata ||= SPARQL::PositionData.new(position_id).results_as(PositionData).first
+      @metadata ||= SPARQL::PositionQuery.new(position_id).results_as(PositionRow).first
     end
 
     def biodata
-      @biodata ||= SPARQL::BioData.new(position_id).results_as(BioData)
+      @biodata ||= SPARQL::BioQuery.new(position_id).results_as(BioRow)
     end
 
     def biodata_for(officeholder)
@@ -99,11 +99,11 @@ module WikidataPositionHistory
     end
 
     def sparql
-      @sparql ||= SPARQL::Mandates.new(position_id)
+      @sparql ||= SPARQL::MandatesQuery.new(position_id)
     end
 
     def mandates
-      @mandates ||= sparql.results_as(Mandate)
+      @mandates ||= sparql.results_as(MandateRow)
     end
 
     def no_items_output

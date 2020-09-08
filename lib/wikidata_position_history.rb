@@ -2,9 +2,9 @@
 
 require 'query_service'
 require 'sparql/item_query'
-require 'sparql/position_data'
-require 'sparql/bio_data'
-require 'sparql/mandates'
+require 'sparql/position_query'
+require 'sparql/bio_query'
+require 'sparql/mandates_query'
 require 'wikidata_position_history/checks'
 require 'wikidata_position_history/template'
 require 'wikidata_position_history/report'

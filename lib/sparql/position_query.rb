@@ -3,7 +3,7 @@
 module WikidataPositionHistory
   module SPARQL
     # SPARQL for fetching metadata about a position
-    class PositionData < ItemQuery
+    class PositionQuery < ItemQuery
       def raw_sparql
         <<~SPARQL
           # position-metadata
@@ -26,7 +26,7 @@ module WikidataPositionHistory
   end
 
   # Represents a single row returned from the Position query
-  class PositionData
+  class PositionRow
     def initialize(row)
       @row = row
     end
