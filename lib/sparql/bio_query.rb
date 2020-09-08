@@ -7,7 +7,7 @@ module WikidataPositionHistory
     # This is distinct from the mandate query itself to avoid complex
     # GROUP BY scenarios where people have multiple values for
     # biographical properties.
-    class BioData < ItemQuery
+    class BioQuery < ItemQuery
       def raw_sparql
         <<~SPARQL
           # holder-biodata
@@ -24,7 +24,7 @@ module WikidataPositionHistory
   end
 
   # Represents a single row returned from the Position query
-  class BioData
+  class BioRow
     def initialize(row)
       @row = row
     end

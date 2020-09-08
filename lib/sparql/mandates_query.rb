@@ -3,7 +3,7 @@
 module WikidataPositionHistory
   module SPARQL
     # SPARQL for fetching all officeholdings of a position
-    class Mandates < ItemQuery
+    class MandatesQuery < ItemQuery
       def raw_sparql
         <<~SPARQL
           # position-mandates
@@ -28,7 +28,7 @@ module WikidataPositionHistory
   end
 
   # Represents a single row returned from the Mandates query
-  class Mandate
+  class MandateRow
     def initialize(row)
       @row = row
     end
