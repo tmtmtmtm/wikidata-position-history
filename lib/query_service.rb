@@ -54,7 +54,7 @@ module QueryService
   class WikidataDate
     include Comparable
 
-    DATELEN = { '11' => 10, '10' => 7, '9' => 4, '8' => 4 }.freeze
+    DATELEN = { '11' => 10, '10' => 7, '9' => 4, '8' => 4, '7' => 2 }.freeze
 
     def initialize(str, precision)
       @str = str
@@ -105,6 +105,7 @@ module QueryService
     end
 
     def precisioned_string
+      return "#{truncated_string}. century" if precision == '7'
       return "#{truncated_string}s" if precision == '8'
 
       truncated_string

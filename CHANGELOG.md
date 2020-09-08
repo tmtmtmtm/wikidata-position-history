@@ -1,15 +1,25 @@
 # Changelog
 
+# Unreleased
+
+## Enhancements
+
+* It seems that the recent ability to handle dates that are only know at
+  decade-level precision isn’t actually enough, as we have some that we
+  only know at century-level precision! (For example, that the position of
+  Lord Chancellor of Ireland was created some time in the 12th Century.
+  Such dates will now appear in a nicer format.
+
 # [1.7.0] 2020-09-08
 
-# Enchancements
+## Enchancements
 
 * Yesterday’s future, when we said we'd do something a little better
   with positions that have multiple inception or abolition dates, has
   arrived. Now we display all of them (with a warning), rather than just
   picking one semi-randomly.
 
-# Improvements
+## Improvements
 
 * A query like https://w.wiki/bVz is taking about 6 seconds to run.
   Changing that to https://w.wiki/bW3 drops that to about half a second.
@@ -39,7 +49,7 @@
 
 * When showing the results for a position from long long ago (such as
   the High Kings of Ireland), display the dates as "862 – 879" not as
-  "862 – 879"
+  "0862 – 0879"
 * If we only know that someone took (or left) office sometime in a given
   decade (i.e. at date precision 8), display that as (say) "1930s"
 
