@@ -8,7 +8,7 @@ module WikidataPositionHistory
         <<~SPARQL
           # position-metadata
 
-          SELECT DISTINCT ?inception ?inception_precision ?abolition ?abolition_precision ?isPosition
+          SELECT DISTINCT ?item ?inception ?inception_precision ?abolition ?abolition_precision ?isPosition
           WHERE {
             VALUES ?item { wd:%s }
             BIND(EXISTS { wd:%s wdt:P279+ wd:Q4164871  } as ?isPosition)
@@ -29,6 +29,10 @@ module WikidataPositionHistory
   class PositionRow
     def initialize(row)
       @row = row
+    end
+
+    def item
+      QueryService::WikidataItem.new(row.dig(:item, :value))
     end
 
     def inception_date
