@@ -40,6 +40,42 @@ module WikidataPositionHistory
     attr_reader :later, :current, :earlier
   end
 
+  # Data about the position itself, to be passed to the report template
+  class Metadata
+    def initialize(rows)
+      @rows = rows
+    end
+
+    def inception_date
+      return if inception_dates.empty?
+
+      inception_dates.join(' / ')
+    end
+
+    def abolition_date
+      return if abolition_dates.empty?
+
+      abolition_dates.join(' / ')
+    end
+
+    def position?
+      # this should be the same everywhere
+      rows.map(&:position?).first
+    end
+
+    private
+
+    attr_reader :rows
+
+    def inception_dates
+      rows.map(&:inception_date).compact.uniq
+    end
+
+    def abolition_dates
+      rows.map(&:abolition_date).compact.uniq
+    end
+  end
+
   # The entire wikitext generated for this report
   class Report
     def initialize(position_id, template_class = ReportTemplate)
@@ -81,9 +117,7 @@ module WikidataPositionHistory
     private
 
     def metadata
-      # TODO: we might get more than one response, if a position has
-      # multiple dates
-      @metadata ||= SPARQL::PositionQuery.new(position_id).results_as(PositionRow).first
+      @metadata ||= Metadata.new(SPARQL::PositionQuery.new(position_id).results_as(PositionRow))
     end
 
     def biodata
