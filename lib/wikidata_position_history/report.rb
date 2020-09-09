@@ -85,6 +85,11 @@ module WikidataPositionHistory
       rows.map(&:position?).first
     end
 
+    def legislator?
+      # this should be the same everywhere
+      rows.map(&:legislator?).first
+    end
+
     private
 
     attr_reader :rows
