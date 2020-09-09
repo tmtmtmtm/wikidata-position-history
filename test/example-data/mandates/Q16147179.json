@@ -6,17 +6,17 @@
     "bindings" : [ {
       "item" : {
         "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q13124934"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q5553143"
       }
     }, {
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q6768990"
-      }
-    }, {
-      "item" : {
-        "type" : "uri",
-        "value" : "http://www.wikidata.org/entity/Q13124934"
       }
     } ]
   }

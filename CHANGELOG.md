@@ -16,7 +16,7 @@
   will cause all manner of havoc, as it will try to display tens of
   thousands of people, all of whom have overlaps with other members etc.
   So we now sanity-check first of all that the position isn't legislative,
-  and produce a nice "Don't do that!" message in such cases.
+  and produce a nice "Don’t do that!" message in such cases.
 
 * It seems that the recent ability to handle dates that are only know at
   decade-level precision isn’t actually enough, as we have some that we
@@ -24,11 +24,19 @@
   Lord Chancellor of Ireland was created some time in the 12th Century.
   Such dates will now appear in a nicer format.
 
+* Sometimes updating the table looks like something has changed, but
+  really the only difference is that a few of people who have no dates
+  are shuffled around a bit in the list. This is because we previously
+  only sorted by date order, so people with no dates were effectively in a
+  random order. Now we sort those people by ID too, which should minimise
+  the number of times an update will appear in your watchlist, only to
+  discover nothing significant actually happened.
+
 # [1.7.0] 2020-09-08
 
 ## Enchancements
 
-* Yesterday’s future, when we said we'd do something a little better
+* Yesterday’s future, when we said we’d do something a little better
   with positions that have multiple inception or abolition dates, has
   arrived. Now we display all of them (with a warning), rather than just
   picking one semi-randomly.
@@ -38,7 +46,7 @@
 * A query like https://w.wiki/bVz is taking about 6 seconds to run.
   Changing that to https://w.wiki/bW3 drops that to about half a second.
   If you were to guess that the first has now been replaced by the
-  second, you'd be entirely correct.
+  second, you’d be entirely correct.
 
 # [1.6.0] 2020-09-07
 
@@ -46,7 +54,7 @@
 
 * If a position has an inception date and/or abolition date, those will
   now also be displayed. (If a position has more than one of either of
-  those — which really shouldn't happen, but sometimes does — then the
+  those — which really shouldn’t happen, but sometimes does — then the
   behaviour may not be particularly sensible. Later evolutions of this
   feature will hopefully handle that better.)
 
