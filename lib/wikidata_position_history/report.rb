@@ -120,7 +120,7 @@ module WikidataPositionHistory
       return legislator_template if metadata.legislator?
       return no_items_output if mandates.empty?
 
-      output
+      template_class.new(template_params).output
     end
 
     def header
@@ -178,10 +178,6 @@ module WikidataPositionHistory
 
     def legislator_template
       "\n{{PositionHolderHistory/error_legislator|id=#{position_id}}}\n"
-    end
-
-    def output
-      template_class.new(template_params).output
     end
 
     def table_rows
