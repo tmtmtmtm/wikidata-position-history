@@ -8,10 +8,12 @@ module WikidataPositionHistory
         <<~SPARQL
           # position-metadata
 
-          SELECT DISTINCT ?item ?inception ?inception_precision ?abolition ?abolition_precision ?isPosition
+          SELECT DISTINCT ?item ?inception ?inception_precision ?abolition ?abolition_precision 
+                          ?isPosition ?isLegislator
           WHERE {
             VALUES ?item { wd:%s }
-            BIND(EXISTS { wd:%s wdt:P279+ wd:Q4164871  } as ?isPosition)
+            BIND(EXISTS { wd:%s wdt:P279+ wd:Q4164871 } as ?isPosition)
+            BIND(EXISTS { wd:%s wdt:P279+ wd:Q4175034 } as ?isLegislator)
             OPTIONAL { ?item p:P571 [ a wikibase:BestRank ;
               psv:P571 [ wikibase:timeValue ?inception; wikibase:timePrecision ?inception_precision ]
             ] }
@@ -24,7 +26,7 @@ module WikidataPositionHistory
       end
 
       def sparql_args
-        [itemid, itemid]
+        [itemid] * 3
       end
     end
   end
@@ -53,6 +55,10 @@ module WikidataPositionHistory
 
     def position?
       row.dig(:isPosition, :value) == 'true'
+    end
+
+    def legislator?
+      row.dig(:isLegislator, :value) == 'true'
     end
 
     private
