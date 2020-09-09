@@ -14,12 +14,22 @@
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7183627}}</span> 1982 – 1996
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent predecessor</span>&nbsp;<ref>{{Q|Q7183627}} has a {{P|1365}} of {{Q|Q7352884}}, but follows {{Q|Q366142}} here</ref></span>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | 
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7352884}}</span> 1971 – 1982
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing field</span>&nbsp;<ref>{{Q|Q7352884}} is missing {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6536418}}</span> 1956 – 1971
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6536418}} is missing {{P|1365}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | [[File:CharlesGore.jpg|75px]]
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q366142}}</span> 1902 – 1905
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent predecessor</span>&nbsp;<ref>{{Q|Q366142}} has a {{P|1365}} of {{Q|Q6252583}}, but follows {{Q|Q7326616}} here</ref></span><span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent successor</span>&nbsp;<ref>{{Q|Q366142}} has a {{P|1366}} of {{Q|Q5951489}}, but is followed by {{Q|Q7183627}} here</ref></span>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent predecessor</span>&nbsp;<ref>{{Q|Q366142}} has a {{P|1365}} of {{Q|Q6252583}}, but follows {{Q|Q7326616}} here</ref></span><span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent successor</span>&nbsp;<ref>{{Q|Q366142}} has a {{P|1366}} of {{Q|Q5951489}}, but is followed by {{Q|Q6536418}} here</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | [[File:Richard-Hurd%2C-Bishop-of-Worcester.jpg|75px]]
@@ -27,19 +37,19 @@
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7326616}} is missing {{P|1365}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:John%20Hough%20portrait.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6239968}}</span> 1717 – 1743
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent predecessor</span>&nbsp;<ref>{{Q|Q6239968}} has a {{P|1365}} of {{Q|Q8014632}}, but follows {{Q|Q6136887}} here</ref></span><span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent successor</span>&nbsp;<ref>{{Q|Q6239968}} has a {{P|1366}} of {{Q|Q6076734}}, but is followed by {{Q|Q7326616}} here</ref></span>
-|-
-| style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | [[File:Bp%20James%20Johnson%2C%20Hartlebury.jpg|75px]]
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6136887}}</span> 1717 – 1743-05-08
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6136887}} is missing {{P|1365}}, {{P|1366}}</ref></span><span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Date overlap</span>&nbsp;<ref>{{Q|Q6136887}} has a {{P|582}} of 1743-05-08, which is later than the {{P|580}} of 1717 for {{Q|Q6239968}}</ref></span>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6136887}} is missing {{P|1365}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:John%20Hough%20portrait.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6239968}}</span> 1717 – 1743
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Date overlap</span>&nbsp;<ref>{{Q|Q6239968}} has a {{P|582}} of 1743, which is later than the {{P|580}} of 1717 for {{Q|Q6136887}}</ref></span><span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent predecessor</span>&nbsp;<ref>{{Q|Q6239968}} has a {{P|1365}} of {{Q|Q8014632}}, but follows {{Q|Q7964317}} here</ref></span><span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent successor</span>&nbsp;<ref>{{Q|Q6239968}} has a {{P|1366}} of {{Q|Q6076734}}, but is followed by {{Q|Q6136887}} here</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | [[File:Bp%20Walter%20Blandford.jpg|75px]]
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7964317}}</span> 1671 – 1675
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent successor</span>&nbsp;<ref>{{Q|Q7964317}} has a {{P|1366}} of {{Q|Q6133966}}, but is followed by {{Q|Q6136887}} here</ref></span>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent successor</span>&nbsp;<ref>{{Q|Q7964317}} has a {{P|1366}} of {{Q|Q6133966}}, but is followed by {{Q|Q6239968}} here</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
@@ -99,12 +109,17 @@
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6707774}}</span> 1041 – 1046
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent predecessor</span>&nbsp;<ref>{{Q|Q6707774}} has a {{P|1365}} of {{Q|Q3577164}}, but follows {{Q|Q6707774}} here</ref></span>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | 
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3577164}}</span> 1040 – 1041
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3577164}} is missing {{P|1365}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6707774}}</span> 1038 – 1040
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent predecessor</span>&nbsp;<ref>{{Q|Q6707774}} has a {{P|1365}} of {{Q|Q4890864}}, but follows {{Q|Q1236490}} here</ref></span><span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent successor</span>&nbsp;<ref>{{Q|Q6707774}} has a {{P|1366}} of {{Q|Q3577164}}, but is followed by {{Q|Q6707774}} here</ref></span>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Inconsistent predecessor</span>&nbsp;<ref>{{Q|Q6707774}} has a {{P|1365}} of {{Q|Q4890864}}, but follows {{Q|Q1236490}} here</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | [[File:Sermo%20Lupi.jpg|75px]]
@@ -133,8 +148,78 @@
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q1424772}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q1424772}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q16198628}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q16198628}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q16199451}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q16199451}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q16206552}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q16206552}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Bishop%20John%20Alcock%2C%20statue%2C%20Worcester.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q1699108}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q1699108}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:1535%20HIERONYMUS%20DE%20GINUTIIS%20-%20GHINUCCI%20GIROLAMO.JPG|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q2261543}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q2261543}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Yorkminsterwalterdegraytombvertical.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q2546913}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q2546913}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3175375}}</span> 
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3175375}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:John%20Earle%20from%20NPG.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3181405}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3181405}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3349759}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3349759}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3430766}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3430766}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3470965}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3470965}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3809652}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3809652}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Edward%20Stillingfleet%20by%20Mary%20Beale.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4216692}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4216692}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:John%20Whitgift%20from%20NPG.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q473302}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q473302}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
@@ -143,53 +228,38 @@
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5694375}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5694375}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Henry%20Pepys%20NGS.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5726852}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5726852}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:John%20Thornborough%20from%20NPG.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6260722}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6260722}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4799963}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4799963}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7026488}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7026488}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4890864}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4890864}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7264654}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7264654}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4947224}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4947224}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Brownlow%20North%20by%20Kettle.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4976612}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4976612}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7516948}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7516948}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q515156}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q515156}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7519369}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7519369}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5256880}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5256880}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7660850}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7660850}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7790574}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7790574}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8020759}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8020759}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5325464}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5325464}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
@@ -202,9 +272,59 @@
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5393671}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Folliott%20Herbert%20Walker%20Cornewall%20by%20William%20Owen.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5464674}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5464674}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:George%20Morley.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5542623}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5542623}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Gervase%20Babington.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5553466}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5553466}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Godfrey%20Giffard%20Bishop%20of%20Worcester%20window.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5576437}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5576437}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5694375}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5694375}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5726735}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5726735}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Henry%20Pepys%20NGS.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5726852}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5726852}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Henry%20Philpott.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5726988}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5726988}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5729754}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5729754}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5730811}}</span> 
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5730811}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Huyshe%20Yeatman-Biggs%2C%20Anglican%20Bishop.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5951489}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5951489}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
@@ -217,9 +337,99 @@
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6133966}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Memorial%20to%20Bishop%20John%20Barnet%20in%20Ely%20Cathedral.JPG|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6220782}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6220782}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6225251}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6225251}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:JohnGauden.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6234976}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6234976}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Bp%20John%20Perowne.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6252583}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6252583}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:JohnPrideaux.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6253415}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6253415}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6258741}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6258741}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:John%20Thornborough%20from%20NPG.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6260722}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6260722}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6265608}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6265608}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6425613}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6425613}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:John%20Hooper%20by%20Henry%20Bryan%20Hall%20after%20James%20Warren%20Childe%20cropped.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q647264}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q647264}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6524415}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6524415}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Baldwinofexeterstatuecanterburycatheraloutside.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q660426}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q660426}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q668508}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q668508}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6792356}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6792356}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7025130}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7025130}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7026488}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7026488}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:Hugh%20Latimer%20from%20NPG.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q710046}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q710046}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7184103}}</span> 
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7184103}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7264654}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7264654}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
@@ -233,233 +443,13 @@
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7352884}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7352884}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7793205}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7793205}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8002041}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8002041}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8014476}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8014476}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8020452}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8020452}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q16198628}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q16198628}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q16206552}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q16206552}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q1424772}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q1424772}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3349759}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3349759}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:George%20Morley.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5542623}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5542623}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Bp%20John%20Perowne.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6252583}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6252583}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6258741}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6258741}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7350397}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7350397}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7787983}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7787983}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8009623}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8009623}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8019291}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8019291}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q16199451}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q16199451}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Bishop%20John%20Alcock%2C%20statue%2C%20Worcester.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q1699108}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q1699108}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:1535%20HIERONYMUS%20DE%20GINUTIIS%20-%20GHINUCCI%20GIROLAMO.JPG|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q2261543}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q2261543}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3470965}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3470965}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4890864}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4890864}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5325464}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5325464}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Godfrey%20Giffard%20Bishop%20of%20Worcester%20window.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5576437}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5576437}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Henry%20Philpott.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5726988}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5726988}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Huyshe%20Yeatman-Biggs%2C%20Anglican%20Bishop.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5951489}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5951489}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:JohnPrideaux.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6253415}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6253415}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7324791}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7324791}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7328295}}</span> 
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7328295}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7983285}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7983285}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8002042}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8002042}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:John%20Whitgift%20from%20NPG.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q473302}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q473302}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q515156}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q515156}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Baldwinofexeterstatuecanterburycatheraloutside.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q660426}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q660426}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:John%20Earle%20from%20NPG.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3181405}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3181405}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Gervase%20Babington.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5553466}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5553466}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5729754}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5729754}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6225251}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6225251}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:JohnGauden.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6234976}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6234976}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6524415}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6524415}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7025130}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7025130}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7347838}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7347838}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Bp%20Thomas%20Bilson.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7787637}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7787637}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8020895}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8020895}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q668508}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q668508}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3430766}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3430766}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5726735}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5726735}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6792356}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6792356}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | [[File:Robert%20James%20Carr.jpg|75px]]
@@ -468,53 +458,23 @@
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7793136}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7793136}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7347838}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7347838}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7802144}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7802144}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:William%20III%20de%20Cantilupe%20%28d.1254%29%20MatthewParis%20Historia%20Anglorum.png|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7966500}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7966500}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:John%20Hooper%20by%20Henry%20Bryan%20Hall%20after%20James%20Warren%20Childe%20cropped.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q647264}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q647264}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7350397}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7350397}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4799963}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4799963}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Brownlow%20North%20by%20Kettle.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4976612}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4976612}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Folliott%20Herbert%20Walker%20Cornewall%20by%20William%20Owen.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5464674}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5464674}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Memorial%20to%20Bishop%20John%20Barnet%20in%20Ely%20Cathedral.JPG|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6220782}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6220782}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7516948}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7516948}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6536418}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6536418}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7324791}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7324791}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7519369}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7519369}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
@@ -523,58 +483,43 @@
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7660850}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7660850}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7783595}}</span> 
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7783595}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8039218}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8039218}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | [[File:Bp%20Thomas%20Bilson.jpg|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7787637}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7787637}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8077364}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8077364}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Hugh%20Latimer%20from%20NPG.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q710046}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q710046}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Yorkminsterwalterdegraytombvertical.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q2546913}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q2546913}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7787983}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7787983}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q3809652}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q3809652}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | [[File:Edward%20Stillingfleet%20by%20Mary%20Beale.jpg|75px]]
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4216692}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4216692}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7790574}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7790574}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q4947224}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q4947224}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7793136}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7793136}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q5256880}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q5256880}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7793205}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7793205}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6265608}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6265608}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
-|-
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | 
-| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q6425613}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q6425613}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7802144}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7802144}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | 
@@ -587,15 +532,75 @@
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7965537}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | [[File:William%20III%20de%20Cantilupe%20%28d.1254%29%20MatthewParis%20Historia%20Anglorum.png|75px]]
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7966500}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7966500}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q7983285}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q7983285}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8002041}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8002041}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8002042}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8002042}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8009623}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8009623}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8014476}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8014476}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
 | style="padding:0.5em 2em" | [[File:WilliamLloydBpOfStAsaph.jpg|75px]]
 | style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8014632}}</span> 
-| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8014632}} is missing {{P|580}}, {{P|582}}, {{P|1366}}</ref></span>
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8014632}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8019291}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8019291}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8020452}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8020452}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8020759}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8020759}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8020895}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8020895}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8039218}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8039218}} is missing {{P|580}}, {{P|1365}}, {{P|582}}, {{P|1366}}</ref></span>
+|-
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | 
+| style="padding:0.5em 2em" | <span style="font-size: 1.5em; display: block;">{{Q|Q8077364}}</span> 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing fields</span>&nbsp;<ref>{{Q|Q8077364}} is missing {{P|580}}, {{P|582}}, {{P|1366}}</ref></span>
 |-
 | colspan="3" style="padding:0.5em 2em; border: none; background: #fff; font-size: 1.25em; text-align: right;" | '''Position created''': 680
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | 
 |}
 
 <div style="margin-bottom:5px; border-bottom:3px solid #2f74d0; font-size:8pt">
-  <div style="float:right">[https://query.wikidata.org/#%23%20position-mandates%0A%0ASELECT%20DISTINCT%20%3Fordinal%20%3Fitem%20%3Fstart_date%20%3Fstart_precision%20%3Fend_date%20%3Fend_precision%20%3Fprev%20%3Fnext%20%3Fnature%0AWHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP31%20wd%3AQ5%20%3B%20p%3AP39%20%3Fposn%20.%0A%20%20%3Fposn%20ps%3AP39%20wd%3AQ1837494%20.%0A%20%20FILTER%20NOT%20EXISTS%20%7B%20%3Fposn%20wikibase%3Arank%20wikibase%3ADeprecatedRank%20%7D%0A%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pqv%3AP580%20%5B%20wikibase%3AtimeValue%20%3Fstart_date%3B%20wikibase%3AtimePrecision%20%3Fstart_precision%20%5D%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pqv%3AP582%20%5B%20wikibase%3AtimeValue%20%3Fend_date%3B%20wikibase%3AtimePrecision%20%3Fend_precision%20%5D%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pq%3AP1365%7Cpq%3AP155%20%3Fprev%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pq%3AP1366%7Cpq%3AP156%20%3Fnext%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pq%3AP1545%20%3Fordinal%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pq%3AP5102%20%3Fnature%20%7D%0A%7D%0AORDER%20BY%20DESC%28%3Fstart_date%29%0A WDQS]</div>
+  <div style="float:right">[https://query.wikidata.org/#%23%20position-mandates%0A%0ASELECT%20DISTINCT%20%3Fordinal%20%3Fitem%20%3Fstart_date%20%3Fstart_precision%20%3Fend_date%20%3Fend_precision%20%3Fprev%20%3Fnext%20%3Fnature%0AWHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP31%20wd%3AQ5%20%3B%20p%3AP39%20%3Fposn%20.%0A%20%20%3Fposn%20ps%3AP39%20wd%3AQ1837494%20.%0A%20%20FILTER%20NOT%20EXISTS%20%7B%20%3Fposn%20wikibase%3Arank%20wikibase%3ADeprecatedRank%20%7D%0A%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pqv%3AP580%20%5B%20wikibase%3AtimeValue%20%3Fstart_date%3B%20wikibase%3AtimePrecision%20%3Fstart_precision%20%5D%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pqv%3AP582%20%5B%20wikibase%3AtimeValue%20%3Fend_date%3B%20wikibase%3AtimePrecision%20%3Fend_precision%20%5D%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pq%3AP1365%7Cpq%3AP155%20%3Fprev%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pq%3AP1366%7Cpq%3AP156%20%3Fnext%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pq%3AP1545%20%3Fordinal%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fposn%20pq%3AP5102%20%3Fnature%20%7D%0A%7D%0AORDER%20BY%20DESC%28%3Fstart_date%29%20%3Fitem%0A WDQS]</div>
 </div>
 {{reflist}}

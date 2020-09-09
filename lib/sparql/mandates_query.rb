@@ -21,7 +21,7 @@ module WikidataPositionHistory
             OPTIONAL { ?posn pq:P1545 ?ordinal }
             OPTIONAL { ?posn pq:P5102 ?nature }
           }
-          ORDER BY DESC(?start_date)
+          ORDER BY DESC(?start_date) ?item
         SPARQL
       end
     end

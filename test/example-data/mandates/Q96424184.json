@@ -322,6 +322,81 @@
     }, {
       "item" : {
         "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5482670"
+      },
+      "start_date" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1849-01-01T00:00:00Z"
+      },
+      "start_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "9"
+      },
+      "end_date" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1852-01-01T00:00:00Z"
+      },
+      "end_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "9"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5482670"
+      },
+      "start_date" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1843-01-01T00:00:00Z"
+      },
+      "start_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "9"
+      },
+      "end_date" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1843-01-01T00:00:00Z"
+      },
+      "end_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "9"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5482670"
+      },
+      "start_date" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1838-01-01T00:00:00Z"
+      },
+      "start_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "9"
+      },
+      "end_date" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1839-01-01T00:00:00Z"
+      },
+      "end_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "9"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q4499149"
       },
       "start_date" : {
@@ -345,11 +420,6 @@
         "value" : "10"
       },
       "next" : {
-        "type" : "uri",
-        "value" : "http://www.wikidata.org/entity/Q5482670"
-      }
-    }, {
-      "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q5482670"
       }

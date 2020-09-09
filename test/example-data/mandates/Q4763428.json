@@ -89,7 +89,7 @@
     }, {
       "item" : {
         "type" : "uri",
-        "value" : "http://www.wikidata.org/entity/Q5669153"
+        "value" : "http://www.wikidata.org/entity/Q10970786"
       }
     }, {
       "item" : {
@@ -104,17 +104,17 @@
     }, {
       "item" : {
         "type" : "uri",
-        "value" : "http://www.wikidata.org/entity/Q5568759"
-      }
-    }, {
-      "item" : {
-        "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q5496983"
       }
     }, {
       "item" : {
         "type" : "uri",
-        "value" : "http://www.wikidata.org/entity/Q8005995"
+        "value" : "http://www.wikidata.org/entity/Q5568759"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5669153"
       }
     }, {
       "item" : {
@@ -139,7 +139,7 @@
     }, {
       "item" : {
         "type" : "uri",
-        "value" : "http://www.wikidata.org/entity/Q10970786"
+        "value" : "http://www.wikidata.org/entity/Q8005995"
       }
     } ]
   }
