@@ -4,6 +4,14 @@
 
 ## Enhancements
 
+* This report is meant to be used with positions that are held by only a
+  single person at a time. Using it to produce a report of everyone who
+  has been, say, a Member of the UK Parliament, is the sort of thing that
+  will cause all manner of havoc, as it will try to display tens of
+  thousands of people, all of whom have overlaps with other members etc.
+  So we now sanity-check first of all that the position isn't legislative,
+  and produce a nice "Don't do that!" message in such cases.
+
 * It seems that the recent ability to handle dates that are only know at
   decade-level precision isn’t actually enough, as we have some that we
   only know at century-level precision! (For example, that the position of
