@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# [1.8.0] 2020-09-09
 
 ## Enhancements
 
@@ -21,7 +21,7 @@
 * It seems that the recent ability to handle dates that are only know at
   decade-level precision isn’t actually enough, as we have some that we
   only know at century-level precision! (For example, that the position of
-  Lord Chancellor of Ireland was created some time in the 12th Century.
+  Lord Chancellor of Ireland was created some time in the 12th Century.)
   Such dates will now appear in a nicer format.
 
 * Sometimes updating the table looks like something has changed, but
