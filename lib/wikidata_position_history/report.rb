@@ -117,6 +117,7 @@ module WikidataPositionHistory
     attr_reader :position_id, :template_class
 
     def wikitext
+      return legislator_template if metadata.legislator?
       return no_items_output if mandates.empty?
 
       output
@@ -173,6 +174,10 @@ module WikidataPositionHistory
 
     def no_items_output
       "\n{{PositionHolderHistory/error_no_holders|id=#{position_id}}}\n"
+    end
+
+    def legislator_template
+      "\n{{PositionHolderHistory/error_legislator|id=#{position_id}}}\n"
     end
 
     def output
