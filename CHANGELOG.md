@@ -4,6 +4,12 @@
 
 ## Enhancements
 
+* If the very latest person we know of having held this position also
+  has a 'replaced by' qualifier, that’s a sign that the successor should
+  really also have a suitable P39, and actually appear here too. So we
+  want to display a warning in such cases. Likewise if the earliest person
+  we know if also has a 'replaces'
+
 * This report is meant to be used with positions that are held by only a
   single person at a time. Using it to produce a report of everyone who
   has been, say, a Member of the UK Parliament, is the sort of thing that

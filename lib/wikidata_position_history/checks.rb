@@ -25,11 +25,11 @@ module WikidataPositionHistory
       current.prev
     end
 
-    def latest_holder?
+    def later_holder?
       !!later
     end
 
-    def earliest_holder?
+    def earlier_holder?
       !!earlier
     end
   end
@@ -92,7 +92,7 @@ module WikidataPositionHistory
     # Does the 'replaces' match the previous item in the list?
     class WrongPredecessor < Check
       def problem?
-        earliest_holder? && !!predecessor && (earlier.item != predecessor)
+        earlier_holder? && !!predecessor && (earlier.item != predecessor)
       end
 
       def headline
@@ -104,10 +104,25 @@ module WikidataPositionHistory
       end
     end
 
+    # Is there a 'replaces' but no previous item in the list?
+    class MissingPredecessor < Check
+      def problem?
+        predecessor && !earlier_holder?
+      end
+
+      def headline
+        'Inconsistent predecessor'
+      end
+
+      def possible_explanation
+        "#{current.item} has a {{P|1365}} of #{predecessor}, but does not follow anyone here"
+      end
+    end
+
     # Does the 'replaced by' match the next item in the list?
     class WrongSuccessor < Check
       def problem?
-        latest_holder? && !!successor && (later.item != successor)
+        later_holder? && !!successor && (later.item != successor)
       end
 
       def headline
@@ -116,6 +131,21 @@ module WikidataPositionHistory
 
       def possible_explanation
         "#{current.item} has a {{P|1366}} of #{successor}, but is followed by #{later.item} here"
+      end
+    end
+
+    # Is there a 'replaced by' but no next item in the list?
+    class MissingSuccessor < Check
+      def problem?
+        successor && !later_holder?
+      end
+
+      def headline
+        'Inconsistent successor'
+      end
+
+      def possible_explanation
+        "#{current.item} has a {{P|1366}} of #{successor}, but is not followed by anyone here"
       end
     end
 

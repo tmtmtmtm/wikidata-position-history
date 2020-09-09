@@ -68,6 +68,20 @@ describe 'Checks' do
     end
   end
 
+  describe 'Minister of Defence of Kenya' do
+    let(:position) { 'Q54211708' }
+
+    it 'warns if latest holder should have a successor' do
+      check = WikidataPositionHistory::Check::MissingSuccessor.new(*mandates.take(3))
+      expect(check.problem?).must_equal true
+    end
+
+    it 'warns if earliest holder should have a predecessor' do
+      check = WikidataPositionHistory::Check::MissingPredecessor.new(*mandates.last(3))
+      expect(check.problem?).must_equal true
+    end
+  end
+
   # Three officeholders, with no qualifiers at all
   describe 'Tanzanian Water Minister' do
     let(:position) { 'Q16147179' }
