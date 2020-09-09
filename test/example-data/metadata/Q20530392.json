@@ -1,6 +1,6 @@
 {
   "head" : {
-    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "isPosition" ]
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "isPosition", "isLegislator" ]
   },
   "results" : {
     "bindings" : [ {
@@ -29,6 +29,11 @@
         "value" : "11"
       },
       "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "isLegislator" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
         "type" : "literal",
         "value" : "false"
