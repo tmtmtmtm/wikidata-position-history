@@ -1,6 +1,37 @@
 # frozen_string_literal: true
 
 module WikidataPositionHistory
+  # A list made up of both direct and indirect claims, where we
+  # can tell which came from which, when required
+  class ImpliedList
+    def initialize(direct, indirect)
+      @direct = direct
+      @indirect = indirect
+    end
+
+    def empty?
+      all.empty?
+    end
+
+    def all
+      direct | indirect
+    end
+
+    def both
+      direct & indirect
+    end
+
+    def direct_only
+      direct - indirect
+    end
+
+    def indirect_only
+      indirect - direct
+    end
+
+    attr_reader :direct, :indirect
+  end
+
   # Data about the position itself, to be passed to the report template
   class Metadata
     def initialize(rows)
@@ -37,12 +68,28 @@ module WikidataPositionHistory
       rows.map(&:legislator?).first
     end
 
+    def replaces_combined
+      @replaces_combined ||= ImpliedList.new(replaces_list, derived_replaces_list)
+    end
+
+    def replaced_by_combined
+      @replaced_by_combined ||= ImpliedList.new(replaced_by_list, derived_replaced_by_list)
+    end
+
     def replaces_list
       rows.map(&:replaces).compact.uniq(&:id).sort_by(&:id)
     end
 
     def replaced_by_list
       rows.map(&:replaced_by).compact.uniq(&:id).sort_by(&:id)
+    end
+
+    def derived_replaces_list
+      rows.map(&:derived_replaces).compact.uniq(&:id).sort_by(&:id)
+    end
+
+    def derived_replaced_by_list
+      rows.map(&:derived_replaced_by).compact.uniq(&:id).sort_by(&:id)
     end
 
     def inception_dates

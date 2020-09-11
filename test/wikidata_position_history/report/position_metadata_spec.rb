@@ -57,11 +57,18 @@ describe WikidataPositionHistory::Report do
     it { expect(metadata.successor.position).must_equal '{{Q|Q862638}}' }
   end
 
-  describe 'office with mutiples replaces and replaced by' do
+  describe 'office with mutiple replaces and replaced by' do
     let(:position_id) { 'Q67202316' }
 
     it { expect(metadata.predecessor.position).must_equal '{{Q|Q67202278}}, {{Q|Q67202332}}' }
     it { expect(metadata.successor.position).must_equal '{{Q|Q50390723}}, {{Q|Q51280630}}' }
+  end
+
+  describe 'office with implied replaces and replaced by' do
+    let(:position_id) { 'Q5068105' }
+
+    it { expect(metadata.predecessor.position).must_be_nil }
+    it { expect(metadata.successor.position).must_equal "''{{Q|Q4376681}}''" }
   end
 
   describe 'legislative term' do

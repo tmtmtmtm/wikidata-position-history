@@ -37,12 +37,20 @@ module QueryService
       @url = url
     end
 
+    def eql?(other)
+      id == other.id
+    end
+
     def id
       url.split('/').last unless url.to_s.empty?
     end
 
     def qlink
       "{{Q|#{id}}}" if id
+    end
+
+    def qlink_i
+      "''{{Q|#{id}}}''" if id
     end
 
     private
