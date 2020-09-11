@@ -4,7 +4,7 @@ require 'erb'
 
 module WikidataPositionHistory
   module SPARQL
-    # Turn raw SPARQL into result objects
+    # Abstract class to turn raw SPARQL into result objects
     class ItemQuery
       def initialize(itemid)
         @itemid = itemid
@@ -32,6 +32,35 @@ module WikidataPositionHistory
 
       def json
         @json ||= QueryService::Query.new(sparql).results
+      end
+    end
+
+    # Abstract class to represents a single row returned from a query
+    class QueryRow
+      def initialize(row)
+        @row = row
+      end
+
+      protected
+
+      attr_reader :row
+
+      def item_from(key)
+        value = raw(key)
+        return if value.to_s.empty?
+
+        QueryService::WikidataItem.new(value)
+      end
+
+      def date_from(key, precision_key)
+        trunc = raw(key).to_s[0..9]
+        return if trunc.empty?
+
+        QueryService::WikidataDate.new(trunc, raw(precision_key))
+      end
+
+      def raw(key)
+        row.dig(key, :value)
       end
     end
   end

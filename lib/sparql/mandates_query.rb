@@ -28,17 +28,13 @@ module WikidataPositionHistory
   end
 
   # Represents a single row returned from the Mandates query
-  class MandateRow
-    def initialize(row)
-      @row = row
-    end
-
+  class MandateRow < SPARQL::QueryRow
     def ordinal
-      row.dig(:ordinal, :value)
+      raw(:ordinal)
     end
 
     def officeholder
-      QueryService::WikidataItem.new(row.dig(:item, :value))
+      item_from(:item)
     end
 
     # TODO: rename or remove. 'item' is meaningless/ambiguous
@@ -46,14 +42,17 @@ module WikidataPositionHistory
       officeholder.qlink
     end
 
+    # TODO: switch to item_from
     def prev
       QueryService::WikidataItem.new(row.dig(:prev, :value)).qlink
     end
 
+    # TODO: switch to item_from
     def next
       QueryService::WikidataItem.new(row.dig(:next, :value)).qlink
     end
 
+    # TODO: switch to item_from
     def nature
       QueryService::WikidataItem.new(row.dig(:nature, :value)).id
     end
@@ -63,35 +62,11 @@ module WikidataPositionHistory
     end
 
     def start_date
-      return if start_date_raw.empty?
-
-      QueryService::WikidataDate.new(start_date_raw, start_date_precision)
+      date_from(:start_date, :start_precision)
     end
 
     def end_date
-      return if end_date_raw.empty?
-
-      QueryService::WikidataDate.new(end_date_raw, end_date_precision)
+      date_from(:end_date, :end_precision)
     end
-
-    def start_date_raw
-      row.dig(:start_date, :value).to_s[0..9]
-    end
-
-    def end_date_raw
-      row.dig(:end_date, :value).to_s[0..9]
-    end
-
-    def start_date_precision
-      row.dig(:start_precision, :value)
-    end
-
-    def end_date_precision
-      row.dig(:end_precision, :value)
-    end
-
-    private
-
-    attr_reader :row
   end
 end
