@@ -107,9 +107,9 @@ module WikidataPositionHistory
       end
 
       def position
-        return if position_list.empty?
+        return if implied_list.empty?
 
-        position_list.map(&:qlink).join(', ')
+        (implied_list.direct.map(&:qlink) + implied_list.indirect_only.map(&:qlink_i)).join(', ')
       end
 
       # TODO: add some checks
@@ -124,15 +124,15 @@ module WikidataPositionHistory
 
     # Data for the position that comes after this one
     class Successor < RelatedPosition
-      def position_list
-        metadata.replaced_by_list
+      def implied_list
+        metadata.replaced_by_combined
       end
     end
 
     # Data for the position that came before this one
     class Predecessor < RelatedPosition
-      def position_list
-        metadata.replaces_list
+      def implied_list
+        metadata.replaces_combined
       end
     end
   end
