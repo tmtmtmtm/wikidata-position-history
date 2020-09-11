@@ -1,6 +1,6 @@
 {
   "head" : {
-    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "isPosition", "isLegislator" ]
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "derivedReplaces", "derivedReplacedBy", "isPosition", "isLegislator" ]
   },
   "results" : {
     "bindings" : [ {
@@ -43,6 +43,14 @@
         "value" : "http://www.wikidata.org/entity/Q967549"
       },
       "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q61975993"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q967549"
+      },
+      "derivedReplacedBy" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q61975993"
       }
