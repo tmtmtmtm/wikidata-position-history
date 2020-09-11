@@ -8,7 +8,8 @@ module WikidataPositionHistory
         <<~SPARQL
           # position-metadata
 
-          SELECT DISTINCT ?item ?inception ?inception_precision ?abolition ?abolition_precision 
+          SELECT DISTINCT ?item ?inception ?inception_precision ?abolition ?abolition_precision
+                          ?replaces ?replacedBy
                           ?isPosition ?isLegislator
           WHERE {
             VALUES ?item { wd:%s }
@@ -20,7 +21,8 @@ module WikidataPositionHistory
             OPTIONAL { ?item p:P576 [ a wikibase:BestRank ;
               psv:P576 [ wikibase:timeValue ?abolition; wikibase:timePrecision ?abolition_precision ]
             ] }
-            SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+            OPTIONAL { ?item wdt:P1365 ?replaces }
+            OPTIONAL { ?item wdt:P1366 ?replacedBy }
           }
         SPARQL
       end
@@ -53,6 +55,18 @@ module WikidataPositionHistory
       QueryService::WikidataDate.new(abolition_date_raw, abolition_date_precision)
     end
 
+    def replaces
+      return if replaces_raw.to_s.empty?
+
+      QueryService::WikidataItem.new(replaces_raw)
+    end
+
+    def replaced_by
+      return if replaced_by_raw.to_s.empty?
+
+      QueryService::WikidataItem.new(replaced_by_raw)
+    end
+
     def position?
       row.dig(:isPosition, :value) == 'true'
     end
@@ -64,6 +78,14 @@ module WikidataPositionHistory
     private
 
     attr_reader :row
+
+    def replaces_raw
+      row.dig(:replaces, :value)
+    end
+
+    def replaced_by_raw
+      row.dig(:replacedBy, :value)
+    end
 
     def inception_date_raw
       row.dig(:inception, :value).to_s[0..9]
