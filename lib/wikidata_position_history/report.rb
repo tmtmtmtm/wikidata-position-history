@@ -69,27 +69,11 @@ module WikidataPositionHistory
     end
 
     def replaces_combined
-      @replaces_combined ||= ImpliedList.new(replaces_list, derived_replaces_list)
+      @replaces_combined ||= ImpliedList.new(uniq_by_id(:replaces), uniq_by_id(:derived_replaces))
     end
 
     def replaced_by_combined
-      @replaced_by_combined ||= ImpliedList.new(replaced_by_list, derived_replaced_by_list)
-    end
-
-    def replaces_list
-      rows.map(&:replaces).compact.uniq(&:id).sort_by(&:id)
-    end
-
-    def replaced_by_list
-      rows.map(&:replaced_by).compact.uniq(&:id).sort_by(&:id)
-    end
-
-    def derived_replaces_list
-      rows.map(&:derived_replaces).compact.uniq(&:id).sort_by(&:id)
-    end
-
-    def derived_replaced_by_list
-      rows.map(&:derived_replaced_by).compact.uniq(&:id).sort_by(&:id)
+      @replaced_by_combined ||= ImpliedList.new(uniq_by_id(:replaced_by), uniq_by_id(:derived_replaced_by))
     end
 
     def inception_dates
@@ -103,6 +87,10 @@ module WikidataPositionHistory
     private
 
     attr_reader :rows
+
+    def uniq_by_id(method)
+      rows.map(&method).compact.uniq(&:id).sort_by(&:id)
+    end
   end
 
   # The entire wikitext generated for this report
