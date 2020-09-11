@@ -1,6 +1,6 @@
 {
   "head" : {
-    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "isPosition", "isLegislator" ]
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "isPosition", "isLegislator" ]
   },
   "results" : {
     "bindings" : [ {
