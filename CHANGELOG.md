@@ -1,5 +1,12 @@
 # Changelog
 
+# Unreleased
+
+## Enhancements
+
+* If a position has any successor or predecessor offices (in "replaces"
+  (P1365) or "replaced by" (P1366)) the report will now display those.
+
 # [1.8.0] 2020-09-09
 
 ## Enhancements
