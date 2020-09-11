@@ -24,13 +24,9 @@ module WikidataPositionHistory
   end
 
   # Represents a single row returned from the Position query
-  class BioRow
-    def initialize(row)
-      @row = row
-    end
-
+  class BioRow < SPARQL::QueryRow
     def person
-      QueryService::WikidataItem.new(row.dig(:item, :value))
+      item_from(:item)
     end
 
     def image_title
@@ -47,10 +43,8 @@ module WikidataPositionHistory
 
     private
 
-    attr_reader :row
-
     def image_url
-      row.dig(:image, :value)
+      raw(:image)
     end
   end
 end

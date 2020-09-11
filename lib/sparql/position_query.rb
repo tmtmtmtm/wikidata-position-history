@@ -34,11 +34,7 @@ module WikidataPositionHistory
   end
 
   # Represents a single row returned from the Position query
-  class PositionRow
-    def initialize(row)
-      @row = row
-    end
-
+  class PositionRow < SPARQL::QueryRow
     def item
       item_from(:item)
     end
@@ -60,33 +56,11 @@ module WikidataPositionHistory
     end
 
     def position?
-      row.dig(:isPosition, :value) == 'true'
+      raw(:isPosition) == 'true'
     end
 
     def legislator?
-      row.dig(:isLegislator, :value) == 'true'
-    end
-
-    private
-
-    attr_reader :row
-
-    def item_from(key)
-      value = raw(key)
-      return if value.to_s.empty?
-
-      QueryService::WikidataItem.new(value)
-    end
-
-    def date_from(key, precision_key)
-      trunc = raw(key).to_s[0..9]
-      return if trunc.empty?
-
-      QueryService::WikidataDate.new(trunc, raw(precision_key))
-    end
-
-    def raw(key)
-      row.dig(key, :value)
+      raw(:isLegislator) == 'true'
     end
   end
 end
