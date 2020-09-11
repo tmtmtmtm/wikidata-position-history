@@ -1,6 +1,6 @@
 {
   "head" : {
-    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "isPosition", "isLegislator" ]
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "derivedReplaces", "derivedReplacedBy", "isPosition", "isLegislator" ]
   },
   "results" : {
     "bindings" : [ {
@@ -45,6 +45,65 @@
       "replacedBy" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q51280630"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
       }
     }, {
       "item" : {
@@ -86,6 +145,473 @@
         "value" : "http://www.wikidata.org/entity/Q67202332"
       },
       "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "derivedReplacedBy" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q51280630"
       }
@@ -131,6 +657,14 @@
       "replacedBy" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q50390723"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
       }
     }, {
       "item" : {
@@ -169,11 +703,121 @@
       },
       "replaces" : {
         "type" : "uri",
-        "value" : "http://www.wikidata.org/entity/Q67202332"
+        "value" : "http://www.wikidata.org/entity/Q67202278"
       },
       "replacedBy" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q50390723"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202316"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2004-07-23T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2003-05-13T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202278"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50390723"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q67202332"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q51280630"
       }
     } ]
   }
