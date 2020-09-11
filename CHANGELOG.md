@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# [1.9.0] 2020-09-11
 
 ## Enhancements
 
