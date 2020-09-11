@@ -57,6 +57,13 @@ describe WikidataPositionHistory::Report do
     it { expect(metadata.replaced_by).must_equal '{{Q|Q862638}}' }
   end
 
+  describe 'office with mutiples replaces and replaced by' do
+    let(:position_id) { 'Q67202316' }
+
+    it { expect(metadata.replaces).must_equal '{{Q|Q67202278}}, {{Q|Q67202332}}' }
+    it { expect(metadata.replaced_by).must_equal '{{Q|Q50390723}}, {{Q|Q51280630}}' }
+  end
+
   describe 'legislative term' do
     let(:position_id) { 'Q20530392' }
 
