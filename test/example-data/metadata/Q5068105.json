@@ -1,0 +1,47 @@
+{
+  "head" : {
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "derivedReplaces", "derivedReplacedBy", "isPosition", "isLegislator" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5068105"
+      },
+      "abolition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1922-12-06T00:00:00Z"
+      },
+      "abolition_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1921-05-03T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4376681"
+      }
+    } ]
+  }
+}
