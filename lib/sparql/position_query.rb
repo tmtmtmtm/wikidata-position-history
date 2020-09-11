@@ -9,7 +9,7 @@ module WikidataPositionHistory
           # position-metadata
 
           SELECT DISTINCT ?item ?inception ?inception_precision ?abolition ?abolition_precision
-                          ?replaces ?replacedBy
+                          ?replaces ?replacedBy ?derivedReplaces ?derivedReplacedBy
                           ?isPosition ?isLegislator
           WHERE {
             VALUES ?item { wd:%s }
@@ -23,6 +23,8 @@ module WikidataPositionHistory
             ] }
             OPTIONAL { ?item wdt:P1365 ?replaces }
             OPTIONAL { ?item wdt:P1366 ?replacedBy }
+            OPTIONAL { ?derivedReplaces wdt:P1366 ?item }
+            OPTIONAL { ?derivedReplacedBy wdt:P1365 ?item }
           }
         SPARQL
       end
@@ -53,6 +55,14 @@ module WikidataPositionHistory
 
     def replaced_by
       item_from(:replacedBy)
+    end
+
+    def derived_replaces
+      item_from(:derivedReplaces)
+    end
+
+    def derived_replaced_by
+      item_from(:derivedReplacedBy)
     end
 
     def position?
