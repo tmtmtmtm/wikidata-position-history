@@ -55,6 +55,18 @@ module WikidataPositionHistory
       rows.map(&:item).first
     end
 
+    def replaces
+      return if replaces_list.empty?
+
+      replaces_list.map(&:qlink).join(', ')
+    end
+
+    def replaced_by
+      return if replaced_by_list.empty?
+
+      replaced_by_list.map(&:qlink).join(', ')
+    end
+
     def inception_date
       return if inception_dates.empty?
 
@@ -95,6 +107,14 @@ module WikidataPositionHistory
     private
 
     attr_reader :rows
+
+    def replaces_list
+      rows.map(&:replaces).compact.uniq(&:id).sort_by(&:id)
+    end
+
+    def replaced_by_list
+      rows.map(&:replaced_by).compact.uniq(&:id).sort_by(&:id)
+    end
 
     def inception_dates
       rows.map(&:inception_date).compact.uniq(&:to_s).sort

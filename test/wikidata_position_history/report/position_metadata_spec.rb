@@ -6,7 +6,7 @@ describe WikidataPositionHistory::Report do
   before { use_sample_data }
 
   let(:report) { WikidataPositionHistory::Report.new(position_id) }
-  let(:metadata) { report.template_params[:metadata] }
+  let(:metadata) { report.send(:metadata) }
 
   describe 'office with inception but no abolition date' do
     let(:position_id) { 'Q14211' }
@@ -45,6 +45,16 @@ describe WikidataPositionHistory::Report do
     it { expect(metadata.inception_warning.headline).must_equal 'Missing field' }
     it { expect(metadata.inception_warning.explanation).must_include '{{Q|Q96424184}}' }
     it { expect(metadata.abolition_warning).must_be_nil }
+
+    it { expect(metadata.replaces).must_be_nil }
+    it { expect(metadata.replaced_by).must_be_nil }
+  end
+
+  describe 'office with replaces and replaced by' do
+    let(:position_id) { 'Q38780172' }
+
+    it { expect(metadata.replaces).must_equal '{{Q|Q38780315}}' }
+    it { expect(metadata.replaced_by).must_equal '{{Q|Q862638}}' }
   end
 
   describe 'legislative term' do
