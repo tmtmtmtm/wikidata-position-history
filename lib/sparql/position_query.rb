@@ -40,31 +40,23 @@ module WikidataPositionHistory
     end
 
     def item
-      QueryService::WikidataItem.new(row.dig(:item, :value))
+      item_from(:item)
     end
 
     def inception_date
-      return if inception_date_raw.empty?
-
-      QueryService::WikidataDate.new(inception_date_raw, inception_date_precision)
+      date_from(:inception, :inception_precision)
     end
 
     def abolition_date
-      return if abolition_date_raw.empty?
-
-      QueryService::WikidataDate.new(abolition_date_raw, abolition_date_precision)
+      date_from(:abolition, :abolition_precision)
     end
 
     def replaces
-      return if replaces_raw.to_s.empty?
-
-      QueryService::WikidataItem.new(replaces_raw)
+      item_from(:replaces)
     end
 
     def replaced_by
-      return if replaced_by_raw.to_s.empty?
-
-      QueryService::WikidataItem.new(replaced_by_raw)
+      item_from(:replacedBy)
     end
 
     def position?
@@ -79,28 +71,22 @@ module WikidataPositionHistory
 
     attr_reader :row
 
-    def replaces_raw
-      row.dig(:replaces, :value)
+    def item_from(key)
+      value = raw(key)
+      return if value.to_s.empty?
+
+      QueryService::WikidataItem.new(value)
     end
 
-    def replaced_by_raw
-      row.dig(:replacedBy, :value)
+    def date_from(key, precision_key)
+      trunc = raw(key).to_s[0..9]
+      return if trunc.empty?
+
+      QueryService::WikidataDate.new(trunc, raw(precision_key))
     end
 
-    def inception_date_raw
-      row.dig(:inception, :value).to_s[0..9]
-    end
-
-    def abolition_date_raw
-      row.dig(:abolition, :value).to_s[0..9]
-    end
-
-    def inception_date_precision
-      row.dig(:inception_precision, :value)
-    end
-
-    def abolition_date_precision
-      row.dig(:abolition_precision, :value)
+    def raw(key)
+      row.dig(key, :value)
     end
   end
 end
