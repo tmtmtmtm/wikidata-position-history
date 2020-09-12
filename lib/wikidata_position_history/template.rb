@@ -57,12 +57,12 @@ module WikidataPositionHistory
         | colspan="3" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
         | colspan="1" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
         <% end -%>
-        <% if metadata.inception_date -%>
+        <% if metadata.inception.date -%>
         |-
         | colspan="2" style="border: none; background: #fff; font-size: 1.15em; text-align: right;" | '''Position created''':
-        | style="border: none; background: #fff; text-align: left;" | <%= metadata.inception_date %>
+        | style="border: none; background: #fff; text-align: left;" | <%= metadata.inception.date %>
         | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | \
-        <% [metadata.inception_warning].compact.each do |warning| -%>
+        <% metadata.inception.warnings.each do |warning| -%>
         <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span>\
         <% end %>
         <% end -%>
