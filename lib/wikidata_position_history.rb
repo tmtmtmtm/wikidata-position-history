@@ -7,6 +7,7 @@ require 'sparql/bio_query'
 require 'sparql/mandates_query'
 require 'wikidata_position_history/checks'
 require 'wikidata_position_history/template'
+require 'wikidata_position_history/output_row'
 require 'wikidata_position_history/report'
 require 'wikidata_position_history/version'
 
