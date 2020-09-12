@@ -42,5 +42,39 @@ module WikidataPositionHistory
 
       attr_reader :later, :current, :earlier
     end
+
+    # Data for the Inception date of the position
+    class Inception
+      # simplified version of a WikidataPositionHistory::Check
+      Warning = Struct.new(:headline, :explanation)
+
+      def initialize(metadata)
+        @metadata = metadata
+      end
+
+      def date
+        return if dates.empty?
+
+        dates.join(' / ')
+      end
+
+      def warnings
+        count = dates.count
+        return [] if count == 1
+
+        qlink = metadata.item_qlink
+        return [Warning.new('Missing field', "#{qlink} is missing {{P|571}}")] if count.zero?
+
+        [Warning.new('Multiple values', "#{qlink} has more than one {{P|571}}")]
+      end
+
+      private
+
+      attr_reader :metadata
+
+      def dates
+        metadata.inception_dates
+      end
+    end
   end
 end

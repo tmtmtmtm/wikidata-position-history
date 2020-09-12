@@ -26,19 +26,8 @@ module WikidataPositionHistory
       replaced_by_list.map(&:qlink).join(', ')
     end
 
-    def inception_date
-      return if inception_dates.empty?
-
-      inception_dates.join(' / ')
-    end
-
-    def inception_warning
-      count = inception_dates.count
-
-      return if count == 1
-      return Warning.new('Missing field', "#{item_qlink} is missing {{P|571}}") if count.zero?
-
-      Warning.new('Multiple values', "#{item_qlink} has more than one {{P|571}}")
+    def inception
+      @inception ||= OutputRow::Inception.new(self)
     end
 
     def abolition_date
@@ -63,10 +52,6 @@ module WikidataPositionHistory
       rows.map(&:legislator?).first
     end
 
-    private
-
-    attr_reader :rows
-
     def replaces_list
       rows.map(&:replaces).compact.uniq(&:id).sort_by(&:id)
     end
@@ -86,6 +71,10 @@ module WikidataPositionHistory
     def item_qlink
       item.qlink
     end
+
+    private
+
+    attr_reader :rows
   end
 
   # The entire wikitext generated for this report
@@ -109,7 +98,7 @@ module WikidataPositionHistory
     end
 
     def position_dates
-      dates = [metadata.inception_date, metadata.abolition_date]
+      dates = [metadata.inception.date, metadata.abolition_date]
       return '' if dates.compact.empty?
 
       format('(%s)', dates.join(' – '))
