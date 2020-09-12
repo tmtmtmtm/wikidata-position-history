@@ -43,8 +43,8 @@ module WikidataPositionHistory
       attr_reader :later, :current, :earlier
     end
 
-    # Data for the Inception date of the position
-    class Inception
+    # Base class for the Inception/Abolition date rows
+    class PositionDate
       # simplified version of a WikidataPositionHistory::Check
       Warning = Struct.new(:headline, :explanation)
 
@@ -58,11 +58,21 @@ module WikidataPositionHistory
         dates.join(' / ')
       end
 
+      private
+
+      attr_reader :metadata
+
+      def qlink
+        metadata.item_qlink
+      end
+    end
+
+    # Data for the Inception date of the position
+    class Inception < PositionDate
       def warnings
         count = dates.count
         return [] if count == 1
 
-        qlink = metadata.item_qlink
         return [Warning.new('Missing field', "#{qlink} is missing {{P|571}}")] if count.zero?
 
         [Warning.new('Multiple values', "#{qlink} has more than one {{P|571}}")]
@@ -70,38 +80,20 @@ module WikidataPositionHistory
 
       private
 
-      attr_reader :metadata
-
       def dates
         metadata.inception_dates
       end
     end
 
     # Data for the Abolition date of the position
-    class Abolition
-      # simplified version of a WikidataPositionHistory::Check
-      Warning = Struct.new(:headline, :explanation)
-
-      def initialize(metadata)
-        @metadata = metadata
-      end
-
-      def date
-        return if dates.empty?
-
-        dates.join(' / ')
-      end
-
+    class Abolition < PositionDate
       def warnings
         return [] unless dates.count > 1
 
-        qlink = metadata.item_qlink
         [Warning.new('Multiple values', "#{qlink} has more than one {{P|576}}")]
       end
 
       private
-
-      attr_reader :metadata
 
       def dates
         metadata.abolition_dates
