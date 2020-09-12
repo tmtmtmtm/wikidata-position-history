@@ -20,10 +20,8 @@ module WikidataPositionHistory
       replaces_list.map(&:qlink).join(', ')
     end
 
-    def replaced_by
-      return if replaced_by_list.empty?
-
-      replaced_by_list.map(&:qlink).join(', ')
+    def successor
+      @successor ||= OutputRow::Successor.new(self)
     end
 
     def inception

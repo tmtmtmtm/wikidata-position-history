@@ -99,5 +99,31 @@ module WikidataPositionHistory
         metadata.abolition_dates
       end
     end
+
+    # Data for the the position that comes after this one
+    class Successor
+      def initialize(metadata)
+        @metadata = metadata
+      end
+
+      def position
+        return if position_list.empty?
+
+        position_list.map(&:qlink).join(', ')
+      end
+
+      # TODO: add some checks
+      def warnings
+        []
+      end
+
+      private
+
+      attr_reader :metadata
+
+      def position_list
+        metadata.replaced_by_list
+      end
+    end
   end
 end

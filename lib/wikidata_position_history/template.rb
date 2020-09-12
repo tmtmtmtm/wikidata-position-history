@@ -31,13 +31,13 @@ module WikidataPositionHistory
         <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span>\
         <% end %>
         <% end -%>
-        <% if metadata.replaced_by -%>
+        <% if metadata.successor.position -%>
         |-
         | colspan="2" style="border: none; background: #fff; font-size: 1.15em; text-align: right;" | '''Replaced by''':
-        | style=" border: none; background: #fff; text-align: left;" | <%= metadata.replaced_by %>
+        | style=" border: none; background: #fff; text-align: left;" | <%= metadata.successor.position %>
         | style=" border: none; background: #fff; text-align: left;" |
         <% end -%>
-        <% if metadata.replaced_by || metadata.abolition.date -%>
+        <% if metadata.successor.position || metadata.abolition.date -%>
         |-
         | colspan="3" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
         | colspan="1" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
@@ -52,7 +52,7 @@ module WikidataPositionHistory
         <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span>\
         <% end %>
         <% end -%>
-        <% if metadata.replaced_by || metadata.abolition.date -%>
+        <% if metadata.successor.position || metadata.abolition.date -%>
         |-
         | colspan="3" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
         | colspan="1" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
