@@ -66,10 +66,10 @@ module WikidataPositionHistory
         <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span>\
         <% end %>
         <% end -%>
-        <% if metadata.replaces -%>
+        <% if metadata.predecessor.position -%>
         |-
         | colspan="2" style=" border: none; background: #fff; font-size: 1.15em; text-align: right;" | '''Replaces''':
-        | style="border: none; background: #fff; text-align: left;" | <%= metadata.replaces %>
+        | style="border: none; background: #fff; text-align: left;" | <%= metadata.predecessor.position %>
         | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" |
         <% end -%>
         |}

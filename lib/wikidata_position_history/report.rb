@@ -14,10 +14,8 @@ module WikidataPositionHistory
       rows.map(&:item).first
     end
 
-    def replaces
-      return if replaces_list.empty?
-
-      replaces_list.map(&:qlink).join(', ')
+    def predecessor
+      @predecessor ||= OutputRow::Predecessor.new(self)
     end
 
     def successor

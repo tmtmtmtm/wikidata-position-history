@@ -125,5 +125,31 @@ module WikidataPositionHistory
         metadata.replaced_by_list
       end
     end
+
+    # Data for the the position that came before this one
+    class Predecessor
+      def initialize(metadata)
+        @metadata = metadata
+      end
+
+      def position
+        return if position_list.empty?
+
+        position_list.map(&:qlink).join(', ')
+      end
+
+      # TODO: add some checks
+      def warnings
+        []
+      end
+
+      private
+
+      attr_reader :metadata
+
+      def position_list
+        metadata.replaces_list
+      end
+    end
   end
 end
