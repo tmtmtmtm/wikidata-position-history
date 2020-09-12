@@ -3,14 +3,11 @@
 module WikidataPositionHistory
   # Data about the position itself, to be passed to the report template
   class Metadata
-    # simplified version of a WikidataPositionHistory::Check
-    Warning = Struct.new(:headline, :explanation)
-
     def initialize(rows)
       @rows = rows
     end
 
-    def item
+    def position
       rows.map(&:item).first
     end
 
@@ -54,10 +51,6 @@ module WikidataPositionHistory
 
     def abolition_dates
       rows.map(&:abolition_date).compact.uniq(&:to_s).sort
-    end
-
-    def item_qlink
-      item.qlink
     end
 
     private

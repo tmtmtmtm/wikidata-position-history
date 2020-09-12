@@ -63,7 +63,7 @@ module WikidataPositionHistory
       attr_reader :metadata
 
       def qlink
-        metadata.item_qlink
+        metadata.position.qlink
       end
     end
 
