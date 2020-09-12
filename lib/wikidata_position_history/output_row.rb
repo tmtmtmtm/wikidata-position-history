@@ -76,5 +76,36 @@ module WikidataPositionHistory
         metadata.inception_dates
       end
     end
+
+    # Data for the Abolition date of the position
+    class Abolition
+      # simplified version of a WikidataPositionHistory::Check
+      Warning = Struct.new(:headline, :explanation)
+
+      def initialize(metadata)
+        @metadata = metadata
+      end
+
+      def date
+        return if dates.empty?
+
+        dates.join(' / ')
+      end
+
+      def warnings
+        return [] unless dates.count > 1
+
+        qlink = metadata.item_qlink
+        [Warning.new('Multiple values', "#{qlink} has more than one {{P|576}}")]
+      end
+
+      private
+
+      attr_reader :metadata
+
+      def dates
+        metadata.abolition_dates
+      end
+    end
   end
 end

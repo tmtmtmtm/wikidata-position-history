@@ -12,16 +12,16 @@ describe WikidataPositionHistory::Report do
     let(:position_id) { 'Q14211' }
 
     it { expect(metadata.inception.date.to_s).must_equal '1721-04-04' }
-    it { expect(metadata.abolition_date).must_be_nil }
+    it { expect(metadata.abolition.date).must_be_nil }
   end
 
   describe 'office with both inception and abolition date' do
     let(:position_id) { 'Q7444267' }
 
     it { expect(metadata.inception.date.to_s).must_equal '1920-08-22' }
-    it { expect(metadata.abolition_date.to_s).must_equal '1945' }
+    it { expect(metadata.abolition.date.to_s).must_equal '1945' }
 
-    it { expect(metadata.abolition_warning).must_be_nil }
+    it { expect(metadata.abolition.warnings.first).must_be_nil }
     it { expect(metadata.inception.warnings).must_be_empty }
   end
 
@@ -29,22 +29,22 @@ describe WikidataPositionHistory::Report do
     let(:position_id) { 'Q3657870' }
 
     it { expect(metadata.inception.date.to_s).must_equal '1957 / 1969' }
-    it { expect(metadata.abolition_date.to_s).must_equal '1960 / 1972' }
+    it { expect(metadata.abolition.date.to_s).must_equal '1960 / 1972' }
 
     it { expect(metadata.inception.warnings.first.headline).must_equal 'Multiple values' }
-    it { expect(metadata.abolition_warning.headline).must_equal 'Multiple values' }
+    it { expect(metadata.abolition.warnings.first.headline).must_equal 'Multiple values' }
   end
 
   describe 'office with neither inception nor abolition date' do
     let(:position_id) { 'Q96424184' }
 
     it { expect(metadata.inception.date).must_be_nil }
-    it { expect(metadata.abolition_date).must_be_nil }
+    it { expect(metadata.abolition.date).must_be_nil }
     it { expect(metadata.position?).must_equal true }
 
     it { expect(metadata.inception.warnings.first.headline).must_equal 'Missing field' }
     it { expect(metadata.inception.warnings.first.explanation).must_include '{{Q|Q96424184}}' }
-    it { expect(metadata.abolition_warning).must_be_nil }
+    it { expect(metadata.abolition.warnings.first).must_be_nil }
 
     it { expect(metadata.replaces).must_be_nil }
     it { expect(metadata.replaced_by).must_be_nil }
