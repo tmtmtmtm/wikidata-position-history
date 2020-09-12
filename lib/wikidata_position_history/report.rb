@@ -30,16 +30,8 @@ module WikidataPositionHistory
       @inception ||= OutputRow::Inception.new(self)
     end
 
-    def abolition_date
-      return if abolition_dates.empty?
-
-      abolition_dates.join(' / ')
-    end
-
-    def abolition_warning
-      return unless abolition_dates.count > 1
-
-      Warning.new('Multiple values', "#{item_qlink} has more than one {{P|576}}")
+    def abolition
+      @abolition ||= OutputRow::Abolition.new(self)
     end
 
     def position?
@@ -98,7 +90,7 @@ module WikidataPositionHistory
     end
 
     def position_dates
-      dates = [metadata.inception.date, metadata.abolition_date]
+      dates = [metadata.inception.date, metadata.abolition.date]
       return '' if dates.compact.empty?
 
       format('(%s)', dates.join(' – '))
