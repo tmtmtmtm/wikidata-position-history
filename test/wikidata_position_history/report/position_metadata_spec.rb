@@ -68,7 +68,11 @@ describe WikidataPositionHistory::Report do
     let(:position_id) { 'Q5068105' }
 
     it { expect(metadata.predecessor.position).must_be_nil }
+    it { expect(metadata.predecessor.warnings).must_be_empty }
     it { expect(metadata.successor.position).must_equal "''{{Q|Q4376681}}''" }
+    it { expect(metadata.successor.warnings.count).must_equal 1 }
+    it { expect(metadata.successor.warnings.first.headline).must_equal 'Indirect only' }
+    it { expect(metadata.successor.warnings.first.explanation).must_equal '{{PositionHolderHistory/warning_indirect_successor|from=Q4376681|to=Q5068105}}' }
   end
 
   describe 'legislative term' do

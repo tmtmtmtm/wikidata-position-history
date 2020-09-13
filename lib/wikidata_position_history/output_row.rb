@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module WikidataPositionHistory
+  # simplified version of a WikidataPositionHistory::Check
+  Warning = Struct.new(:headline, :explanation)
+
   class OutputRow
     # Date for a single mandate row, to be passed to the report template
     class Mandate
@@ -45,9 +48,6 @@ module WikidataPositionHistory
 
     # Base class for the Inception/Abolition date rows
     class PositionDate
-      # simplified version of a WikidataPositionHistory::Check
-      Warning = Struct.new(:headline, :explanation)
-
       def initialize(metadata)
         @metadata = metadata
       end
@@ -112,14 +112,19 @@ module WikidataPositionHistory
         (implied_list.direct.map(&:qlink) + implied_list.indirect_only.map(&:qlink_i)).join(', ')
       end
 
-      # TODO: add some checks
       def warnings
-        []
+        implied_list.indirect_only.map do |from|
+          Warning.new('Indirect only', "{{PositionHolderHistory/#{indirect_warning_template}|from=#{from.id}|to=#{metadata.position.id}}}")
+        end
       end
 
       private
 
       attr_reader :metadata
+
+      def indirect_warning_template
+        format('warning_indirect_%s', self.class.name.split('::').last.downcase)
+      end
     end
 
     # Data for the position that comes after this one
