@@ -47,6 +47,12 @@ describe WikidataPositionHistory::Report do
     it { expect(report.wikitext_with_header).must_equal expected }
   end
 
+  describe 'Federal Minister of Economics and Technology' do
+    let(:id) { 'Q30533307' }
+
+    it { expect(report.wikitext_with_header).must_equal expected }
+  end
+
   describe 'Bishop of Worcester' do
     let(:id) { 'Q1837494' }
 
