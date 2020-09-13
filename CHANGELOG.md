@@ -1,5 +1,20 @@
 # Changelog
 
+# Unreleased
+
+## Enhancements
+
+* If some other position has a "replaces" (P1365) or "replaced by"
+  (P1366) pointing to _this_ position, but this position doesn't have
+  the reciprocal inverse claims back to that one, include them as a
+  successor/predecessor, but warn that it’s only an indirect connection.
+
+* The warnings in the above case now use an on-wiki template for their
+  text. This means they can be translated into other languages, and also
+  means that backlinks to these templates, via WhatLinksHere, can act as
+  a TODO list. The other warnings will be migrated to this approach Real
+  Soon Now™.
+
 # [1.9.0] 2020-09-11
 
 ## Enhancements
