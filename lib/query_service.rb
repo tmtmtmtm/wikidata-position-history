@@ -49,8 +49,16 @@ module QueryService
       "{{Q|#{id}}}" if id
     end
 
+    def qblink
+      "{{QB|#{id}}}" if id
+    end
+
     def qlink_i
-      "''{{Q|#{id}}}''" if id
+      "''#{qlink}''" if qlink
+    end
+
+    def qblink_i
+      "''#{qblink}''" if qblink
     end
 
     private
