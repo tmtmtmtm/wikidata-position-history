@@ -1,5 +1,15 @@
 # Changelog
 
+# Unreleased
+
+## Enhancements
+
+* Wikidata now has a new {{QB}} template to link to _both_ an Item and
+  its Talk page. As the PositionHolderHistory template for a position
+  often lives on its Talk page, any link to a position item now uses
+  this template, for easier of access to that. (Requested by Tagishsimon:
+  https://twitter.com/Tagishsimon/status/1304363879322079233)
+
 # [1.10.0] 2020-09-13
 
 ## Enhancements
