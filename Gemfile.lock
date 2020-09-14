@@ -85,7 +85,7 @@ GEM
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
     warning (1.1.0)
-    webmock (3.8.3)
+    webmock (3.9.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -103,7 +103,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.8.0)
   rubocop-rspec (~> 1.43.2)
   warning (~> 1.1)
-  webmock (~> 3.8.3)
+  webmock (~> 3.9.1)
   wikidata_position_history!
 
 BUNDLED WITH
