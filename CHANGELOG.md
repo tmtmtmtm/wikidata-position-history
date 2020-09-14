@@ -10,6 +10,12 @@
   this template, for easier of access to that. (Requested by Tagishsimon:
   https://twitter.com/Tagishsimon/status/1304363879322079233)
 
+* The change to how warnings templates work from the last release (i.e.
+  using on-wiki templates, so they can be improved or translated, or used
+  to look for problems via backlinks) definitely seems to have been a good
+  idea, so now the warnings for having an unexpected number of inception
+  or abolition dates have also been adjusted to work the same way.
+
 # [1.10.0] 2020-09-13
 
 ## Enhancements
