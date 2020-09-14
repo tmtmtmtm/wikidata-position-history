@@ -62,8 +62,8 @@ module WikidataPositionHistory
 
       attr_reader :metadata
 
-      def qlink
-        metadata.position.qlink
+      def position_id
+        metadata.position.id
       end
     end
 
@@ -72,10 +72,9 @@ module WikidataPositionHistory
       def warnings
         count = dates.count
         return [] if count == 1
+        return [Warning.new('Missing field', "{{PositionHolderHistory/warning_no_inception_date|item=#{position_id}}}")] if count.zero?
 
-        return [Warning.new('Missing field', "#{qlink} is missing {{P|571}}")] if count.zero?
-
-        [Warning.new('Multiple values', "#{qlink} has more than one {{P|571}}")]
+        [Warning.new('Multiple values', "{{PositionHolderHistory/warning_multiple_inception_dates|item=#{position_id}}}")]
       end
 
       private
@@ -90,7 +89,7 @@ module WikidataPositionHistory
       def warnings
         return [] unless dates.count > 1
 
-        [Warning.new('Multiple values', "#{qlink} has more than one {{P|576}}")]
+        [Warning.new('Multiple values', "{{PositionHolderHistory/warning_multiple_abolition_dates|item=#{position_id}}}")]
       end
 
       private
