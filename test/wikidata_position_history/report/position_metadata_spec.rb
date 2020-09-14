@@ -32,7 +32,9 @@ describe WikidataPositionHistory::Report do
     it { expect(metadata.abolition.date.to_s).must_equal '1960 / 1972' }
 
     it { expect(metadata.inception.warnings.first.headline).must_equal 'Multiple values' }
+    it { expect(metadata.inception.warnings.first.explanation).must_include 'PositionHolderHistory/warning_multiple_inception_dates' }
     it { expect(metadata.abolition.warnings.first.headline).must_equal 'Multiple values' }
+    it { expect(metadata.abolition.warnings.first.explanation).must_include 'PositionHolderHistory/warning_multiple_abolition_dates' }
   end
 
   describe 'office with neither inception nor abolition date' do
@@ -43,7 +45,7 @@ describe WikidataPositionHistory::Report do
     it { expect(metadata.position?).must_equal true }
 
     it { expect(metadata.inception.warnings.first.headline).must_equal 'Missing field' }
-    it { expect(metadata.inception.warnings.first.explanation).must_include '{{Q|Q96424184}}' }
+    it { expect(metadata.inception.warnings.first.explanation).must_include 'PositionHolderHistory/warning_no_inception_date' }
     it { expect(metadata.abolition.warnings.first).must_be_nil }
 
     it { expect(metadata.predecessor.position).must_be_nil }
