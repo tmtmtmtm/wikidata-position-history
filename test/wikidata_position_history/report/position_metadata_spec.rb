@@ -53,15 +53,15 @@ describe WikidataPositionHistory::Report do
   describe 'office with replaces and replaced by' do
     let(:position_id) { 'Q38780172' }
 
-    it { expect(metadata.predecessor.position).must_equal '{{Q|Q38780315}}' }
-    it { expect(metadata.successor.position).must_equal '{{Q|Q862638}}' }
+    it { expect(metadata.predecessor.position).must_equal '{{QB|Q38780315}}' }
+    it { expect(metadata.successor.position).must_equal '{{QB|Q862638}}' }
   end
 
   describe 'office with mutiple replaces and replaced by' do
     let(:position_id) { 'Q67202316' }
 
-    it { expect(metadata.predecessor.position).must_equal '{{Q|Q67202278}}, {{Q|Q67202332}}' }
-    it { expect(metadata.successor.position).must_equal '{{Q|Q50390723}}, {{Q|Q51280630}}' }
+    it { expect(metadata.predecessor.position).must_equal '{{QB|Q67202278}}, {{QB|Q67202332}}' }
+    it { expect(metadata.successor.position).must_equal '{{QB|Q50390723}}, {{QB|Q51280630}}' }
   end
 
   describe 'office with implied replaces and replaced by' do
@@ -69,7 +69,7 @@ describe WikidataPositionHistory::Report do
 
     it { expect(metadata.predecessor.position).must_be_nil }
     it { expect(metadata.predecessor.warnings).must_be_empty }
-    it { expect(metadata.successor.position).must_equal "''{{Q|Q4376681}}''" }
+    it { expect(metadata.successor.position).must_equal "''{{QB|Q4376681}}''" }
     it { expect(metadata.successor.warnings.count).must_equal 1 }
     it { expect(metadata.successor.warnings.first.headline).must_equal 'Indirect only' }
     it { expect(metadata.successor.warnings.first.explanation).must_equal '{{PositionHolderHistory/warning_indirect_successor|from=Q4376681|to=Q5068105}}' }

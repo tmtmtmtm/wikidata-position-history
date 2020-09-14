@@ -109,7 +109,7 @@ module WikidataPositionHistory
       def position
         return if implied_list.empty?
 
-        (implied_list.direct.map(&:qlink) + implied_list.indirect_only.map(&:qlink_i)).join(', ')
+        (implied_list.direct.map(&:qblink) + implied_list.indirect_only.map(&:qblink_i)).join(', ')
       end
 
       def warnings
