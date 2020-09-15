@@ -37,11 +37,6 @@ module WikidataPositionHistory
       item_from(:item)
     end
 
-    # TODO: rename or remove. 'item' is meaningless/ambiguous
-    def item
-      officeholder.qlink
-    end
-
     # TODO: switch to item_from
     def prev
       QueryService::WikidataItem.new(row.dig(:prev, :value)).qlink
