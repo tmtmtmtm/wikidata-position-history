@@ -46,7 +46,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.item} is missing #{missing.map { |field| "{{P|#{field_map[field]}}}" }.join(', ')}"
+        "#{current.officeholder.qlink} is missing #{missing.map { |field| "{{P|#{field_map[field]}}}" }.join(', ')}"
       end
 
       def missing
@@ -76,14 +76,14 @@ module WikidataPositionHistory
 
       def expect_prev?
         return unless earlier
-        return if earlier.item == current.item # sucessive terms by same person
+        return if earlier.officeholder.id == current.officeholder.id # sucessive terms by same person
 
         !current.acting?
       end
 
       def expect_next?
         return unless later
-        return if later.item == current.item # sucessive terms by same person
+        return if later.officeholder.id == current.officeholder.id # sucessive terms by same person
 
         !current.acting?
       end
@@ -100,7 +100,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.item} has a {{P|1365}} of #{predecessor}, but follows #{earlier.item} here"
+        "#{current.officeholder.qlink} has a {{P|1365}} of #{predecessor}, but follows #{earlier.officeholder.qlink} here"
       end
     end
 
@@ -115,7 +115,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.item} has a {{P|1365}} of #{predecessor}, but does not follow anyone here"
+        "#{current.officeholder.qlink} has a {{P|1365}} of #{predecessor}, but does not follow anyone here"
       end
     end
 
@@ -130,7 +130,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.item} has a {{P|1366}} of #{successor}, but is followed by #{later.item} here"
+        "#{current.officeholder.qlink} has a {{P|1366}} of #{successor}, but is followed by #{later.officeholder.qlink} here"
       end
     end
 
@@ -145,7 +145,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.item} has a {{P|1366}} of #{successor}, but is not followed by anyone here"
+        "#{current.officeholder.qlink} has a {{P|1366}} of #{successor}, but is not followed by anyone here"
       end
     end
 
@@ -167,7 +167,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.item} has a {{P|582}} of #{current.end_date}, which #{overlap_explanation} the {{P|580}} of #{later.start_date} for #{later.item}"
+        "#{current.officeholder.qlink} has a {{P|582}} of #{current.end_date}, which #{overlap_explanation} the {{P|580}} of #{later.start_date} for #{later.officeholder.qlink}"
       end
 
       protected
