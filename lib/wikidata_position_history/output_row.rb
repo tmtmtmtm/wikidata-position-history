@@ -22,8 +22,8 @@ module WikidataPositionHistory
         "#{ordinal}."
       end
 
-      def person
-        current.item
+      def officeholder
+        current.officeholder
       end
 
       def dates

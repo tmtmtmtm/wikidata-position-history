@@ -93,7 +93,7 @@ module WikidataPositionHistory
     # Does the 'replaces' match the previous item in the list?
     class WrongPredecessor < Check
       def problem?
-        earlier_holder? && !!predecessor_qlink && (earlier.item != predecessor_qlink)
+        earlier_holder? && !!predecessor_qlink && (earlier.officeholder.qlink != predecessor_qlink)
       end
 
       def headline
@@ -123,7 +123,7 @@ module WikidataPositionHistory
     # Does the 'replaced by' match the next item in the list?
     class WrongSuccessor < Check
       def problem?
-        later_holder? && !!successor_qlink && (later.item != successor_qlink)
+        later_holder? && !!successor_qlink && (later.officeholder.qlink != successor_qlink)
       end
 
       def headline
