@@ -17,11 +17,12 @@ module WikidataPositionHistory
 
     attr_reader :later, :current, :earlier
 
-    def successor
+    # TODO: replace these with objects instead of strings
+    def successor_qlink
       current.next
     end
 
-    def predecessor
+    def predecessor_qlink
       current.prev
     end
 
@@ -92,7 +93,7 @@ module WikidataPositionHistory
     # Does the 'replaces' match the previous item in the list?
     class WrongPredecessor < Check
       def problem?
-        earlier_holder? && !!predecessor && (earlier.item != predecessor)
+        earlier_holder? && !!predecessor_qlink && (earlier.item != predecessor_qlink)
       end
 
       def headline
@@ -100,14 +101,14 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.officeholder.qlink} has a {{P|1365}} of #{predecessor}, but follows #{earlier.officeholder.qlink} here"
+        "#{current.officeholder.qlink} has a {{P|1365}} of #{predecessor_qlink}, but follows #{earlier.officeholder.qlink} here"
       end
     end
 
     # Is there a 'replaces' but no previous item in the list?
     class MissingPredecessor < Check
       def problem?
-        predecessor && !earlier_holder?
+        predecessor_qlink && !earlier_holder?
       end
 
       def headline
@@ -115,14 +116,14 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.officeholder.qlink} has a {{P|1365}} of #{predecessor}, but does not follow anyone here"
+        "#{current.officeholder.qlink} has a {{P|1365}} of #{predecessor_qlink}, but does not follow anyone here"
       end
     end
 
     # Does the 'replaced by' match the next item in the list?
     class WrongSuccessor < Check
       def problem?
-        later_holder? && !!successor && (later.item != successor)
+        later_holder? && !!successor_qlink && (later.item != successor_qlink)
       end
 
       def headline
@@ -130,14 +131,14 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.officeholder.qlink} has a {{P|1366}} of #{successor}, but is followed by #{later.officeholder.qlink} here"
+        "#{current.officeholder.qlink} has a {{P|1366}} of #{successor_qlink}, but is followed by #{later.officeholder.qlink} here"
       end
     end
 
     # Is there a 'replaced by' but no next item in the list?
     class MissingSuccessor < Check
       def problem?
-        successor && !later_holder?
+        successor_qlink && !later_holder?
       end
 
       def headline
@@ -145,7 +146,7 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.officeholder.qlink} has a {{P|1366}} of #{successor}, but is not followed by anyone here"
+        "#{current.officeholder.qlink} has a {{P|1366}} of #{successor_qlink}, but is not followed by anyone here"
       end
     end
 
