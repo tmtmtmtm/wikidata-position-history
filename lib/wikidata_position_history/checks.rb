@@ -168,7 +168,8 @@ module WikidataPositionHistory
       end
 
       def possible_explanation
-        "#{current.officeholder.qlink} has a {{P|582}} of #{current.end_date}, which #{overlap_explanation} the {{P|580}} of #{later.start_date} for #{later.officeholder.qlink}"
+        format('%s has a {{P|582}} of %s, which %s the {{P|580}} of %s for %s',
+               current.officeholder.qlink, current.end_date, overlap_explanation, later.start_date, later.officeholder.qlink)
       end
 
       protected
