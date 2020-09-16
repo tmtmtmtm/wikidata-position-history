@@ -3,6 +3,20 @@
     "vars" : [ "item", "image" ]
   },
   "results" : {
-    "bindings" : [ ]
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1680843"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q300292"
+      },
+      "image" : {
+        "type" : "uri",
+        "value" : "http://commons.wikimedia.org/wiki/Special:FilePath/Official%20portrait%20of%20Sir%20Jeffrey%20M.%20Donaldson%20crop%202.jpg"
+      }
+    } ]
   }
 }
