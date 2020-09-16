@@ -21,6 +21,22 @@ module WikidataPositionHistory
         SPARQL
       end
     end
+
+    # Biographical data for Members for a Constituency
+    class ConstituencyBioQuery < ItemQuery
+      def raw_sparql
+        <<~SPARQL
+          # constituency-biodata
+
+          SELECT DISTINCT ?item ?image
+          WHERE {
+            ?item wdt:P31 wd:Q5 ; p:P39/pq:P768 wd:%s .
+            OPTIONAL { ?item wdt:P18 ?image }
+          }
+          ORDER BY ?item
+        SPARQL
+      end
+    end
   end
 
   # Represents a single row returned from the Position query

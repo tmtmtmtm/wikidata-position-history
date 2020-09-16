@@ -129,7 +129,7 @@ module WikidataPositionHistory
     end
 
     def biodata
-      @biodata ||= SPARQL::BioQuery.new(position_id).results_as(BioRow)
+      @biodata ||= biodata_query.new(position_id).results_as(BioRow)
     end
 
     def biodata_for(officeholder)
@@ -144,6 +144,12 @@ module WikidataPositionHistory
       return SPARQL::ConstituencyMandatesQuery if metadata.constituency?
 
       SPARQL::MandatesQuery
+    end
+
+    def biodata_query
+      return SPARQL::ConstituencyBioQuery if metadata.constituency?
+
+      SPARQL::BioQuery
     end
 
     def sparql
