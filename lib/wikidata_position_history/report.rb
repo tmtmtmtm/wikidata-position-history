@@ -176,7 +176,7 @@ module WikidataPositionHistory
     end
 
     def biodata
-      @biodata ||= config.biodata_query.new(position_id).results_as(BioRow)
+      @biodata ||= biodata_sparql.results_as(BioRow)
     end
 
     def biodata_for(officeholder)
@@ -193,6 +193,10 @@ module WikidataPositionHistory
 
     def sparql
       @sparql ||= config.mandates_query.new(position_id)
+    end
+
+    def biodata_sparql
+      config.biodata_query.new(position_id)
     end
 
     def mandates

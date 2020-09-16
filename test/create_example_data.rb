@@ -11,6 +11,9 @@ def store(id, dir, query)
 end
 
 id = ARGV.first or abort "Usage: #{$PROGRAM_NAME} <Qid>"
-store(id, 'mandates', WikidataPositionHistory::SPARQL::MandatesQuery.new(id))
+report = WikidataPositionHistory::Report.new(id)
+
 store(id, 'metadata', WikidataPositionHistory::SPARQL::PositionQuery.new(id))
-store(id, 'biodata', WikidataPositionHistory::SPARQL::BioQuery.new(id))
+
+store(id, 'mandates', report.send(:sparql))
+store(id, 'biodata', report.send(:biodata_sparql))
