@@ -68,6 +68,11 @@ module WikidataPositionHistory
       rows.map(&:legislator?).first
     end
 
+    def constituency?
+      # this should be the same everywhere
+      rows.map(&:constituency?).first
+    end
+
     def replaces_combined
       @replaces_combined ||= ImpliedList.new(uniq_by_id(:replaces), uniq_by_id(:derived_replaces))
     end
@@ -135,8 +140,14 @@ module WikidataPositionHistory
       [nil, mandates, nil].flatten(1)
     end
 
+    def mandates_query
+      return SPARQL::ConstituencyMandatesQuery if metadata.constituency?
+
+      SPARQL::MandatesQuery
+    end
+
     def sparql
-      @sparql ||= SPARQL::MandatesQuery.new(position_id)
+      @sparql ||= mandates_query.new(position_id)
     end
 
     def mandates
