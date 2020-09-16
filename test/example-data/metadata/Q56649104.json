@@ -8,6 +8,11 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q56649104"
       },
+      "representative_count" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "12"
+      },
       "legislature" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q783330"

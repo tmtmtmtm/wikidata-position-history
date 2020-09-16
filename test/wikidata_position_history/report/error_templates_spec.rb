@@ -14,4 +14,11 @@ describe WikidataPositionHistory::Report do
     result = WikidataPositionHistory::Report.new('Q13653224').wikitext
     expect(result[/{{(.*?)}}/, 1]).must_include 'error_legislator'
   end
+
+  describe 'warning template for a multi-member constituency' do
+    let(:report) { WikidataPositionHistory::Report.new('Q56649104') }
+
+    it { expect(report.send(:metadata).representative_count).must_equal 12 }
+    it { expect(report.wikitext[/{{(.*?)}}/, 1]).must_include 'error_multimember' }
+  end
 end
