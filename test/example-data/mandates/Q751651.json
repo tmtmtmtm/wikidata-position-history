@@ -1,9 +1,13 @@
 {
   "head" : {
-    "vars" : [ "item", "start_date", "start_precision", "end_date", "end_precision", "party", "prev", "nex" ]
+    "vars" : [ "ordinal", "item", "start_date", "start_precision", "end_date", "end_precision", "party", "prev", "next", "term" ]
   },
   "results" : {
     "bindings" : [ {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "58"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -21,8 +25,16 @@
       "party" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q215519"
+      },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q77685395"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "57"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -41,6 +53,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q215519"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q29974940"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -52,6 +68,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "56"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -70,6 +90,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q215519"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084473"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -81,6 +105,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "55"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -99,6 +127,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q215519"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084472"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -110,6 +142,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "54"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -128,6 +164,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q215519"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084471"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -139,6 +179,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "53"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -157,6 +201,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q215519"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084470"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -168,6 +216,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "53"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -186,6 +238,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q327591"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084470"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -197,6 +253,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "53"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -215,6 +275,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q841045"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084470"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -226,6 +290,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "52"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q300292"
@@ -244,6 +312,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q841045"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084469"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -255,6 +327,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "51"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q1680843"
@@ -273,6 +349,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q841045"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084468"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -284,6 +364,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "50"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q1680843"
@@ -302,6 +386,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q841045"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084467"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -313,6 +401,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "49"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q1680843"
@@ -331,6 +423,10 @@
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q841045"
       },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084466"
+      },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
         "type" : "literal",
@@ -342,6 +438,10 @@
         "value" : "11"
       }
     }, {
+      "ordinal" : {
+        "type" : "literal",
+        "value" : "49"
+      },
       "item" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q1680843"
@@ -359,6 +459,10 @@
       "party" : {
         "type" : "uri",
         "value" : "http://www.wikidata.org/entity/Q841045"
+      },
+      "term" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q21084466"
       },
       "end_date" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
