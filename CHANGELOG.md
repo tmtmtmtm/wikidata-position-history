@@ -9,6 +9,12 @@
   anything *was* using it, that will now break loudly (but, usefully,
   should also break very early.)
 
+## Enhancements
+
+* A {{PositionHolderHistory}} template can now also be added to items
+  representing single-member constituencies, to see the history of
+  representatives for that seat.
+
 # [1.11.0] 2020-09-14
 
 ## Enhancements
