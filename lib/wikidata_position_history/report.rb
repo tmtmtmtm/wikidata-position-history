@@ -98,6 +98,44 @@ module WikidataPositionHistory
     end
   end
 
+  # Construct the correct ReportConfig based on the position metadata
+  class ReportConfigFactory
+    def self.config(metadata)
+      return ReportConfig::Constituency.new if metadata.constituency?
+
+      ReportConfig::Position.new
+    end
+
+    private
+
+    attr_reader :metadata
+  end
+
+  # Encapsulates the different configuration for each type of position
+  module ReportConfig
+    # Configuration for 'default' single-holder position
+    class Position
+      def mandates_query
+        SPARQL::MandatesQuery
+      end
+
+      def biodata_query
+        SPARQL::BioQuery
+      end
+    end
+
+    # Configuration for representatives of a single-member constituency
+    class Constituency
+      def mandates_query
+        SPARQL::ConstituencyMandatesQuery
+      end
+
+      def biodata_query
+        SPARQL::ConstituencyBioQuery
+      end
+    end
+  end
+
   # The entire wikitext generated for this report
   class Report
     def initialize(position_id, template_class = ReportTemplate)
@@ -129,7 +167,7 @@ module WikidataPositionHistory
     end
 
     def biodata
-      @biodata ||= biodata_query.new(position_id).results_as(BioRow)
+      @biodata ||= config.biodata_query.new(position_id).results_as(BioRow)
     end
 
     def biodata_for(officeholder)
@@ -140,20 +178,12 @@ module WikidataPositionHistory
       [nil, mandates, nil].flatten(1)
     end
 
-    def mandates_query
-      return SPARQL::ConstituencyMandatesQuery if metadata.constituency?
-
-      SPARQL::MandatesQuery
-    end
-
-    def biodata_query
-      return SPARQL::ConstituencyBioQuery if metadata.constituency?
-
-      SPARQL::BioQuery
+    def config
+      @config ||= ReportConfigFactory.config(metadata)
     end
 
     def sparql
-      @sparql ||= mandates_query.new(position_id)
+      @sparql ||= config.mandates_query.new(position_id)
     end
 
     def mandates
