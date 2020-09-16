@@ -6,12 +6,16 @@
     "bindings" : [ {
       "item" : {
         "type" : "uri",
-        "value" : "http://www.wikidata.org/entity/Q16147179"
+        "value" : "http://www.wikidata.org/entity/Q56649104"
+      },
+      "legislature" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q783330"
       },
       "isPosition" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
         "type" : "literal",
-        "value" : "true"
+        "value" : "false"
       },
       "isLegislator" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
@@ -21,7 +25,7 @@
       "isConstituency" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
         "type" : "literal",
-        "value" : "false"
+        "value" : "true"
       }
     } ]
   }
