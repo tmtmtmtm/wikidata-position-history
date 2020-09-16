@@ -1,5 +1,14 @@
 # Changelog
 
+# Unreleased
+
+## Interface change
+
+* `Report#wikitext_with_header` has been removed. This was undocumented,
+  and only used internally, so should not be a breaking change, but if
+  anything *was* using it, that will now break loudly (but, usefully,
+  should also break very early.)
+
 # [1.11.0] 2020-09-14
 
 ## Enhancements
