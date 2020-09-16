@@ -1,0 +1,47 @@
+{
+  "head" : {
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "derivedReplaces", "derivedReplacedBy", "isPosition", "isLegislator", "isConstituency", "representative_count", "legislature" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q751651"
+      },
+      "representative_count" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "1"
+      },
+      "legislature" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q11005"
+      },
+      "inception" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "1983-06-09T00:00:00Z"
+      },
+      "inception_precision" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#integer",
+        "type" : "literal",
+        "value" : "11"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "isConstituency" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      }
+    } ]
+  }
+}
