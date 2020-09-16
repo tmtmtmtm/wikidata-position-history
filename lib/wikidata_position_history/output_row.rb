@@ -22,6 +22,10 @@ module WikidataPositionHistory
         "#{ordinal}."
       end
 
+      def party
+        current.party
+      end
+
       def officeholder
         current.officeholder
       end

@@ -32,7 +32,7 @@ module WikidataPositionHistory
         <<~SPARQL
           # constituency-mandates
 
-          SELECT DISTINCT ?ordinal ?item ?start_date ?start_precision ?end_date ?end_precision ?prev ?next ?nature
+          SELECT DISTINCT ?item ?start_date ?start_precision ?end_date ?end_precision ?party ?prev ?nex 
           WHERE {
             ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
             ?posn pq:P768 wd:%s .
@@ -40,10 +40,9 @@ module WikidataPositionHistory
 
             OPTIONAL { ?posn pqv:P580 [ wikibase:timeValue ?start_date; wikibase:timePrecision ?start_precision ] }
             OPTIONAL { ?posn pqv:P582 [ wikibase:timeValue ?end_date; wikibase:timePrecision ?end_precision ] }
-            OPTIONAL { ?posn pq:P1365|pq:P155 ?prev }
-            OPTIONAL { ?posn pq:P1366|pq:P156 ?next }
-            OPTIONAL { ?posn pq:P1545 ?ordinal }
-            OPTIONAL { ?posn pq:P5102 ?nature }
+            OPTIONAL { ?posn pq:P1365 ?prev }
+            OPTIONAL { ?posn pq:P1366 ?next }
+            OPTIONAL { ?posn pq:P4100 ?party }
           }
           ORDER BY DESC(?start_date) ?item
         SPARQL
@@ -59,6 +58,10 @@ module WikidataPositionHistory
 
     def officeholder
       item_from(:item)
+    end
+
+    def party
+      item_from(:party)
     end
 
     # TODO: switch to item_from
