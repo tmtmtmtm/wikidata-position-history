@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# [2.1.0] 2020-09-16
 
 * When displaying a list of members for a constituency, also include
   a 'parliamentary group' (P4100) column, and if there's a

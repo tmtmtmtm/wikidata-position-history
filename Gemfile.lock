@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    wikidata_position_history (2.0.0)
+    wikidata_position_history (2.1.0)
       mediawiki-replaceable-content (= 0.2.2)
       rest-client (~> 2.0)
 
