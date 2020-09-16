@@ -53,6 +53,12 @@ describe WikidataPositionHistory::Report do
     it { expect(report.wikitext).must_equal expected }
   end
 
+  describe 'MP for Lagan Valley' do
+    let(:id) { 'Q751651' }
+
+    it { expect(report.wikitext).must_equal expected }
+  end
+
   describe 'Bishop of Worcester' do
     let(:id) { 'Q1837494' }
 
