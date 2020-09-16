@@ -5,7 +5,7 @@ require 'test_helper'
 describe WikidataPositionHistory::Report do
   before { use_sample_data }
 
-  let(:rows) { WikidataPositionHistory::Report.new(position_id).wikitext_with_header.split('|-') }
+  let(:rows) { WikidataPositionHistory::Report.new(position_id).wikitext.split('|-') }
   let(:holder_row) { rows.find { |line| line.include? "#{officeholder}}}</span>" } }
   let(:dates) { holder_row.match(/(?<start>[\ds\-]+)\s–\s(?<end>[\ds-]+)?/).named_captures }
 

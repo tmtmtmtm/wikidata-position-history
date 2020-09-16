@@ -109,21 +109,6 @@ module WikidataPositionHistory
       template_class.new(template_params).output
     end
 
-    def header
-      "== {{Q|#{position_id}}} officeholders #{position_dates} =="
-    end
-
-    def position_dates
-      dates = [metadata.inception.date, metadata.abolition.date]
-      return '' if dates.compact.empty?
-
-      format('(%s)', dates.join(' – '))
-    end
-
-    def wikitext_with_header
-      [header, wikitext].join("\n")
-    end
-
     def template_params
       {
         metadata:   metadata,

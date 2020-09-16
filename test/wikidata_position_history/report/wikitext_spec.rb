@@ -19,43 +19,43 @@ describe WikidataPositionHistory::Report do
   let(:pathname) { Pathname.new("test/expected-output/#{id}.out") }
   let(:expected) do
     # uncomment this to regenerate all the reports
-    # pathname.write report.wikitext_with_header
+    # pathname.write report.wikitext
     pathname.read
   end
 
   describe 'Prime Minister of the United Kingdom' do
     let(:id) { 'Q14211' }
 
-    it { expect(report.wikitext_with_header).must_equal expected }
+    it { expect(report.wikitext).must_equal expected }
   end
 
   describe 'Secretary for Mines' do
     let(:id) { 'Q7444267' }
 
-    it { expect(report.wikitext_with_header).must_equal expected }
+    it { expect(report.wikitext).must_equal expected }
   end
 
   describe 'Ambassador to Albania' do
     let(:id) { 'Q56761097' }
 
-    it { expect(report.wikitext_with_header).must_equal expected }
+    it { expect(report.wikitext).must_equal expected }
   end
 
   describe 'Prime Minister of Ghana' do
     let(:id) { 'Q3657870' }
 
-    it { expect(report.wikitext_with_header).must_equal expected }
+    it { expect(report.wikitext).must_equal expected }
   end
 
   describe 'Federal Minister of Economics and Technology' do
     let(:id) { 'Q30533307' }
 
-    it { expect(report.wikitext_with_header).must_equal expected }
+    it { expect(report.wikitext).must_equal expected }
   end
 
   describe 'Bishop of Worcester' do
     let(:id) { 'Q1837494' }
 
-    it { expect(report.wikitext_with_header).must_equal expected }
+    it { expect(report.wikitext).must_equal expected }
   end
 end
