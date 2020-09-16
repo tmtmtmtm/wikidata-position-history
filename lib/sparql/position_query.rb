@@ -11,10 +11,13 @@ module WikidataPositionHistory
           SELECT DISTINCT ?item ?inception ?inception_precision ?abolition ?abolition_precision
                           ?replaces ?replacedBy ?derivedReplaces ?derivedReplacedBy
                           ?isPosition ?isLegislator
+                          ?isConstituency ?representative_count ?legislature
           WHERE {
             VALUES ?item { wd:%s }
             BIND(EXISTS { wd:%s wdt:P279+ wd:Q4164871 } as ?isPosition)
             BIND(EXISTS { wd:%s wdt:P279+ wd:Q4175034 } as ?isLegislator)
+            BIND(EXISTS { wd:%s wdt:P31/wdt:P279+ wd:Q192611 } as ?isConstituency)
+
             OPTIONAL { ?item p:P571 [ a wikibase:BestRank ;
               psv:P571 [ wikibase:timeValue ?inception; wikibase:timePrecision ?inception_precision ]
             ] }
@@ -25,12 +28,16 @@ module WikidataPositionHistory
             OPTIONAL { ?item wdt:P1366 ?replacedBy }
             OPTIONAL { ?derivedReplaces wdt:P1366 ?item }
             OPTIONAL { ?derivedReplacedBy wdt:P1365 ?item }
+
+            OPTIONAL { # if constituency
+              ?item p:P1410 [ a wikibase:BestRank ; ps:P1410 ?representative_count ; pq:P194 ?legislature ]
+            }
           }
         SPARQL
       end
 
       def sparql_args
-        [itemid] * 3
+        [itemid] * 4
       end
     end
   end
@@ -71,6 +78,18 @@ module WikidataPositionHistory
 
     def legislator?
       raw(:isLegislator) == 'true'
+    end
+
+    def constituency?
+      raw(:isConstituency) == 'true'
+    end
+
+    def legislature
+      item_from(:legislature)
+    end
+
+    def representative_count
+      raw(:representative_count)
     end
   end
 end
