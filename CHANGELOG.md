@@ -3,7 +3,8 @@
 # Unreleased
 
 * When displaying a list of members for a constituency, also include
-  a parliamentary group (P4100) column.
+  a 'parliamentary group' (P4100) column, and if there's a
+  'parliamentary term' (P2937) qualifier, use it for the ordinal.
 
 # [2.0.0] 2020-09-16
 
