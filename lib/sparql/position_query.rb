@@ -89,7 +89,7 @@ module WikidataPositionHistory
     end
 
     def representative_count
-      raw(:representative_count)
+      raw(:representative_count).to_i
     end
   end
 end
