@@ -32,7 +32,7 @@ module WikidataPositionHistory
         <<~SPARQL
           # constituency-mandates
 
-          SELECT DISTINCT ?item ?start_date ?start_precision ?end_date ?end_precision ?party ?prev ?nex 
+          SELECT DISTINCT ?ordinal ?item ?start_date ?start_precision ?end_date ?end_precision ?party ?prev ?next ?term
           WHERE {
             ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
             ?posn pq:P768 wd:%s .
@@ -43,6 +43,10 @@ module WikidataPositionHistory
             OPTIONAL { ?posn pq:P1365 ?prev }
             OPTIONAL { ?posn pq:P1366 ?next }
             OPTIONAL { ?posn pq:P4100 ?party }
+            OPTIONAL {
+              ?posn pq:P2937 ?term .
+              OPTIONAL { ?term p:P31/pq:P1545 ?ordinal }
+            }
           }
           ORDER BY DESC(?start_date) ?item
         SPARQL
