@@ -50,6 +50,9 @@ module WikidataPositionHistory
         | style="padding:0.5em 2em" | <%= mandate.ordinal_string %>
         | style="padding:0.5em 2em" | <%= bio.map(&:image_link).first %>
         | style="padding:0.5em 2em" | <span style="font-size: <%= mandate.acting? ? '1.25em; font-style: italic;' : '1.5em' %>; display: block;"><%= mandate.officeholder.qlink %></span> <%= mandate.dates %>
+        <% if metadata.constituency? -%>
+        | style="padding:0.5em 1em" | <% if mandate.party %><%= mandate.party.qlink %><% end %>
+        <% end -%>
         | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | \
         <% mandate.warnings.each do |warning| -%>
         <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;"><%= warning.headline %></span>&nbsp;<ref><%= warning.explanation %></ref></span>\
