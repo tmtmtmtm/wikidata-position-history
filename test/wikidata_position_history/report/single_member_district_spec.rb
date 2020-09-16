@@ -13,6 +13,10 @@ describe WikidataPositionHistory::Report do
     expect(mandates.map(&:officeholder).uniq(&:id).count).must_equal 2
   end
 
+  it 'has term ordinals' do
+    expect(mandates.count { |mandate| mandate.ordinal_string == '53.' }).must_equal 3
+  end
+
   it 'has lots of Donaldson mandates' do
     expect(donaldson_mandates.count).must_equal 9
   end
