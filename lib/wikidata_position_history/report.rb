@@ -73,6 +73,10 @@ module WikidataPositionHistory
       rows.map(&:constituency?).first
     end
 
+    def representative_count
+      rows.map(&:representative_count).map(&:to_i).max
+    end
+
     def replaces_combined
       @replaces_combined ||= ImpliedList.new(uniq_by_id(:replaces), uniq_by_id(:derived_replaces))
     end
@@ -133,6 +137,10 @@ module WikidataPositionHistory
       def biodata_query
         SPARQL::ConstituencyBioQuery
       end
+
+      def multimember_error_template
+        "\n{{PositionHolderHistory/error_multimember}}\n"
+      end
     end
   end
 
@@ -147,6 +155,7 @@ module WikidataPositionHistory
 
     def wikitext
       return legislator_template if metadata.legislator?
+      return config.multimember_error_template if metadata.constituency? && metadata.representative_count != 1
       return no_items_output if mandates.empty?
 
       template_class.new(template_params).output
