@@ -1,6 +1,6 @@
 {
   "head" : {
-    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "derivedReplaces", "derivedReplacedBy", "isPosition", "isLegislator" ]
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "derivedReplaces", "derivedReplacedBy", "isPosition", "isLegislator", "isConstituency", "representative_count", "legislature" ]
   },
   "results" : {
     "bindings" : [ {
@@ -37,6 +37,11 @@
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
         "type" : "literal",
         "value" : "false"
+      },
+      "isConstituency" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
       }
     }, {
       "item" : {
@@ -69,6 +74,11 @@
         "value" : "true"
       },
       "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "isConstituency" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
         "type" : "literal",
         "value" : "false"
@@ -107,6 +117,11 @@
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
         "type" : "literal",
         "value" : "false"
+      },
+      "isConstituency" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
       }
     }, {
       "item" : {
@@ -139,6 +154,11 @@
         "value" : "true"
       },
       "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "isConstituency" : {
         "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
         "type" : "literal",
         "value" : "false"
