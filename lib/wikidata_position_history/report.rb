@@ -74,7 +74,7 @@ module WikidataPositionHistory
     end
 
     def representative_count
-      rows.map(&:representative_count).map(&:to_i).max
+      rows.map(&:representative_count).max
     end
 
     def replaces_combined
@@ -155,7 +155,7 @@ module WikidataPositionHistory
 
     def wikitext
       return legislator_template if metadata.legislator?
-      return config.multimember_error_template if metadata.constituency? && metadata.representative_count != 1
+      return config.multimember_error_template if metadata.constituency? && (metadata.representative_count != 1)
       return no_items_output if mandates.empty?
 
       template_class.new(template_params).output
