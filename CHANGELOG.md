@@ -1,6 +1,18 @@
 # Changelog
 
+# Unreleased
+
+## Enhancements
+
+* When a position has more than one successor or prdecessor, those will
+  now be displayed as a proper Mediawiki list, rather than one long line
+  of text. As these are in a table cell, this should stop those growing
+  unnecessarily wide, and should generally make everything look a little
+  nicer.
+
 # [2.1.0] 2020-09-16
+
+## Enhancements
 
 * When displaying a list of members for a constituency, also include
   a 'parliamentary group' (P4100) column, and if there's a
