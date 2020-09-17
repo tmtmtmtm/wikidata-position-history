@@ -27,6 +27,10 @@
 | colspan="3" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
 | colspan="1" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
 |-
+| colspan="2" style="border: none; background: #fff; font-size: 1.15em; text-align: right;" | '''Position created''':
+| style="border: none; background: #fff; text-align: left;" | 
+| style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Missing field</span>&nbsp;<ref>{{PositionHolderHistory/warning_no_inception_date|item=Q30533307}}</ref></span>
+|-
 | colspan="2" style=" border: none; background: #fff; font-size: 1.15em; text-align: right;" | '''Replaces''':
 | style="border: none; background: #fff; text-align: left;" | ''{{QB|Q42567912}}''
 | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | <span style="display: block">[[File:Pictogram voting comment.svg|15px|link=]]&nbsp;<span style="color: #d33; font-weight: bold; vertical-align: middle;">Indirect only</span>&nbsp;<ref>{{PositionHolderHistory/warning_indirect_predecessor|from=Q42567912|to=Q30533307}}</ref></span>
