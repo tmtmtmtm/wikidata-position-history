@@ -63,7 +63,7 @@ module WikidataPositionHistory
         | colspan="3" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
         | colspan="1" style="padding:0.5em; border: none; background: #fff"> |&nbsp;
         <% end -%>
-        <% if metadata.inception.date -%>
+        <% if metadata.inception.date || metadata.inception.warnings.any? -%>
         |-
         | colspan="2" style="border: none; background: #fff; font-size: 1.15em; text-align: right;" | '''Position created''':
         | style="border: none; background: #fff; text-align: left;" | <%= metadata.inception.date %>

@@ -4,6 +4,12 @@
 
 ## Enhancements
 
+* Every position came into existence at _some_ point, and so should have
+  a P571 inception date. If that's missing, a warning will now be
+  displayed.
+
+## Improvements
+
 * When a position has more than one successor or prdecessor, those will
   now be displayed as a proper Mediawiki list, rather than one long line
   of text. As these are in a table cell, this should stop those growing
