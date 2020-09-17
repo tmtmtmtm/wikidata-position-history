@@ -112,7 +112,10 @@ module WikidataPositionHistory
       def position
         return if implied_list.empty?
 
-        (implied_list.direct.map(&:qblink) + implied_list.indirect_only.map(&:qblink_i)).join(', ')
+        list = (implied_list.direct.map(&:qblink) + implied_list.indirect_only.map(&:qblink_i))
+        return list.first if list.count == 1
+
+        list.map { |item| "\n* #{item}" }.join
       end
 
       def warnings

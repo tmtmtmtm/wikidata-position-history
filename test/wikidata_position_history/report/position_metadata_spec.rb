@@ -62,8 +62,10 @@ describe WikidataPositionHistory::Report do
   describe 'office with mutiple replaces and replaced by' do
     let(:position_id) { 'Q67202316' }
 
-    it { expect(metadata.predecessor.position).must_equal '{{QB|Q67202278}}, {{QB|Q67202332}}' }
-    it { expect(metadata.successor.position).must_equal '{{QB|Q50390723}}, {{QB|Q51280630}}' }
+    it { expect(metadata.predecessor.position).must_include '{{QB|Q67202278}}' }
+    it { expect(metadata.predecessor.position).must_include '{{QB|Q67202332}}' }
+    it { expect(metadata.successor.position).must_include '{{QB|Q50390723}}' }
+    it { expect(metadata.successor.position).must_include '{{QB|Q51280630}}' }
   end
 
   describe 'office with implied replaces and replaced by' do
