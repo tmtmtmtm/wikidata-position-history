@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+require_relative 'report/abstract'
+require_relative 'report/legislator'
+require_relative 'report/mandate'
+require_relative 'report/constituency'
+require_relative 'report/position'
+
 module WikidataPositionHistory
   # A list made up of both direct and indirect claims, where we
   # can tell which came from which, when required
@@ -99,126 +105,6 @@ module WikidataPositionHistory
 
     def uniq_by_id(method)
       rows.map(&method).compact.uniq(&:id).sort_by(&:id)
-    end
-  end
-
-  class Report
-    # Abstract base class for Reports
-    class Abstract
-      def initialize(metadata)
-        @metadata = metadata
-      end
-
-      protected
-
-      attr_reader :metadata
-
-      def position_id
-        metadata.position.id
-      end
-    end
-  end
-
-  class Report
-    # Report for a (presumed multi-member) legislative position
-    class Legislator < Abstract
-      def wikitext
-        "\n{{PositionHolderHistory/error_legislator|id=#{position_id}}}\n"
-      end
-    end
-  end
-
-  class Report
-    # base report where each row is one person holding an office for a period
-    class Mandate < Abstract
-      def wikitext
-        return no_items_output if mandates.empty?
-
-        ReportTemplate.new(template_params).output
-      end
-
-      def template_params
-        {
-          metadata:   metadata,
-          table_rows: table_rows,
-          sparql_url: sparql.wdqs_url,
-        }
-      end
-
-      private
-
-      def biodata
-        @biodata ||= biodata_sparql.results_as(BioRow)
-      end
-
-      def biodata_for(officeholder)
-        biodata.select { |bio| bio.person.id == officeholder.id }
-      end
-
-      def padded_mandates
-        [nil, mandates, nil].flatten(1)
-      end
-
-      def sparql
-        @sparql ||= mandates_query.new(position_id)
-      end
-
-      def biodata_sparql
-        biodata_query.new(position_id)
-      end
-
-      def mandates
-        @mandates ||= sparql.results_as(MandateRow)
-      end
-
-      def no_items_output
-        "\n{{PositionHolderHistory/error_no_holders|id=#{position_id}}}\n"
-      end
-
-      def table_rows
-        padded_mandates.each_cons(3).map do |later, current, earlier|
-          {
-            mandate: OutputRow::Mandate.new(later, current, earlier),
-            bio:     biodata_for(current.officeholder),
-          }
-        end
-      end
-    end
-  end
-
-  class Report
-    # Report of representatives for a single-member consttuency
-    class Constituency < Mandate
-      def wikitext
-        return multimember_error_template unless metadata.representative_count == 1
-
-        super
-      end
-
-      def mandates_query
-        SPARQL::ConstituencyMandatesQuery
-      end
-
-      def biodata_query
-        SPARQL::ConstituencyBioQuery
-      end
-
-      def multimember_error_template
-        "\n{{PositionHolderHistory/error_multimember}}\n"
-      end
-    end
-  end
-
-  class Report
-    # The default single-person-at-a-time position
-    class Position < Mandate
-      def mandates_query
-        SPARQL::MandatesQuery
-      end
-
-      def biodata_query
-        SPARQL::BioQuery
-      end
     end
   end
 
