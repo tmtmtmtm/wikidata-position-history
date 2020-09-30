@@ -10,9 +10,11 @@ describe WikidataPositionHistory::Report do
     expect(result[/{{(.*?)}}/, 1]).must_include 'error_no_holders'
   end
 
-  it 'outputs a warning template when the position is legislative' do
-    result = WikidataPositionHistory::Report.new('Q13653224').wikitext
-    expect(result[/{{(.*?)}}/, 1]).must_include 'error_legislator'
+  describe 'warning template when the position is legislative' do
+    let(:result) { WikidataPositionHistory::Report.new('Q13653224').wikitext }
+
+    it { expect(result[/{{(.*?)}}/, 1]).must_include 'error_legislator' }
+    it { expect(result[/id=(Q\d+)/, 1]).must_include 'Q13653224' }
   end
 
   describe 'warning template for a multi-member constituency' do
