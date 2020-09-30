@@ -147,8 +147,8 @@ module WikidataPositionHistory
   class Report
     # Report for a (presumed multi-member) legislative position
     class Legislator
-      def initialize(position_id)
-        @position_id = position_id
+      def initialize(metadata)
+        @metadata = metadata
       end
 
       def wikitext
@@ -157,84 +157,122 @@ module WikidataPositionHistory
 
       private
 
-      attr_reader :position_id
+      attr_reader :metadata
+
+      def position_id
+        metadata.position.id
+      end
+    end
+  end
+
+  class Report
+    # base report where each row is one person holding an office for a period
+    class Mandate
+      def initialize(metadata)
+        @metadata = metadata
+      end
+
+      def wikitext
+        return config.multimember_error_template if metadata.constituency? && (metadata.representative_count != 1)
+        return no_items_output if mandates.empty?
+
+        ReportTemplate.new(template_params).output
+      end
+
+      def template_params
+        {
+          metadata:   metadata,
+          table_rows: table_rows,
+          sparql_url: sparql.wdqs_url,
+        }
+      end
+
+      private
+
+      attr_reader :metadata
+
+      def position_id
+        metadata.position.id
+      end
+
+      def biodata
+        @biodata ||= biodata_sparql.results_as(BioRow)
+      end
+
+      def biodata_for(officeholder)
+        biodata.select { |bio| bio.person.id == officeholder.id }
+      end
+
+      def padded_mandates
+        [nil, mandates, nil].flatten(1)
+      end
+
+      def config
+        @config ||= ReportConfigFactory.config(metadata)
+      end
+
+      def sparql
+        @sparql ||= config.mandates_query.new(position_id)
+      end
+
+      def biodata_sparql
+        config.biodata_query.new(position_id)
+      end
+
+      def mandates
+        @mandates ||= sparql.results_as(MandateRow)
+      end
+
+      def no_items_output
+        "\n{{PositionHolderHistory/error_no_holders|id=#{position_id}}}\n"
+      end
+
+      def table_rows
+        padded_mandates.each_cons(3).map do |later, current, earlier|
+          {
+            mandate: OutputRow::Mandate.new(later, current, earlier),
+            bio:     biodata_for(current.officeholder),
+          }
+        end
+      end
     end
   end
 
   # The entire wikitext generated for this report
   class Report
-    def initialize(position_id, template_class = ReportTemplate)
+    def initialize(position_id)
       @position_id = position_id
       @template_class = template_class
     end
 
     attr_reader :position_id, :template_class
 
-    def wikitext
-      return legislator_wikitext if metadata.legislator?
-      return config.multimember_error_template if metadata.constituency? && (metadata.representative_count != 1)
-      return no_items_output if mandates.empty?
-
-      template_class.new(template_params).output
-    end
-
-    def template_params
-      {
-        metadata:   metadata,
-        table_rows: table_rows,
-        sparql_url: sparql.wdqs_url,
-      }
-    end
-
-    private
-
     def metadata
       @metadata ||= Metadata.new(SPARQL::PositionQuery.new(position_id).results_as(PositionRow))
     end
 
-    def biodata
-      @biodata ||= biodata_sparql.results_as(BioRow)
+    def report
+      return legislator_report if metadata.legislator?
+
+      mandate_report
     end
 
-    def biodata_for(officeholder)
-      biodata.select { |bio| bio.person.id == officeholder.id }
+    def template_params
+      report.template_params
     end
 
-    def padded_mandates
-      [nil, mandates, nil].flatten(1)
+    def wikitext
+      report.wikitext
     end
 
-    def config
-      @config ||= ReportConfigFactory.config(metadata)
+    private
+
+    def legislator_report
+      Report::Legislator.new(metadata)
     end
 
-    def sparql
-      @sparql ||= config.mandates_query.new(position_id)
-    end
-
-    def biodata_sparql
-      config.biodata_query.new(position_id)
-    end
-
-    def mandates
-      @mandates ||= sparql.results_as(MandateRow)
-    end
-
-    def no_items_output
-      "\n{{PositionHolderHistory/error_no_holders|id=#{position_id}}}\n"
-    end
-
-    def legislator_wikitext
-      Report::Legislator.new(position_id).wikitext
-    end
-
-    def table_rows
-      padded_mandates.each_cons(3).map do |later, current, earlier|
-        {
-          mandate: OutputRow::Mandate.new(later, current, earlier),
-          bio:     biodata_for(current.officeholder),
-        }
-      end
+    def mandate_report
+      Report::Mandate.new(metadata)
     end
   end
 end

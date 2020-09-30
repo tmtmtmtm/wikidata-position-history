@@ -5,7 +5,7 @@ require 'test_helper'
 describe 'Checks' do
   before { use_sample_data }
 
-  let(:mandates) { WikidataPositionHistory::Report.new(position).send(:padded_mandates) }
+  let(:mandates) { WikidataPositionHistory::Report.new(position).report.send(:padded_mandates) }
 
   describe 'UK Prime Minister' do
     let(:position) { 'Q14211' }
