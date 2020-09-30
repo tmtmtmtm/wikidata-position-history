@@ -144,6 +144,23 @@ module WikidataPositionHistory
     end
   end
 
+  class Report
+    # Report for a (presumed multi-member) legislative position
+    class Legislator
+      def initialize(position_id)
+        @position_id = position_id
+      end
+
+      def wikitext
+        "\n{{PositionHolderHistory/error_legislator|id=#{position_id}}}\n"
+      end
+
+      private
+
+      attr_reader :position_id
+    end
+  end
+
   # The entire wikitext generated for this report
   class Report
     def initialize(position_id, template_class = ReportTemplate)
@@ -154,7 +171,7 @@ module WikidataPositionHistory
     attr_reader :position_id, :template_class
 
     def wikitext
-      return legislator_template if metadata.legislator?
+      return legislator_wikitext if metadata.legislator?
       return config.multimember_error_template if metadata.constituency? && (metadata.representative_count != 1)
       return no_items_output if mandates.empty?
 
@@ -207,8 +224,8 @@ module WikidataPositionHistory
       "\n{{PositionHolderHistory/error_no_holders|id=#{position_id}}}\n"
     end
 
-    def legislator_template
-      "\n{{PositionHolderHistory/error_legislator|id=#{position_id}}}\n"
+    def legislator_wikitext
+      Report::Legislator.new(position_id).wikitext
     end
 
     def table_rows
