@@ -102,48 +102,6 @@ module WikidataPositionHistory
     end
   end
 
-  # Construct the correct ReportConfig based on the position metadata
-  class ReportConfigFactory
-    def self.config(metadata)
-      return ReportConfig::Constituency.new if metadata.constituency?
-
-      ReportConfig::Position.new
-    end
-
-    private
-
-    attr_reader :metadata
-  end
-
-  # Encapsulates the different configuration for each type of position
-  module ReportConfig
-    # Configuration for 'default' single-holder position
-    class Position
-      def mandates_query
-        SPARQL::MandatesQuery
-      end
-
-      def biodata_query
-        SPARQL::BioQuery
-      end
-    end
-
-    # Configuration for representatives of a single-member constituency
-    class Constituency
-      def mandates_query
-        SPARQL::ConstituencyMandatesQuery
-      end
-
-      def biodata_query
-        SPARQL::ConstituencyBioQuery
-      end
-
-      def multimember_error_template
-        "\n{{PositionHolderHistory/error_multimember}}\n"
-      end
-    end
-  end
-
   class Report
     # Report for a (presumed multi-member) legislative position
     class Legislator
@@ -173,7 +131,6 @@ module WikidataPositionHistory
       end
 
       def wikitext
-        return config.multimember_error_template if metadata.constituency? && (metadata.representative_count != 1)
         return no_items_output if mandates.empty?
 
         ReportTemplate.new(template_params).output
@@ -207,16 +164,12 @@ module WikidataPositionHistory
         [nil, mandates, nil].flatten(1)
       end
 
-      def config
-        @config ||= ReportConfigFactory.config(metadata)
-      end
-
       def sparql
-        @sparql ||= config.mandates_query.new(position_id)
+        @sparql ||= mandates_query.new(position_id)
       end
 
       def biodata_sparql
-        config.biodata_query.new(position_id)
+        biodata_query.new(position_id)
       end
 
       def mandates
@@ -238,6 +191,42 @@ module WikidataPositionHistory
     end
   end
 
+  class Report
+    # Report of representatives for a single-member consttuency
+    class Constituency < Mandate
+      def wikitext
+        return multimember_error_template unless metadata.representative_count == 1
+
+        super
+      end
+
+      def mandates_query
+        SPARQL::ConstituencyMandatesQuery
+      end
+
+      def biodata_query
+        SPARQL::ConstituencyBioQuery
+      end
+
+      def multimember_error_template
+        "\n{{PositionHolderHistory/error_multimember}}\n"
+      end
+    end
+  end
+
+  class Report
+    # The default single-person-at-a-time position
+    class Position < Mandate
+      def mandates_query
+        SPARQL::MandatesQuery
+      end
+
+      def biodata_query
+        SPARQL::BioQuery
+      end
+    end
+  end
+
   # The entire wikitext generated for this report
   class Report
     def initialize(position_id)
@@ -252,9 +241,10 @@ module WikidataPositionHistory
     end
 
     def report
-      return legislator_report if metadata.legislator?
+      return Report::Legislator.new(metadata) if metadata.legislator?
+      return Report::Constituency.new(metadata) if metadata.constituency?
 
-      mandate_report
+      Report::Position.new(metadata)
     end
 
     def template_params
@@ -263,16 +253,6 @@ module WikidataPositionHistory
 
     def wikitext
       report.wikitext
-    end
-
-    private
-
-    def legislator_report
-      Report::Legislator.new(metadata)
-    end
-
-    def mandate_report
-      Report::Mandate.new(metadata)
     end
   end
 end
