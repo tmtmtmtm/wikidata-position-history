@@ -103,17 +103,13 @@ module WikidataPositionHistory
   end
 
   class Report
-    # Report for a (presumed multi-member) legislative position
-    class Legislator
+    # Abstract base class for Reports
+    class Abstract
       def initialize(metadata)
         @metadata = metadata
       end
 
-      def wikitext
-        "\n{{PositionHolderHistory/error_legislator|id=#{position_id}}}\n"
-      end
-
-      private
+      protected
 
       attr_reader :metadata
 
@@ -124,12 +120,17 @@ module WikidataPositionHistory
   end
 
   class Report
-    # base report where each row is one person holding an office for a period
-    class Mandate
-      def initialize(metadata)
-        @metadata = metadata
+    # Report for a (presumed multi-member) legislative position
+    class Legislator < Abstract
+      def wikitext
+        "\n{{PositionHolderHistory/error_legislator|id=#{position_id}}}\n"
       end
+    end
+  end
 
+  class Report
+    # base report where each row is one person holding an office for a period
+    class Mandate < Abstract
       def wikitext
         return no_items_output if mandates.empty?
 
@@ -145,12 +146,6 @@ module WikidataPositionHistory
       end
 
       private
-
-      attr_reader :metadata
-
-      def position_id
-        metadata.position.id
-      end
 
       def biodata
         @biodata ||= biodata_sparql.results_as(BioRow)
