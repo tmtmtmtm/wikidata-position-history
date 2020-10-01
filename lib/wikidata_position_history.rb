@@ -16,6 +16,18 @@ require 'date'
 require 'mediawiki/client'
 require 'mediawiki/page'
 
+module MediaWiki
+  # mediawiki-page-replaceable_content does not provide a way to set a
+  # bot flag, so we need to monkey patch it. This should really be
+  # exposed somewhere in its interface.
+  class Client
+    def edit(hash)
+      hash['bot'] = ENV['PHH_BOT'] if ENV.key?('PHH_BOT')
+      wrapped_client.edit(hash)
+    end
+  end
+end
+
 module WikidataPositionHistory
   # Rewrites a Wiki page
   class PageRewriter
