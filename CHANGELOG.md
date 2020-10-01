@@ -2,7 +2,7 @@
 
 # Unreleased
 
-## Improvements
+# [2.3.0] 2020-10-01
 
 * Edits on Wikidata can now set a botflag if requested, based on the
   `PHH_BOT` environemnt variable.
