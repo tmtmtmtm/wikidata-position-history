@@ -16,7 +16,7 @@ module WikidataPositionHistory
     attr_reader :data
 
     def template
-      @template ||= ERB.new(template_text, nil, '-')
+      @template ||= ERB.new(template_text, trim_mode: '-')
     end
 
     def template_text
