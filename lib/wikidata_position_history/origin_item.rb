@@ -1,9 +1,17 @@
 # frozen_string_literal: true
 
+# Meta-information about the 'origin' item: i.e the one passed to the
+# template on-wiki.
+#
+# We can look up some data about this without yet knowing what 'type' of
+# item we're dealing with (though not all properties will apply to all
+# types), and then, based on this, decide what other classes, templates,
+# queries etc to use.
+
 module WikidataPositionHistory
   module SPARQL
-    # SPARQL for fetching metadata about a position
-    class PositionQuery < ItemQuery
+    # SPARQL for fetching metadata about the origin item
+    class OriginQuery < ItemQuery
       def raw_sparql
         <<~SPARQL
           # position-metadata
@@ -39,8 +47,10 @@ module WikidataPositionHistory
     end
   end
 
-  # Represents a single row returned from the Position query
-  class PositionRow < SPARQL::QueryRow
+  # Encapsulate a single row returned from the Origin query
+  #  (due to combinatorial explosion when multiple values are set for
+  #  any property, there could potentially be a large number of rows)
+  class OriginRow < SPARQL::QueryRow
     def item
       item_from(:item)
     end
@@ -82,6 +92,68 @@ module WikidataPositionHistory
 
     def representative_count
       raw(:representative_count).to_i
+    end
+  end
+
+  # Metadata about the item specified in the template
+  class OriginItem
+    def initialize(rows)
+      @rows = rows
+    end
+
+    def position
+      rows.map(&:item).first
+    end
+
+    # TODO: this class should not know about Output logic
+    # These should be the ImpliedLists, rather than OutputRows
+    def predecessor
+      @predecessor ||= OutputRow::Predecessor.new(self)
+    end
+
+    def successor
+      @successor ||= OutputRow::Successor.new(self)
+    end
+
+    def inception
+      @inception ||= OutputRow::Inception.new(self)
+    end
+
+    def abolition
+      @abolition ||= OutputRow::Abolition.new(self)
+    end
+
+    def type
+      # this should be the same everywhere
+      rows.map(&:type).first
+    end
+
+    def representative_count
+      rows.map(&:representative_count).max
+    end
+
+    def replaces_combined
+      @replaces_combined ||= ImpliedList.new(uniq_by_id(:replaces), uniq_by_id(:derived_replaces))
+    end
+
+    def replaced_by_combined
+      @replaced_by_combined ||= ImpliedList.new(uniq_by_id(:replaced_by), uniq_by_id(:derived_replaced_by))
+    end
+
+    def inception_dates
+      rows.map(&:inception_date).compact.uniq(&:to_s).sort
+    end
+
+    def abolition_dates
+      rows.map(&:abolition_date).compact.uniq(&:to_s).sort
+    end
+
+    private
+
+    attr_reader :rows
+
+    def uniq_by_id(method)
+      rows.map(&method).compact.uniq(&:id).sort_by(&:id)
     end
   end
 end
