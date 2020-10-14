@@ -7,7 +7,7 @@ module WikidataPositionHistory
       def wikitext
         return no_items_output if mandates.empty?
 
-        ReportTemplate.new(template_params).output
+        template_class.new(template_params).output
       end
 
       def template_params
@@ -19,6 +19,10 @@ module WikidataPositionHistory
       end
 
       private
+
+      def template_class
+        ReportTemplate::Position
+      end
 
       def biodata
         @biodata ||= biodata_sparql.results_as(BioRow)
