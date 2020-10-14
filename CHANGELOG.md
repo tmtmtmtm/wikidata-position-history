@@ -2,6 +2,8 @@
 
 # Unreleased
 
+* Items that are legislative terms can now be detected.
+
 # [2.3.0] 2020-10-01
 
 * Edits on Wikidata can now set a botflag if requested, based on the
