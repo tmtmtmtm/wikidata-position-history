@@ -10,13 +10,14 @@ module WikidataPositionHistory
 
           SELECT DISTINCT ?item ?inception ?inception_precision ?abolition ?abolition_precision
                           ?replaces ?replacedBy ?derivedReplaces ?derivedReplacedBy
-                          ?isPosition ?isLegislator
+                          ?isPosition ?isLegislator ?isTerm
                           ?isConstituency ?representative_count ?legislature
           WHERE {
             VALUES ?item { wd:%s }
             BIND(EXISTS { wd:%s wdt:P279+ wd:Q4164871 } as ?isPosition)
             BIND(EXISTS { wd:%s wdt:P279+ wd:Q4175034 } as ?isLegislator)
-            BIND(EXISTS { wd:%s wdt:P31/wdt:P279+ wd:Q192611 } as ?isConstituency)
+            BIND(EXISTS { wd:%s wdt:P31/wdt:P279* wd:Q15238777 } as ?isTerm)
+            BIND(EXISTS { wd:%s wdt:P31/wdt:P279* wd:Q192611 } as ?isConstituency)
 
             OPTIONAL { ?item p:P571 [ a wikibase:BestRank ;
               psv:P571 [ wikibase:timeValue ?inception; wikibase:timePrecision ?inception_precision ]
@@ -37,7 +38,7 @@ module WikidataPositionHistory
       end
 
       def sparql_args
-        [itemid] * 4
+        [itemid] * 5
       end
     end
   end
@@ -74,8 +75,9 @@ module WikidataPositionHistory
 
     def type
       return 'constituency' if raw(:isConstituency) == 'true'
-      return 'legislator' if raw(:isLegislator) == 'true'
-      return 'position' if raw(:isPosition) == 'true'
+      return 'legislator'   if raw(:isLegislator) == 'true'
+      return 'term'         if raw(:isTerm) == 'true'
+      return 'position'     if raw(:isPosition) == 'true'
     end
 
     def legislature
