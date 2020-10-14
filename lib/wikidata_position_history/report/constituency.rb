@@ -8,7 +8,7 @@ module WikidataPositionHistory
         {
           mandates_query_class: SPARQL::ConstituencyMandatesQuery,
           biodata_query_class:  SPARQL::ConstituencyBioQuery,
-          template_class:       ReportTemplate::Position,
+          template_class:       ReportTemplate::Office,
           mandate_class:        MandateRow,
         }
       end
