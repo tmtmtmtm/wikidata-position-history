@@ -13,6 +13,6 @@ end
 id = ARGV.first or abort "Usage: #{$PROGRAM_NAME} <Qid>"
 report = WikidataPositionHistory::Report.new(id).report
 
-store(id, 'metadata', WikidataPositionHistory::SPARQL::PositionQuery.new(id))
+store(id, 'metadata', WikidataPositionHistory::SPARQL::OriginQuery.new(id))
 store(id, 'mandates', report.send(:sparql))
 store(id, 'biodata', report.send(:biodata_sparql))
