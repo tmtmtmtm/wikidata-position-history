@@ -50,7 +50,7 @@ module WikidataPositionHistory
         | style="padding:0.5em 2em" | <%= mandate.ordinal_string %>
         | style="padding:0.5em 2em" | <%= bio.map(&:image_link).first %>
         | style="padding:0.5em 2em" | <span style="font-size: <%= mandate.acting? ? '1.25em; font-style: italic;' : '1.5em' %>; display: block;"><%= mandate.officeholder.qlink %></span> <%= mandate.dates %>
-        <% if metadata.constituency? -%>
+        <% if metadata.type == 'constituency' -%>
         | style="padding:0.5em 1em" | <% if mandate.party %><%= mandate.party.qlink %><% end %>
         <% end -%>
         | style="padding:0.5em 2em 0.5em 1em; border: none; background: #fff; text-align: left;" | \
