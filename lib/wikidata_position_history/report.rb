@@ -5,6 +5,7 @@ require_relative 'report/legislator'
 require_relative 'report/mandate'
 require_relative 'report/constituency'
 require_relative 'report/position'
+require_relative 'report/term'
 
 module WikidataPositionHistory
   # A list made up of both direct and indirect claims, where we
@@ -115,6 +116,7 @@ module WikidataPositionHistory
       report_class = {
         'legislator'   => Report::Legislator,
         'constituency' => Report::Constituency,
+        'term'         => Report::Term,
       }
       report_class.default = Report::Position
       report_class[metadata.type].new(metadata)

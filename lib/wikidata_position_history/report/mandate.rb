@@ -40,8 +40,12 @@ module WikidataPositionHistory
         biodata_query.new(position_id)
       end
 
+      def mandate_class
+        MandateRow
+      end
+
       def mandates
-        @mandates ||= sparql.results_as(MandateRow)
+        @mandates ||= sparql.results_as(mandate_class)
       end
 
       def no_items_output
