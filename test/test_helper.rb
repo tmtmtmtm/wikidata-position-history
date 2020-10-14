@@ -47,6 +47,13 @@ def stub_constituency_mandate_query
   end
 end
 
+def stub_term_mandate_query
+  stub_request(:get, %r{query.wikidata.org/sparql.*term-mandates}).to_return do |request|
+    filename = request.uri.to_s[/pq:P2937%20wd:(Q\d+)/, 1]
+    { body: (cached_mandates_path + filename).sub_ext('.json').read }
+  end
+end
+
 def stub_metadata_query
   stub_request(:get, %r{query.wikidata.org/sparql.*position-metadata}).to_return do |request|
     filename = request.uri.to_s[/wd:(Q\d+)/, 1]
@@ -68,10 +75,19 @@ def stub_constituency_biodata_query
   end
 end
 
+def stub_term_biodata_query
+  stub_request(:get, %r{query.wikidata.org/sparql.*term-biodata}).to_return do |request|
+    filename = request.uri.to_s[/pq:P2937%20wd:(Q\d+)/, 1]
+    { body: (cached_biodata_path + filename).sub_ext('.json').read }
+  end
+end
+
 def use_sample_data
   stub_mandate_query
   stub_constituency_mandate_query
+  stub_term_mandate_query
   stub_metadata_query
   stub_biodata_query
   stub_constituency_biodata_query
+  stub_term_biodata_query
 end
