@@ -64,4 +64,10 @@ describe WikidataPositionHistory::Report do
 
     it { expect(report.wikitext).must_equal expected }
   end
+
+  describe '13th Estonian Riigikogu' do
+    let(:id) { 'Q20530392' }
+
+    it { expect(report.wikitext).must_equal expected }
+  end
 end
