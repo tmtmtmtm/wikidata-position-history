@@ -72,16 +72,10 @@ module WikidataPositionHistory
       item_from(:derivedReplacedBy)
     end
 
-    def position?
-      raw(:isPosition) == 'true'
-    end
-
-    def legislator?
-      raw(:isLegislator) == 'true'
-    end
-
-    def constituency?
-      raw(:isConstituency) == 'true'
+    def type
+      return 'constituency' if raw(:isConstituency) == 'true'
+      return 'legislator' if raw(:isLegislator) == 'true'
+      return 'position' if raw(:isPosition) == 'true'
     end
 
     def legislature

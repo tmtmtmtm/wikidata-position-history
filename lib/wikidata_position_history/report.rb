@@ -64,19 +64,9 @@ module WikidataPositionHistory
       @abolition ||= OutputRow::Abolition.new(self)
     end
 
-    def position?
+    def type
       # this should be the same everywhere
-      rows.map(&:position?).first
-    end
-
-    def legislator?
-      # this should be the same everywhere
-      rows.map(&:legislator?).first
-    end
-
-    def constituency?
-      # this should be the same everywhere
-      rows.map(&:constituency?).first
+      rows.map(&:type).first
     end
 
     def representative_count
@@ -122,10 +112,12 @@ module WikidataPositionHistory
     end
 
     def report
-      return Report::Legislator.new(metadata) if metadata.legislator?
-      return Report::Constituency.new(metadata) if metadata.constituency?
-
-      Report::Position.new(metadata)
+      report_class = {
+        'legislator'   => Report::Legislator,
+        'constituency' => Report::Constituency,
+      }
+      report_class.default = Report::Position
+      report_class[metadata.type].new(metadata)
     end
 
     def template_params

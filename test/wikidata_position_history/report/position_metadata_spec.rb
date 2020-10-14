@@ -42,7 +42,7 @@ describe WikidataPositionHistory::Report do
 
     it { expect(metadata.inception.date).must_be_nil }
     it { expect(metadata.abolition.date).must_be_nil }
-    it { expect(metadata.position?).must_equal true }
+    it { expect(metadata.type).must_equal 'position' }
 
     it { expect(metadata.inception.warnings.first.headline).must_equal 'Missing field' }
     it { expect(metadata.inception.warnings.first.explanation).must_include 'PositionHolderHistory/warning_no_inception_date' }
@@ -82,6 +82,6 @@ describe WikidataPositionHistory::Report do
   describe 'legislative term' do
     let(:position_id) { 'Q20530392' }
 
-    it { expect(metadata.position?).must_equal false }
+    it { expect(metadata.type).must_be_nil }
   end
 end
