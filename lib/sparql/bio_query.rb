@@ -37,6 +37,22 @@ module WikidataPositionHistory
         SPARQL
       end
     end
+
+    # Biographical data for Members during a Term
+    class TermBioQuery < ItemQuery
+      def raw_sparql
+        <<~SPARQL
+          # term-biodata
+
+          SELECT DISTINCT ?item ?image
+          WHERE {
+            ?item wdt:P31 wd:Q5 ; p:P39/pq:P2937 wd:%s .
+            OPTIONAL { ?item wdt:P18 ?image }
+          }
+          ORDER BY ?item
+        SPARQL
+      end
+    end
   end
 
   # Represents a single row returned from the Position query
