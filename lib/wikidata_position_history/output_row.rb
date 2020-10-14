@@ -50,6 +50,28 @@ module WikidataPositionHistory
       attr_reader :later, :current, :earlier
     end
 
+    # Date for a single output row in a Term-member report
+    class TermMandate
+      extend Forwardable
+
+      def_delegators :mandate, :officeholder, :start_date, :end_date, :party, :district
+
+      def initialize(mandate)
+        @mandate = mandate
+      end
+
+      def dates
+        dates = [start_date, end_date]
+        return '' if dates.compact.empty?
+
+        dates.join(' – ')
+      end
+
+      private
+
+      attr_reader :mandate
+    end
+
     # Base class for the Inception/Abolition date rows
     class PositionDate
       def initialize(metadata)
