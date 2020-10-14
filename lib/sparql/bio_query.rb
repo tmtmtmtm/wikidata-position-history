@@ -14,7 +14,7 @@ module WikidataPositionHistory
 
           SELECT DISTINCT ?item ?image
           WHERE {
-            ?item wdt:P31 wd:Q5 ; p:P39/ps:P39 wd:%s .
+            ?item wdt:P31 wd:Q5 ; p:P39/ps:P39 wd:__ITEMID__ .
             OPTIONAL { ?item wdt:P18 ?image }
           }
           ORDER BY ?item
@@ -30,7 +30,7 @@ module WikidataPositionHistory
 
           SELECT DISTINCT ?item ?image
           WHERE {
-            ?item wdt:P31 wd:Q5 ; p:P39/pq:P768 wd:%s .
+            ?item wdt:P31 wd:Q5 ; p:P39/pq:P768 wd:__ITEMID__ .
             OPTIONAL { ?item wdt:P18 ?image }
           }
           ORDER BY ?item
@@ -46,7 +46,7 @@ module WikidataPositionHistory
 
           SELECT DISTINCT ?item ?image
           WHERE {
-            ?item wdt:P31 wd:Q5 ; p:P39/pq:P2937 wd:%s .
+            ?item wdt:P31 wd:Q5 ; p:P39/pq:P2937 wd:__ITEMID__ .
             OPTIONAL { ?item wdt:P18 ?image }
           }
           ORDER BY ?item
