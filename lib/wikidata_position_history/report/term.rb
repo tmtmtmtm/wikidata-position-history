@@ -4,20 +4,13 @@ module WikidataPositionHistory
   class Report
     # Report of representatives during a legislative term
     class Term < Mandate
-      def mandates_query
-        SPARQL::TermMandatesQuery
-      end
-
-      def template_class
-        ReportTemplate::Term
-      end
-
-      def mandate_class
-        TermMandateRow
-      end
-
-      def biodata_query
-        SPARQL::TermBioQuery
+      def config
+        {
+          mandates_query_class: SPARQL::TermMandatesQuery,
+          biodata_query_class:  SPARQL::TermBioQuery,
+          template_class:       ReportTemplate::Term,
+          mandate_class:        TermMandateRow,
+        }
       end
 
       def table_rows
