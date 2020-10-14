@@ -2,8 +2,8 @@
 
 module WikidataPositionHistory
   class ReportTemplate
-    # ERB output template for position and constituency types
-    class Position < Base
+    # ERB output template for Office and Constituency types
+    class Office < Base
       def template_text
         <<~ERB
           {| class="wikitable" style="text-align: center; border: none;"

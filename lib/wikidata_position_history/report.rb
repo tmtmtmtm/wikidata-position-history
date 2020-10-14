@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 require_relative 'report/abstract'
-require_relative 'report/legislator'
 require_relative 'report/mandate'
+require_relative 'report/office'
+require_relative 'report/legislator'
 require_relative 'report/constituency'
-require_relative 'report/position'
 require_relative 'report/term'
 
 module WikidataPositionHistory
@@ -27,7 +27,7 @@ module WikidataPositionHistory
         'constituency' => Report::Constituency,
         'term'         => Report::Term,
       }
-      report_class.default = Report::Position
+      report_class.default = Report::Office
       report_class[metadata.type].new(metadata)
     end
 

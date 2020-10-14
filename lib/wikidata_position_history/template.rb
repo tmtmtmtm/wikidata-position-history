@@ -24,5 +24,5 @@ module WikidataPositionHistory
   end
 end
 
-require_relative 'template/position'
+require_relative 'template/office'
 require_relative 'template/term'
