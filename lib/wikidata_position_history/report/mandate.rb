@@ -18,10 +18,22 @@ module WikidataPositionHistory
         }
       end
 
-      private
+      protected
+
+      def mandates_query_class
+        config[:mandates_query_class]
+      end
+
+      def biodata_query_class
+        config[:biodata_query_class]
+      end
 
       def template_class
-        ReportTemplate::Position
+        config[:template_class]
+      end
+
+      def mandate_class
+        config[:mandate_class]
       end
 
       def biodata
@@ -37,15 +49,11 @@ module WikidataPositionHistory
       end
 
       def sparql
-        @sparql ||= mandates_query.new(position_id)
+        @sparql ||= mandates_query_class.new(position_id)
       end
 
       def biodata_sparql
-        biodata_query.new(position_id)
-      end
-
-      def mandate_class
-        MandateRow
+        biodata_query_class.new(position_id)
       end
 
       def mandates
