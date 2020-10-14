@@ -23,11 +23,7 @@ module WikidataPositionHistory
       attr_reader :itemid
 
       def sparql
-        raw_sparql % sparql_args
-      end
-
-      def sparql_args
-        itemid
+        raw_sparql.gsub('__ITEMID__', itemid)
       end
 
       def json

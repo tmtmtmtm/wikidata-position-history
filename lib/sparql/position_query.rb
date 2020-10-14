@@ -13,11 +13,11 @@ module WikidataPositionHistory
                           ?isPosition ?isLegislator ?isTerm
                           ?isConstituency ?representative_count ?legislature
           WHERE {
-            VALUES ?item { wd:%s }
-            BIND(EXISTS { wd:%s wdt:P279+ wd:Q4164871 } as ?isPosition)
-            BIND(EXISTS { wd:%s wdt:P279+ wd:Q4175034 } as ?isLegislator)
-            BIND(EXISTS { wd:%s wdt:P31/wdt:P279* wd:Q15238777 } as ?isTerm)
-            BIND(EXISTS { wd:%s wdt:P31/wdt:P279* wd:Q192611 } as ?isConstituency)
+            VALUES ?item { wd:__ITEMID__ }
+            BIND(EXISTS { wd:__ITEMID__ wdt:P279+ wd:Q4164871 } as ?isPosition)
+            BIND(EXISTS { wd:__ITEMID__ wdt:P279+ wd:Q4175034 } as ?isLegislator)
+            BIND(EXISTS { wd:__ITEMID__ wdt:P31/wdt:P279* wd:Q15238777 } as ?isTerm)
+            BIND(EXISTS { wd:__ITEMID__ wdt:P31/wdt:P279* wd:Q192611 } as ?isConstituency)
 
             OPTIONAL { ?item p:P571 [ a wikibase:BestRank ;
               psv:P571 [ wikibase:timeValue ?inception; wikibase:timePrecision ?inception_precision ]
@@ -35,10 +35,6 @@ module WikidataPositionHistory
             }
           }
         SPARQL
-      end
-
-      def sparql_args
-        [itemid] * 5
       end
     end
   end

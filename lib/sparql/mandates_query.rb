@@ -11,7 +11,7 @@ module WikidataPositionHistory
           SELECT DISTINCT ?ordinal ?item ?start_date ?start_precision ?end_date ?end_precision ?prev ?next ?nature
           WHERE {
             ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
-            ?posn ps:P39 wd:%s .
+            ?posn ps:P39 wd:__ITEMID__ .
             FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
 
             OPTIONAL { ?posn pqv:P580 [ wikibase:timeValue ?start_date; wikibase:timePrecision ?start_precision ] }
@@ -35,7 +35,7 @@ module WikidataPositionHistory
           SELECT DISTINCT ?ordinal ?item ?start_date ?start_precision ?end_date ?end_precision ?party ?prev ?next ?term
           WHERE {
             ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
-            ?posn pq:P768 wd:%s .
+            ?posn pq:P768 wd:__ITEMID__ .
             FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
 
             OPTIONAL { ?posn pqv:P580 [ wikibase:timeValue ?start_date; wikibase:timePrecision ?start_precision ] }
@@ -63,7 +63,7 @@ module WikidataPositionHistory
           WHERE {
             ?item wdt:P31 wd:Q5 ; p:P39 ?posn .
             ?posn ps:P39 ?position .
-            ?posn pq:P2937 wd:%s .
+            ?posn pq:P2937 wd:__ITEMID__ .
             FILTER NOT EXISTS { ?posn wikibase:rank wikibase:DeprecatedRank }
 
             OPTIONAL { ?posn pqv:P580 [ wikibase:timeValue ?start_date; wikibase:timePrecision ?start_precision ] }
