@@ -82,6 +82,6 @@ describe WikidataPositionHistory::Report do
   describe 'legislative term' do
     let(:position_id) { 'Q20530392' }
 
-    it { expect(metadata.type).must_be_nil }
+    it { expect(metadata.type).must_equal 'term' }
   end
 end
