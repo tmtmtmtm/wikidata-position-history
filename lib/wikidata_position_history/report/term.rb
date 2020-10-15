@@ -70,12 +70,7 @@ module WikidataPositionHistory
 
   # Represents a single row returned from the TermMandates query
   class TermMandateRow < OfficeMandateRow
-    def district
-      QueryService::WikidataItem.new(row.dig(:district, :value))
-    end
-
-    def end_cause
-      QueryService::WikidataItem.new(row.dig(:endCause, :value))
-    end
+    item_field :district
+    item_field :end_cause
   end
 end
