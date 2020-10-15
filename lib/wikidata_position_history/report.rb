@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'report/abstract'
-require_relative 'report/mandate'
+require_relative 'report/abstract_mandate'
 require_relative 'report/office'
 require_relative 'report/legislator'
 require_relative 'report/constituency'
