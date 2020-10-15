@@ -37,6 +37,11 @@ module WikidataPositionHistory
         @row = row
       end
 
+      def self.item_field(method_name)
+        field = method_name.to_s.gsub(/_\w/) { |str| str.delete_prefix('_').upcase }.to_sym
+        define_method(method_name) { item_from(field) }
+      end
+
       protected
 
       attr_reader :row
