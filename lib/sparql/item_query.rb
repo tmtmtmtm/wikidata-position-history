@@ -42,6 +42,12 @@ module WikidataPositionHistory
         define_method(method_name) { item_from(field) }
       end
 
+      def self.date_field(method_name)
+        field = method_name.to_s.gsub('_date', '').to_sym
+        precision_field = "#{field}_precision".to_sym
+        define_method(method_name) { date_from(field, precision_field) }
+      end
+
       protected
 
       attr_reader :row
