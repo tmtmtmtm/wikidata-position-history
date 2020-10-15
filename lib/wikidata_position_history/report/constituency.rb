@@ -3,7 +3,7 @@
 module WikidataPositionHistory
   class Report
     # Report of representatives for a single-member consttuency
-    class Constituency < Mandate
+    class Constituency < Office
       def config
         {
           mandates_query_class: SPARQL::ConstituencyMandatesQuery,

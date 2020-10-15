@@ -2,8 +2,12 @@
 
 module WikidataPositionHistory
   class Report
-    # base report where each row is one person holding an office for a period
-    class Mandate < Abstract
+    # abstract report category, where each row is one person holding an
+    # office for a period. This could either be an executive-style
+    # one-person-at-a-time office (president, mayor, etc) [e.g.
+    # Report::Office], or a legislative-style many-people-at-a-time one
+    # [e.g. Report::Term]
+    class AbstractMandate < Abstract
       def wikitext
         return no_items_output if mandates.empty?
 
@@ -44,10 +48,6 @@ module WikidataPositionHistory
         biodata.select { |bio| bio.person.id == officeholder.id }
       end
 
-      def padded_mandates
-        [nil, mandates, nil].flatten(1)
-      end
-
       def sparql
         @sparql ||= mandates_query_class.new(position_id)
       end
@@ -62,15 +62,6 @@ module WikidataPositionHistory
 
       def no_items_output
         "\n{{PositionHolderHistory/error_no_holders|id=#{position_id}}}\n"
-      end
-
-      def table_rows
-        padded_mandates.each_cons(3).map do |later, current, earlier|
-          {
-            mandate: OutputRow::Mandate.new(later, current, earlier),
-            bio:     biodata_for(current.officeholder),
-          }
-        end
       end
     end
   end

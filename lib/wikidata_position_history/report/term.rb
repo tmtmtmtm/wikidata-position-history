@@ -3,7 +3,7 @@
 module WikidataPositionHistory
   class Report
     # Report of representatives during a legislative term
-    class Term < Mandate
+    class Term < AbstractMandate
       def config
         {
           mandates_query_class: SPARQL::TermMandatesQuery,
