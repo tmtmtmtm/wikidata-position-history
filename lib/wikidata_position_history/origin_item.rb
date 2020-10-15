@@ -51,9 +51,12 @@ module WikidataPositionHistory
   #  (due to combinatorial explosion when multiple values are set for
   #  any property, there could potentially be a large number of rows)
   class OriginRow < SPARQL::QueryRow
-    def item
-      item_from(:item)
-    end
+    item_field :item
+    item_field :replaces
+    item_field :replaced_by
+    item_field :derived_replaces
+    item_field :derived_replaced_by
+    item_field :legislature
 
     def inception_date
       date_from(:inception, :inception_precision)
@@ -63,31 +66,11 @@ module WikidataPositionHistory
       date_from(:abolition, :abolition_precision)
     end
 
-    def replaces
-      item_from(:replaces)
-    end
-
-    def replaced_by
-      item_from(:replacedBy)
-    end
-
-    def derived_replaces
-      item_from(:derivedReplaces)
-    end
-
-    def derived_replaced_by
-      item_from(:derivedReplacedBy)
-    end
-
     def type
       return 'constituency' if raw(:isConstituency) == 'true'
       return 'legislator'   if raw(:isLegislator) == 'true'
       return 'term'         if raw(:isTerm) == 'true'
       return 'position'     if raw(:isPosition) == 'true'
-    end
-
-    def legislature
-      item_from(:legislature)
     end
 
     def representative_count
