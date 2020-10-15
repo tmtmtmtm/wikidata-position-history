@@ -57,14 +57,8 @@ module WikidataPositionHistory
     item_field :derived_replaces
     item_field :derived_replaced_by
     item_field :legislature
-
-    def inception_date
-      date_from(:inception, :inception_precision)
-    end
-
-    def abolition_date
-      date_from(:abolition, :abolition_precision)
-    end
+    date_field :inception_date
+    date_field :abolition_date
 
     def type
       return 'constituency' if raw(:isConstituency) == 'true'
