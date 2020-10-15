@@ -41,7 +41,7 @@ module WikidataPositionHistory
       end
 
       def biodata
-        @biodata ||= biodata_sparql.results_as(BioRow)
+        @biodata ||= biodata_sparql.results_as(HumanBioRow)
       end
 
       def biodata_for(officeholder)
@@ -63,6 +63,33 @@ module WikidataPositionHistory
       def no_items_output
         "\n{{PositionHolderHistory/error_no_holders|id=#{position_id}}}\n"
       end
+    end
+  end
+
+  # Represents a single row returned from a Biodata query
+  # The actual SPARQL differs for each type of report, but the fields
+  # returned are the same.
+  class HumanBioRow < SPARQL::QueryRow
+    def person
+      item_from(:item)
+    end
+
+    def image_title
+      return if image_url.to_s.empty?
+
+      image_url.split('/').last
+    end
+
+    def image_link(size = 75)
+      return '' unless image_title
+
+      "[[File:#{image_title}|#{size}px]]"
+    end
+
+    private
+
+    def image_url
+      raw(:image)
     end
   end
 end
