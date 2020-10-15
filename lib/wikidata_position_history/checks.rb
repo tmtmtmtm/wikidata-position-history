@@ -17,13 +17,14 @@ module WikidataPositionHistory
 
     attr_reader :later, :current, :earlier
 
-    # TODO: replace these with objects instead of strings
     def successor_qlink
-      current.next
+      successor = current.next or return
+      successor.qlink
     end
 
     def predecessor_qlink
-      current.prev
+      predecessor = current.prev or return
+      predecessor.qlink
     end
 
     def later_holder?

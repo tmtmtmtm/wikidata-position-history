@@ -84,19 +84,11 @@ module WikidataPositionHistory
     item_field :party
     date_field :start_date, 'start_date', 'start_precision'
     date_field :end_date, 'end_date', 'end_precision'
+    item_field :prev
+    item_field :next
 
     def ordinal
       raw(:ordinal)
-    end
-
-    # TODO: switch to item_field
-    def prev
-      QueryService::WikidataItem.new(row.dig(:prev, :value)).qlink
-    end
-
-    # TODO: switch to item_field
-    def next
-      QueryService::WikidataItem.new(row.dig(:next, :value)).qlink
     end
 
     def acting?
