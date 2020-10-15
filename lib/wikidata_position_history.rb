@@ -2,8 +2,6 @@
 
 require 'query_service'
 require 'sparql/item_query'
-require 'sparql/bio_query'
-require 'sparql/mandates_query'
 require 'wikidata_position_history/origin_item'
 require 'wikidata_position_history/implied_list'
 require 'wikidata_position_history/checks'
