@@ -80,6 +80,7 @@ module WikidataPositionHistory
   # Represents a single row returned from the OfficeMandates query
   class OfficeMandateRow < SPARQL::QueryRow
     item_field :officeholder, 'item'
+    item_field :nature
     item_field :party
     date_field :start_date, 'start_date', 'start_precision'
     date_field :end_date, 'end_date', 'end_precision'
@@ -98,13 +99,10 @@ module WikidataPositionHistory
       QueryService::WikidataItem.new(row.dig(:next, :value)).qlink
     end
 
-    # TODO: switch to item_field
-    def nature
-      QueryService::WikidataItem.new(row.dig(:nature, :value)).id
-    end
-
     def acting?
-      nature == 'Q4676846'
+      return unless nature
+
+      nature.id == 'Q4676846'
     end
   end
 end
