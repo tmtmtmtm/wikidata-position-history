@@ -79,43 +79,32 @@ module WikidataPositionHistory
 
   # Represents a single row returned from the OfficeMandates query
   class OfficeMandateRow < SPARQL::QueryRow
+    item_field :officeholder, 'item'
+    item_field :party
+    date_field :start_date, 'start_date', 'start_precision'
+    date_field :end_date, 'end_date', 'end_precision'
+
     def ordinal
       raw(:ordinal)
     end
 
-    def officeholder
-      item_from(:item)
-    end
-
-    def party
-      item_from(:party)
-    end
-
-    # TODO: switch to item_from
+    # TODO: switch to item_field
     def prev
       QueryService::WikidataItem.new(row.dig(:prev, :value)).qlink
     end
 
-    # TODO: switch to item_from
+    # TODO: switch to item_field
     def next
       QueryService::WikidataItem.new(row.dig(:next, :value)).qlink
     end
 
-    # TODO: switch to item_from
+    # TODO: switch to item_field
     def nature
       QueryService::WikidataItem.new(row.dig(:nature, :value)).id
     end
 
     def acting?
       nature == 'Q4676846'
-    end
-
-    def start_date
-      date_from(:start_date, :start_precision)
-    end
-
-    def end_date
-      date_from(:end_date, :end_precision)
     end
   end
 end

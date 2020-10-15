@@ -70,9 +70,7 @@ module WikidataPositionHistory
   # The actual SPARQL differs for each type of report, but the fields
   # returned are the same.
   class HumanBioRow < SPARQL::QueryRow
-    def person
-      item_from(:item)
-    end
+    item_field :person, 'item'
 
     def image_title
       return if image_url.to_s.empty?

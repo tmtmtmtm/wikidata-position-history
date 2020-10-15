@@ -37,14 +37,14 @@ module WikidataPositionHistory
         @row = row
       end
 
-      def self.item_field(method_name)
-        field = method_name.to_s.gsub(/_\w/) { |str| str.delete_prefix('_').upcase }.to_sym
+      def self.item_field(method_name, field = nil)
+        field ||= method_name.to_s.gsub(/_\w/) { |str| str.delete_prefix('_').upcase }
         define_method(method_name) { item_from(field) }
       end
 
-      def self.date_field(method_name)
-        field = method_name.to_s.gsub('_date', '').to_sym
-        precision_field = "#{field}_precision".to_sym
+      def self.date_field(method_name, field = nil, precision_field = nil)
+        field ||= method_name.to_s.gsub('_date', '')
+        precision_field ||= "#{field}_precision"
         define_method(method_name) { date_from(field, precision_field) }
       end
 
@@ -67,7 +67,7 @@ module WikidataPositionHistory
       end
 
       def raw(key)
-        row.dig(key, :value)
+        row.dig(key.to_sym, :value)
       end
     end
   end
