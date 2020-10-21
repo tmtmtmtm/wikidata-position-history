@@ -76,8 +76,9 @@ GEM
     rubocop-performance (1.8.1)
       rubocop (>= 0.87.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rspec (1.43.2)
+    rubocop-rspec (1.44.1)
       rubocop (~> 0.87)
+      rubocop-ast (>= 0.7.1)
     ruby-progressbar (1.10.1)
     unf (0.1.4)
       unf_ext
@@ -100,7 +101,7 @@ DEPENDENCIES
   reek (~> 6.0)
   rubocop (~> 0.89)
   rubocop-performance (~> 1.8.0)
-  rubocop-rspec (~> 1.43.2)
+  rubocop-rspec (~> 1.44.1)
   warning (~> 1.1)
   webmock (~> 3.9.1)
   wikidata_position_history!
