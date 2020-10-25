@@ -1,0 +1,8 @@
+{
+  "head" : {
+    "vars" : [ "item", "start_date", "start_precision", "end_date", "end_precision", "prev", "next", "party", "district", "endCause" ]
+  },
+  "results" : {
+    "bindings" : [ ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "head" : {
+    "vars" : [ "item", "inception", "inception_precision", "abolition", "abolition_precision", "replaces", "replacedBy", "derivedReplaces", "derivedReplacedBy", "isPosition", "isLegislator", "isTerm", "isConstituency", "representative_count", "legislature" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q30744183"
+      },
+      "isPosition" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "isLegislator" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "isTerm" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "true"
+      },
+      "isConstituency" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#boolean",
+        "type" : "literal",
+        "value" : "false"
+      },
+      "replaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q30744187"
+      },
+      "replacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1009198"
+      },
+      "derivedReplaces" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q30744187"
+      },
+      "derivedReplacedBy" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1009198"
+      }
+    } ]
+  }
+}
