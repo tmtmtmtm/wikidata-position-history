@@ -21,6 +21,10 @@ module WikidataPositionHistory
           }
         end
       end
+
+      def no_items_output
+        "\n{{PositionHolderHistory/error_no_term_members|id=#{position_id}}}\n"
+      end
     end
   end
 

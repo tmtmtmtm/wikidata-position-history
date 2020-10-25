@@ -23,4 +23,10 @@ describe WikidataPositionHistory::Report do
     it { expect(report.send(:metadata).representative_count).must_equal 12 }
     it { expect(report.wikitext[/{{(.*?)}}/, 1]).must_include 'error_multimember' }
   end
+
+  describe 'warning template for term with no members' do
+    let(:report) { WikidataPositionHistory::Report.new('Q30744183') }
+
+    it { expect(report.wikitext[/{{(.*?)}}/, 1]).must_include 'error_no_term_members|id=Q30744183' }
+  end
 end
