@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: webmock
+    versions:
+    - 3.11.1
+    - 3.11.2
+    - 3.11.3
+    - 3.12.0
+    - 3.12.1
+  - dependency-name: rubocop-performance
+    versions:
+    - 1.10.0
+    - 1.10.1
+    - 1.9.2
+  - dependency-name: pry
+    versions:
+    - 0.14.0
+  - dependency-name: reek
+    versions:
+    - 6.0.3
+  - dependency-name: minitest
+    versions:
+    - 5.14.3
