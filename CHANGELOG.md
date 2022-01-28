@@ -2,6 +2,7 @@
 
 # Unreleased
 
+* Officeholders for a position are now sorted secondarily by end date.
 * Items that are legislative terms can now be detected.
 
 # [2.3.0] 2020-10-01
