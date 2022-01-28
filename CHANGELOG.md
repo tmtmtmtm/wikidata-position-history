@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# [2.4.0] 2022-01-28
 
 * Officeholders for a position are now sorted secondarily by end date.
 * Items that are legislative terms can now be detected.
